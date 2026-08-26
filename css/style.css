@@ -1,0 +1,100 @@
+/* ===== AGAH - Hoja de estilos compartida ===== */
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #173C48;
+}
+
+.bg-agah-navy { background-color: #173C48; }
+.bg-agah-grey { background-color: #E8EEF0; }
+.bg-agah-cyan { background-color: #0F6685; }
+.bg-agah-amber { background-color: #D98822; }
+.bg-agah-green { background-color: #7D875D; }
+.bg-agah-red { background-color: #C0392B; }
+
+.text-agah-navy { color: #173C48; }
+.text-agah-cyan { color: #0F6685; }
+.text-agah-amber { color: #D98822; }
+
+.border-agah-navy { border-color: #173C48; }
+.border-agah-cyan { border-color: #0F6685; }
+
+.hover-bg-agah-navy:hover { background-color: #173C48; }
+.hover-bg-agah-cyan:hover { background-color: #0F6685; }
+
+.agah-logo-circle {
+  width: 40px;
+  height: 40px;
+  font-size: 1.05rem;
+}
+
+/* Logo (isotipo) dentro del círculo del navbar, reemplaza al texto "AG" */
+.agah-logo-navbar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  padding: 4px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Banner institucional a todo lo ancho (hero de Inicio) */
+.agah-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: #173C48;
+  /* La altura sigue la proporción real de banner-linkedin.png (3168x792 = 4:1).
+     Así la imagen siempre ocupa el 100% del ancho, de lado a lado, sin
+     recortarse y sin dejar espacios vacíos a los costados. */
+  aspect-ratio: 3168 / 792;
+  display: flex;
+  align-items: center;
+}
+
+.agah-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* Al coincidir el aspect-ratio de la sección con el de la imagen,
+     "cover" no recorta nada: la imagen queda completa y a lo ancho. */
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* Difuminado: sólido a la izquierda (para el título) y transparente hacia el centro/derecha */
+.agah-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(23, 60, 72, 1) 0%,
+    rgba(23, 60, 72, 0.97) 28%,
+    rgba(23, 60, 72, 0.7) 46%,
+    rgba(23, 60, 72, 0.3) 60%,
+    rgba(23, 60, 72, 0.1) 72%
+  );
+  z-index: 1;
+}
+
+.agah-hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 767.98px) {
+  .agah-hero-overlay {
+    background: linear-gradient(
+      to right,
+      rgba(23, 60, 72, 1) 0%,
+      rgba(23, 60, 72, 1) 40%,
+      rgba(23, 60, 72, 0.7) 65%,
+      rgba(23, 60, 72, 0.35) 85%,
+      rgba(23, 60, 72, 0.2) 100%
+    );
+  }
+}

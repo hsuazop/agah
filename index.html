@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGAH | Alianza para el Gobierno Abierto Honduras</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white">
+
+  <!-- ============ HEADER Y NAVEGACIÓN (compartido en todas las páginas) ============ -->
+  <header class="sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg bg-agah-navy navbar-dark py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-3 fw-bold fs-4" href="index.html">
+          <img src="img/isotipo.jpg" alt="Isotipo AGAH" class="agah-logo-navbar">
+          <span>AGAH <span class="text-agah-amber small fw-normal d-block d-sm-inline">| Honduras</span></span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAGAH" aria-controls="navbarAGAH" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarAGAH">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-medium small">
+            <li class="nav-item"><a class="nav-link active px-3" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="sobre-agah.html">Sobre AGAH</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="tablero.html">Tablero de Compromiso</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="repositorio.html">Repositorio OCR</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="prensa.html">Sala de Prensa</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="veeduria.html">Veeduría Ciudadana</a></li>
+            <li class="nav-item"><a class="nav-link px-3 btn bg-agah-cyan text-white ms-lg-2 px-4 py-1 rounded-pill hover-bg-agah-navy" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO: Banner institucional a todo lo ancho ============ -->
+    <section class="agah-hero text-white">
+      <img src="img/banner-linkedin.png" alt="Alianza de Gobierno Abierto Honduras" class="agah-hero-img">
+      <div class="agah-hero-overlay"></div>
+      <div class="container agah-hero-content">
+        <h1 class="fw-bold display-5 mb-3" style="max-width: 30rem; text-shadow: 0 2px 12px rgba(0,0,0,0.35);">Alianza para el Gobierno Abierto Honduras</h1>
+        <p class="fs-5 text-white-50 mb-0" style="max-width: 28rem;">
+          Plataforma oficial de transparencia, rendición de cuentas y co-creación ciudadana
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         1.1 BUSCADOR GLOBAL INTELIGENTE
+         =========================================================== -->
+    <section class="py-5 bg-agah-grey">
+      <div class="container">
+        <div class="bg-agah-navy text-white rounded-4 p-4 p-md-5 shadow">
+          <label class="d-block small text-uppercase fw-semibold text-white-50 mb-2">
+            <i class="bi bi-cpu"></i> Búsqueda avanzada con reconocimiento de texto interno (OCR) en el repositorio documental
+          </label>
+          <div class="input-group input-group-lg mb-3">
+            <input type="text" class="form-control" placeholder="Busca por palabra clave, número de decreto, acta, institución o compromiso...">
+            <button class="btn bg-agah-cyan text-white fw-bold d-flex align-items-center gap-2">
+              <i class="bi bi-search"></i> Buscar
+            </button>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="small text-white-50 align-self-center me-1">Filtros rápidos:</span>
+            <a href="repositorio.html?filtro=planes" class="btn btn-sm btn-outline-light rounded-pill">Planes de Acción</a>
+            <a href="repositorio.html?filtro=actas" class="btn btn-sm btn-outline-light rounded-pill">Actas</a>
+            <a href="repositorio.html?filtro=normativa" class="btn btn-sm btn-outline-light rounded-pill">Normativa</a>
+            <a href="repositorio.html?filtro=veeduria" class="btn btn-sm btn-outline-light rounded-pill">Veeduría</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         1.2 TABLERO DE CONTROL DE COMPROMISOS (Resumen)
+         =========================================================== -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="text-center mx-auto mb-4" style="max-width: 48rem;">
+          <h2 class="fw-bold text-agah-navy">Avance y Trazabilidad del Plan de Acción</h2>
+          <p class="text-secondary mb-0">
+            Monitoreo en tiempo real del grado de cumplimiento de los compromisos asumidos por el Estado y la sociedad civil
+          </p>
+        </div>
+
+        <!-- KPIs -->
+        <div class="row g-3 mb-4 text-center">
+          <div class="col-6 col-lg-3">
+            <div class="bg-agah-grey rounded-4 p-3 h-100">
+              <div class="display-6 fw-black text-agah-navy">[XX%]</div>
+              <div class="small text-secondary">Avance General del Plan de Acción Vigente</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="bg-agah-grey rounded-4 p-3 h-100">
+              <div class="display-6 fw-black text-agah-navy">[XX / XX]</div>
+              <div class="small text-secondary">Hitos Completados</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="bg-agah-grey rounded-4 p-3 h-100">
+              <div class="display-6 fw-black text-agah-navy">[XX]</div>
+              <div class="small text-secondary">Instituciones Públicas Responsables</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="bg-agah-grey rounded-4 p-3 h-100">
+              <div class="display-6 fw-black text-agah-navy">[XX]</div>
+              <div class="small text-secondary">Organizaciones de Sociedad Civil Involucradas</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vista previa de compromisos (tarjetas resumidas) -->
+        <div class="row g-4 mb-4">
+          <div class="col-md-6">
+            <div class="bg-agah-grey rounded-4 p-4 h-100">
+              <span class="badge bg-agah-amber text-white text-uppercase mb-2">En Proceso</span>
+              <h5 class="fw-bold text-agah-navy">[Nombre del Compromiso]</h5>
+              <p class="small text-secondary mb-2">[Institución Responsable]</p>
+              <div class="progress" style="height:.6rem;">
+                <div class="progress-bar bg-agah-amber" style="width: 68%">68%</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bg-agah-grey rounded-4 p-4 h-100">
+              <span class="badge bg-agah-green text-white text-uppercase mb-2">Cumplido</span>
+              <h5 class="fw-bold text-agah-navy">[Nombre del Compromiso]</h5>
+              <p class="small text-secondary mb-2">[Institución Responsable]</p>
+              <div class="progress" style="height:.6rem;">
+                <div class="progress-bar bg-agah-green" style="width: 100%">100%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="tablero.html" class="btn bg-agah-cyan text-white fw-bold px-4 py-2 rounded-pill hover-bg-agah-navy">
+            Ver Tablero de Trazabilidad Completo →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         1.3 NOVEDADES Y DESTACADOS
+         =========================================================== -->
+    <section class="py-5 bg-agah-grey">
+      <div class="container">
+        <h2 class="fw-bold text-agah-navy text-center mb-4">Actualidad y Eventos AGAH</h2>
+
+        <div class="row g-4">
+          <!-- Noticia Destacada -->
+          <div class="col-md-4">
+            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
+              <span class="badge text-bg-secondary align-self-start mb-2">Noticia</span>
+              <h5 class="fw-bold text-agah-navy">[Título del comunicado oficial]</h5>
+              <p class="small text-secondary">[Fecha]</p>
+              <p class="small text-secondary flex-grow-1">[Extracto breve del comunicado...]</p>
+              <a href="prensa.html" class="small fw-bold text-agah-cyan text-decoration-none">Leer más →</a>
+            </div>
+          </div>
+          <!-- Evento / Mesa Técnica -->
+          <div class="col-md-4">
+            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
+              <span class="badge text-bg-secondary align-self-start mb-2">Evento / Mesa Técnica</span>
+              <h5 class="fw-bold text-agah-navy">[Título de la próxima convocatoria]</h5>
+              <p class="small text-secondary mb-1">[Fecha y Hora]</p>
+              <p class="small text-secondary flex-grow-1">Modalidad: [Virtual / Presencial]</p>
+              <a href="#" class="btn btn-sm bg-agah-cyan text-white align-self-start">Registrarse</a>
+            </div>
+          </div>
+          <!-- Informe Reciente -->
+          <div class="col-md-4">
+            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
+              <span class="badge text-bg-secondary align-self-start mb-2">Informe</span>
+              <h5 class="fw-bold text-agah-navy">Informe del Mecanismo de Revisión Independiente (IRM) / Autoevaluación</h5>
+              <p class="small text-secondary flex-grow-1">[Descripción breve de la publicación]</p>
+              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar PDF</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="prensa.html" class="btn btn-outline-dark rounded-pill px-4">Ir a la Sala de Prensa →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         1.4 ACCESOS DIRECTOS A VEEDURÍA Y DENUNCIAS
+         =========================================================== -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="text-center mx-auto mb-4" style="max-width: 48rem;">
+          <h2 class="fw-bold text-agah-navy">Participación Ciudadana y Control Social</h2>
+          <p class="text-secondary mb-0">Herramientas directas para incidir, evaluar y vigilar la gestión pública</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Módulo 1 -->
+          <div class="col-md-4">
+            <div class="bg-agah-grey rounded-4 p-4 h-100 d-flex flex-column">
+              <div class="mb-2"><i class="bi bi-chat-square-text fs-2 text-agah-cyan"></i></div>
+              <h5 class="fw-bold text-agah-navy">Consultas Públicas Abiertas</h5>
+              <p class="small text-secondary flex-grow-1">Participa en la discusión y elaboración de borradores normativos, planes y políticas de gobierno abierto.</p>
+              <a href="consultas.html" class="btn bg-agah-navy text-white hover-bg-agah-cyan align-self-start">Ver Consultas Activas</a>
+            </div>
+          </div>
+          <!-- Módulo 2 -->
+          <div class="col-md-4">
+            <div class="bg-agah-grey rounded-4 p-4 h-100 d-flex flex-column">
+              <div class="mb-2"><i class="bi bi-shield-lock fs-2 text-agah-cyan"></i></div>
+              <h5 class="fw-bold text-agah-navy">Portal de Denuncias Sociales y Veeduría</h5>
+              <p class="small text-secondary flex-grow-1">Canal seguro con formulario cifrado y código único de seguimiento para reportes de contraloría social.</p>
+              <a href="veeduria.html" class="btn bg-agah-navy text-white hover-bg-agah-cyan align-self-start">Presentar Denuncia Segura</a>
+            </div>
+          </div>
+          <!-- Módulo 3 -->
+          <div class="col-md-4">
+            <div class="bg-agah-grey rounded-4 p-4 h-100 d-flex flex-column">
+              <div class="mb-2"><i class="bi bi-people fs-2 text-agah-cyan"></i></div>
+              <h5 class="fw-bold text-agah-navy">Espacio para Sociedad Civil</h5>
+              <p class="small text-secondary flex-grow-1">Red de acreditación, grupos de trabajo y colaboración entre organizaciones no gubernamentales y academia.</p>
+              <a href="osc.html" class="btn bg-agah-navy text-white hover-bg-agah-cyan align-self-start">Acceder al Espacio OSC</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       PIE DE PÁGINA INSTITUCIONAL (FOOTER) - compartido
+       =========================================================== -->
+  <footer class="bg-agah-navy text-white pt-5 pb-4" style="border-top:4px solid #0F6685;">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <!-- Columna 1: AGAH -->
+        <div class="col-lg-3">
+          <div class="d-flex align-items-center gap-2 fw-bold fs-4 mb-2">
+            <img src="img/isotipo.jpg" alt="Isotipo AGAH" class="agah-logo-navbar" style="width:32px;height:32px;">
+            <span>AGAH</span>
+          </div>
+          <div class="d-flex gap-3 fs-5 text-white-50">
+            <a href="#" class="text-white-50"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- Columna 2: Navegación Principal -->
+        <div class="col-6 col-lg-3">
+          <h4 class="small fw-bold text-info text-uppercase">Navegación Principal</h4>
+          <ul class="list-unstyled small text-white-50">
+            <li class="mb-1"><a href="sobre-agah.html#ogp" class="text-white-50 text-decoration-none">Sobre OGP</a></li>
+            <li class="mb-1"><a href="tablero.html" class="text-white-50 text-decoration-none">Planes de Acción</a></li>
+            <li class="mb-1"><a href="repositorio.html" class="text-white-50 text-decoration-none">Repositorio Documental</a></li>
+            <li class="mb-1"><a href="veeduria.html" class="text-white-50 text-decoration-none">Veeduría</a></li>
+            <li class="mb-1"><a href="contacto.html" class="text-white-50 text-decoration-none">Contacto</a></li>
+          </ul>
+        </div>
+        <!-- Columna 3: Transparencia y Datos -->
+        <div class="col-6 col-lg-3">
+          <h4 class="small fw-bold text-info text-uppercase">Transparencia y Datos</h4>
+          <ul class="list-unstyled small text-white-50">
+            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Licencia de Datos Abiertos</a></li>
+            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Política de Privacidad</a></li>
+            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Términos de Uso</a></li>
+            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Mapa del Sitio</a></li>
+          </ul>
+        </div>
+        <!-- Columna 4: Contacto Institucional -->
+        <div class="col-lg-3">
+          <h4 class="small fw-bold text-info text-uppercase">Contacto Institucional</h4>
+          <p class="small text-white-50 mb-1"><i class="bi bi-geo-alt"></i> [Dirección de la Secretaría Técnica]</p>
+          <p class="small text-white-50 mb-1"><i class="bi bi-envelope"></i> [correo@electronico.oficial]</p>
+          <p class="small text-white-50 mb-0"><i class="bi bi-telephone"></i> [Teléfono de atención]</p>
+        </div>
+      </div>
+      <div class="border-top border-secondary pt-3 text-center small text-white-50">
+        <p class="mb-0">© 2026 Alianza para el Gobierno Abierto Honduras (AGAH). Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
