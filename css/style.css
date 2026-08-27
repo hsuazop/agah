@@ -86,6 +86,17 @@ body {
   padding-bottom: 1rem;
 }
 
+/* Pestañas (nav-pills) con los colores de marca, usadas en Tablero, Repositorio y Prensa */
+.nav-pills .nav-link {
+  color: #173C48;
+  font-weight: 600;
+  font-size: .95rem;
+}
+.nav-pills .nav-link.active {
+  background-color: #0F6685;
+  color: #fff;
+}
+
 @media (max-width: 767.98px) {
   .agah-hero-overlay {
     background: linear-gradient(

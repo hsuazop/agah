@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultas Públicas Abiertas | Alianza para el Gobierno Abierto Honduras</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white">
+
+  <!-- ============ HEADER Y NAVEGACIÓN (compartido en todas las páginas) ============ -->
+  <header class="sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg bg-agah-navy navbar-dark py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-3 fw-bold fs-4" href="index.html">
+          <img src="img/isotipo.jpg" alt="Isotipo AGAH" class="agah-logo-navbar">
+          <span>AGAH <span class="text-agah-amber small fw-normal d-block d-sm-inline">| Honduras</span></span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAGAH" aria-controls="navbarAGAH" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarAGAH">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-medium small">
+            <li class="nav-item"><a class="nav-link px-3" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="sobre-agah.html">Sobre AGAH</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="tablero.html">Tablero de Compromiso</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="repositorio.html">Repositorio OCR</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="prensa.html">Sala de Prensa</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="veeduria.html">Veeduría Ciudadana</a></li>
+            <li class="nav-item"><a class="nav-link px-3 btn bg-agah-cyan text-white ms-lg-2 px-4 py-1 rounded-pill hover-bg-agah-navy" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="bg-agah-navy text-white py-5">
+      <div class="container py-3">
+        <h1 class="fw-bold display-6 mb-2">Espacio Abierto de Consulta Ciudadana</h1>
+        <p class="fs-5 text-white-50 mb-0" style="max-width: 50rem;">
+          Tu voz incide directamente en la gestión pública. Examina las propuestas activas, descarga los borradores
+          de documentos y envía tus aportes o recomendaciones durante los periodos de consulta pública.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <span class="small text-secondary align-self-center me-1">Estado de las consultas:</span>
+          <button class="btn btn-sm bg-agah-cyan text-white rounded-pill">Todas</button>
+          <button class="btn btn-sm btn-outline-secondary rounded-pill">Abiertas / Activas</button>
+          <button class="btn btn-sm btn-outline-secondary rounded-pill">En Fase de Sistematización</button>
+          <button class="btn btn-sm btn-outline-secondary rounded-pill">Concluidas / Con Informe</button>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-6">
+            <div class="bg-agah-grey rounded-4 p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-green text-white align-self-start mb-2">Abierta / Activa</span>
+              <h5 class="fw-bold text-agah-navy">[Nombre formal de la propuesta de ley, plan o política en consulta]</h5>
+              <p class="small text-secondary mb-2">Vigencia del foro: [Fecha de apertura] — [Fecha de cierre] · [XX] días restantes</p>
+              <p class="small text-secondary flex-grow-1">Documentos base disponibles para revisión ciudadana antes de enviar tu aporte.</p>
+              <div class="d-flex gap-2">
+                <a href="#" class="btn btn-sm bg-agah-navy text-white hover-bg-agah-cyan">Descargar Borrador PDF</a>
+                <a href="#" class="btn btn-sm btn-outline-dark">Enviar Aporte</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bg-agah-grey rounded-4 p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-amber text-white align-self-start mb-2">En Sistematización</span>
+              <h5 class="fw-bold text-agah-navy">[Nombre formal de la propuesta de ley, plan o política en consulta]</h5>
+              <p class="small text-secondary mb-2">Vigencia del foro: [Fecha de apertura] — [Fecha de cierre]</p>
+              <p class="small text-secondary flex-grow-1">El plazo de aportes concluyó; los comentarios recibidos están en fase de análisis técnico.</p>
+              <a href="#" class="btn btn-sm bg-agah-navy text-white hover-bg-agah-cyan align-self-start">Ver Documento Completo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <h2 class="fw-bold text-agah-navy mb-3">Módulo de Aportes Ciudadanos</h2>
+            <form class="bg-agah-grey rounded-4 p-4">
+              <div class="mb-3">
+                <label class="form-label small fw-semibold text-agah-navy">Nombre completo / Organización (opcional)</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-semibold text-agah-navy">Sector al que pertenece</label>
+                <select class="form-select">
+                  <option>Ciudadano</option>
+                  <option>OSC</option>
+                  <option>Academia</option>
+                  <option>Sector Privado</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-semibold text-agah-navy">Sección / Artículo sobre el que opina</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-semibold text-agah-navy">Propuesta o modificación redactada</label>
+                <textarea class="form-control" rows="4"></textarea>
+              </div>
+              <button type="button" class="btn bg-agah-cyan text-white fw-bold">Enviar Aporte</button>
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <h2 class="fw-bold text-agah-navy mb-3">Cierre y Transparencia</h2>
+            <div class="bg-white border rounded-4 p-4">
+              <p class="text-secondary mb-0">
+                Al concluir el plazo, la página publica la <strong>Matriz de Sistematización de Aportes</strong>,
+                detallando qué comentarios fueron aceptados, cuáles fueron desestimados y la justificación técnica
+                correspondiente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       PIE DE PÁGINA INSTITUCIONAL (FOOTER) - compartido
+       =========================================================== -->
+  <footer class="bg-agah-navy text-white pt-5 pb-4" style="border-top:4px solid #0F6685;">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <!-- Columna 1: AGAH -->
+        <div class="col-lg-3">
+          <div class="d-flex align-items-center gap-2 fw-bold fs-4 mb-2">
+            <img src="img/isotipo.jpg" alt="Isotipo AGAH" class="agah-logo-navbar" style="width:32px;height:32px;">
+            <span>AGAH</span>
+          </div>
+          <div class="d-flex gap-3 fs-5 text-white-50">
+            <a href="#" class="text-white-50"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- Columna 2: Navegación Principal -->
+        <div class="col-6 col-lg-3">
+          <h4 class="small fw-bold text-info text-uppercase">Navegación Principal</h4>
+          <ul class="list-unstyled small text-white-50">
+            <li class="mb-1"><a href="sobre-agah.html#ogp" class="text-white-50 text-decoration-none">Sobre OGP</a></li>
+            <li class="mb-1"><a href="tablero.html" class="text-white-50 text-decoration-none">Planes de Acción</a></li>
+            <li class="mb-1"><a href="repositorio.html" class="text-white-50 text-decoration-none">Repositorio Documental</a></li>
+            <li class="mb-1"><a href="veeduria.html" class="text-white-50 text-decoration-none">Veeduría</a></li>
+            <li class="mb-1"><a href="contacto.html" class="text-white-50 text-decoration-none">Contacto</a></li>
+          </ul>
+        </div>
+        <!-- Columna 3: Transparencia y Datos -->
+        <div class="col-6 col-lg-3">
+          <h4 class="small fw-bold text-info text-uppercase">Transparencia y Datos</h4>
+          <ul class="list-unstyled small text-white-50">
+            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Licencia de Datos Abiertos</a></li>
+            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Política de Privacidad</a></li>
+            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Términos de Uso</a></li>
+            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Mapa del Sitio</a></li>
+          </ul>
+        </div>
+        <!-- Columna 4: Contacto Institucional -->
+        <div class="col-lg-3">
+          <h4 class="small fw-bold text-info text-uppercase">Contacto Institucional</h4>
+          <p class="small text-white-50 mb-1"><i class="bi bi-geo-alt"></i> Edificio IUDPAS, Ciudad Universitaria, Tegucigalpa, M.D.C., Honduras</p>
+          <p class="small text-white-50 mb-1"><i class="bi bi-envelope"></i> secretariatecnicaagah@iaip.gob.hn</p>
+          <p class="small text-white-50 mb-0"><i class="bi bi-telephone"></i> [Teléfono de atención]</p>
+        </div>
+      </div>
+      <div class="border-top border-secondary pt-3 text-center small text-white-50">
+        <p class="mb-0">© 2026 Alianza para el Gobierno Abierto Honduras (AGAH). Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
