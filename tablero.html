@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablero de Compromiso | Alianza para el Gobierno Abierto Honduras</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white">
+
+  <!-- ============ HEADER Y NAVEGACIÓN (compartido en todas las páginas) ============ -->
+  <header class="sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg bg-agah-navy navbar-dark py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-3 fw-bold fs-4" href="index.html">
+          <img src="img/isotipo.jpg" alt="Isotipo AGAH" class="agah-logo-navbar">
+          <span>AGAH <span class="text-agah-amber small fw-normal d-block d-sm-inline">| Honduras</span></span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAGAH" aria-controls="navbarAGAH" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarAGAH">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-medium small">
+            <li class="nav-item"><a class="nav-link px-3" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="sobre-agah.html">Sobre AGAH</a></li>
+            <li class="nav-item"><a class="nav-link active px-3" href="tablero.html">Tablero de Compromiso</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="repositorio.html">Repositorio OCR</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="prensa.html">Sala de Prensa</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="veeduria.html">Veeduría Ciudadana</a></li>
+            <li class="nav-item"><a class="nav-link px-3 btn bg-agah-cyan text-white ms-lg-2 px-4 py-1 rounded-pill hover-bg-agah-navy" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="bg-agah-navy text-white py-5">
+      <div class="container py-3">
+        <h1 class="fw-bold display-6 mb-2">Plan de Acción Nacional Vigente</h1>
+        <p class="fs-5 text-white-50 mb-0" style="max-width: 50rem;">
+          V Plan de Acción de Estado Abierto Honduras (PAEAH) 2023 - 2025, elaborado por la Mesa Técnica de
+          Seguimiento de la AGAH, liderada por la Secretaría de Transparencia y Lucha Contra la Corrupción (STLCC),
+          con la colaboración de USAID (Gobernabilidad Local Honduras) y UNODC.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ 3.1 RESUMEN GENERAL DEL PLAN (KPIs) ============ -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="row g-3 mb-4 text-center">
+          <div class="col-6 col-lg-3">
+            <div class="bg-agah-grey rounded-4 p-3 h-100">
+              <div class="display-6 fw-black text-agah-navy">[XX%]</div>
+              <div class="small text-secondary">Avance Global del Plan</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="bg-agah-grey rounded-4 p-3 h-100">
+              <div class="display-6 fw-black text-agah-navy">14</div>
+              <div class="small text-secondary">Compromisos en el Plan</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="bg-agah-grey rounded-4 p-3 h-100">
+              <div class="display-6 fw-black text-agah-navy">[XX]</div>
+              <div class="small text-secondary">Compromisos Finalizados</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="bg-agah-grey rounded-4 p-3 h-100">
+              <div class="display-6 fw-black text-agah-navy">[XX]</div>
+              <div class="small text-secondary">Hitos Totales Programados</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="bg-agah-grey rounded-4 p-4 mb-4">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="small fw-semibold text-agah-navy d-block mb-1">Filtrar por Sector Responsable</label>
+              <select class="form-select form-select-sm">
+                <option>Todos</option>
+                <option>Público</option>
+                <option>Sociedad Civil / Co-Líder</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="small fw-semibold text-agah-navy d-block mb-1">Filtrar por Estado</label>
+              <select class="form-select form-select-sm">
+                <option>Todos</option>
+                <option>Cumplido</option>
+                <option>En Proceso</option>
+                <option>Retrasado</option>
+                <option>Sin Iniciar</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="small fw-semibold text-agah-navy d-block mb-1">Filtrar por Eje Temático</label>
+              <select class="form-select form-select-sm">
+                <option>Todos</option>
+                <option>Acceso a la Información</option>
+                <option>Anticorrupción</option>
+                <option>Digitalización</option>
+                <option>Medio Ambiente</option>
+                <option>Inclusión / Grupos Vulnerables</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="fw-bold text-agah-navy mb-4">Los 14 Compromisos del PAEAH 2023-2025</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 1</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Estableciendo el Sistema de Banderas Rojas (Alertas Tempranas) para detectar y prevenir actos de corrupción y promover la buena gobernanza</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 2</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Implementando la Estrategia de Apertura de Datos</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 3</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Sistema de Denuncias Ciudadanas para combatir la Corrupción</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 4</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Fortalecimiento de las Comisiones Ciudadanas de Transparencia</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 5</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Fortaleciendo el acceso a la información, la participación y el acceso a la justicia en asuntos ambientales en Honduras (Acuerdo de Escazú)</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 6</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Visibilizando las voces de los Pueblos Originarios en la construcción de una Política Colaborativa: con ellos y para ellos</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 7</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Promoviendo la Apertura Judicial para fortalecer el interés por la Justicia en Defensa de los Derechos de la Población</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 8</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Agenda de Integridad, más allá del Compliance Empresarial</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 9</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Aplicación del Principio de Paridad en el sector público</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 10</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Sistema de Atención Ciudadana en la prestación de los servicios de salud (e-Health)</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 11</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Acceso a la información sobre salud sexual y reproductiva en Honduras</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 12</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Aplicación de buenas prácticas internacionales para la protección y promoción de los Derechos Humanos por parte de los Operadores de Seguridad y Defensa</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 13</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Promoviendo la veeduría ciudadana en los proyectos de infraestructura pública</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 border">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-agah-cyan text-white">Compromiso 14</span>
+                <span class="badge bg-agah-amber text-white">En Proceso</span>
+              </div>
+              <h6 class="fw-bold text-agah-navy mb-0">Fortalecimiento de las Escuelas y Centros Educativos en temas de Transparencia</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3.2 HISTÓRICO DE PLANES DE ACCIÓN ============ -->
+    <section class="py-5 bg-agah-grey">
+      <div class="container">
+        <h2 class="fw-bold text-agah-navy mb-1">Histórico y Archivo de Planes de Acción</h2>
+        <p class="text-secondary mb-4" style="max-width: 50rem;">
+          Consulta la trayectoria de la AGAH en la implementación de políticas de gobierno abierto a lo largo de sus
+          distintas etapas de gestión.
+        </p>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-navy text-white align-self-start mb-2">Histórico</span>
+              <h5 class="fw-bold text-agah-navy">I Plan de Acción de Gobierno Abierto Honduras</h5>
+              <p class="small text-secondary mb-2">Periodo de vigencia: 2012 - 2013</p>
+              <p class="small text-secondary flex-grow-1">Primer Plan de Acción presentado en abril de 2012, tras la adhesión formal de Honduras a la Alianza para el Gobierno Abierto (OGP) en agosto de 2011.</p>
+              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-navy text-white align-self-start mb-2">Histórico</span>
+              <h5 class="fw-bold text-agah-navy">II Plan de Acción de Gobierno Abierto Honduras</h5>
+              <p class="small text-secondary mb-2">Periodo de vigencia: 2014 - 2016</p>
+              <p class="small text-secondary flex-grow-1">Segundo ciclo de compromisos nacionales en el marco de la Alianza para el Gobierno Abierto.</p>
+              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-navy text-white align-self-start mb-2">Histórico</span>
+              <h5 class="fw-bold text-agah-navy">III Plan de Acción de Gobierno Abierto Honduras</h5>
+              <p class="small text-secondary mb-2">Periodo de vigencia: 2016 - 2018</p>
+              <p class="small text-secondary flex-grow-1">Construido "de abajo hacia arriba" mediante jornadas de consulta presencial en 7 ciudades, que generaron 47 necesidades prioritarias y 188 acciones puntuales. Organizado en 6 ejes: Control de la Corrupción, Acceso a la Información, Gasto Público, Compras Públicas, Servicios Públicos y Gobierno Digital.</p>
+              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-navy text-white align-self-start mb-2">Histórico</span>
+              <h5 class="fw-bold text-agah-navy">IV Plan de Acción de Gobierno Abierto Honduras</h5>
+              <p class="small text-secondary mb-2">Periodo de vigencia: 2018 - 2020</p>
+              <p class="small text-secondary flex-grow-1">Cuarto ciclo de compromisos nacionales de gobierno abierto.</p>
+              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-green text-white align-self-start mb-2">Vigente</span>
+              <h5 class="fw-bold text-agah-navy">V Plan de Acción de Estado Abierto Honduras (PAEAH)</h5>
+              <p class="small text-secondary mb-2">Periodo de vigencia: 2023 - 2025</p>
+              <p class="small text-secondary flex-grow-1">14 compromisos co-creados con la Mesa Técnica de Seguimiento de la AGAH, con apoyo de USAID (Gobernabilidad Local Honduras) y UNODC. Título del documento: "Voces hondureñas por la transparencia".</p>
+              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3.3 INFORMES DE AUTOEVALUACIÓN E IRM ============ -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <h2 class="fw-bold text-agah-navy mb-1">Informes de Evaluación y Control Social</h2>
+        <p class="text-secondary mb-4" style="max-width: 50rem;">
+          Accede a las autoevaluaciones periódicas del gobierno y a las revisiones objetivas realizadas por
+          evaluadores internacionales independientes.
+        </p>
+
+        <ul class="nav nav-pills mb-4" id="tabsInformes" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="irm-tab" data-bs-toggle="pill" data-bs-target="#irm" type="button" role="tab">Informes IRM</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="auto-tab" data-bs-toggle="pill" data-bs-target="#auto" type="button" role="tab">Autoevaluación Institucional</button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="irm" role="tabpanel">
+            <div class="bg-agah-grey rounded-4 p-4">
+              <span class="badge text-bg-secondary mb-2">Informe de Diseño</span>
+              <h6 class="fw-bold text-agah-navy">Plan de Acción Vinculado: V PAEAH 2023 - 2025</h6>
+              <p class="small text-secondary mb-1">Fecha de Publicación: [Mes / Año]</p>
+              <ul class="small text-secondary">
+                <li>[Recomendación técnica principal 1]</li>
+                <li>[Recomendación técnica principal 2]</li>
+                <li>[Recomendación técnica principal 3]</li>
+              </ul>
+              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Reporte IRM en PDF</a>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="auto" role="tabpanel">
+            <div class="bg-agah-grey rounded-4 p-4">
+              <span class="badge text-bg-secondary mb-2">Autoevaluación de Mitad de Periodo</span>
+              <h6 class="fw-bold text-agah-navy">Periodo Evaluado: [Fechas]</h6>
+              <p class="small text-secondary mb-2">Resumen Ejecutivo: [Síntesis del estado de la gestión, principales desafíos y lecciones aprendidas]</p>
+              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Autoevaluación en PDF</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       PIE DE PÁGINA INSTITUCIONAL (FOOTER) - compartido
+       =========================================================== -->
+  <footer class="bg-agah-navy text-white pt-5 pb-4" style="border-top:4px solid #0F6685;">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <!-- Columna 1: AGAH -->
+        <div class="col-lg-3">
+          <div class="d-flex align-items-center gap-2 fw-bold fs-4 mb-2">
+            <img src="img/isotipo.jpg" alt="Isotipo AGAH" class="agah-logo-navbar" style="width:32px;height:32px;">
+            <span>AGAH</span>
+          </div>
+          <div class="d-flex gap-3 fs-5 text-white-50">
+            <a href="#" class="text-white-50"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- Columna 2: Navegación Principal -->
+        <div class="col-6 col-lg-3">
+          <h4 class="small fw-bold text-info text-uppercase">Navegación Principal</h4>
+          <ul class="list-unstyled small text-white-50">
+            <li class="mb-1"><a href="sobre-agah.html#ogp" class="text-white-50 text-decoration-none">Sobre OGP</a></li>
+            <li class="mb-1"><a href="tablero.html" class="text-white-50 text-decoration-none">Planes de Acción</a></li>
+            <li class="mb-1"><a href="repositorio.html" class="text-white-50 text-decoration-none">Repositorio Documental</a></li>
+            <li class="mb-1"><a href="veeduria.html" class="text-white-50 text-decoration-none">Veeduría</a></li>
+            <li class="mb-1"><a href="contacto.html" class="text-white-50 text-decoration-none">Contacto</a></li>
+          </ul>
+        </div>
+        <!-- Columna 3: Transparencia y Datos -->
+        <div class="col-6 col-lg-3">
+          <h4 class="small fw-bold text-info text-uppercase">Transparencia y Datos</h4>
+          <ul class="list-unstyled small text-white-50">
+            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Licencia de Datos Abiertos</a></li>
+            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Política de Privacidad</a></li>
+            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Términos de Uso</a></li>
+            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Mapa del Sitio</a></li>
+          </ul>
+        </div>
+        <!-- Columna 4: Contacto Institucional -->
+        <div class="col-lg-3">
+          <h4 class="small fw-bold text-info text-uppercase">Contacto Institucional</h4>
+          <p class="small text-white-50 mb-1"><i class="bi bi-geo-alt"></i> Edificio IUDPAS, Ciudad Universitaria, Tegucigalpa, M.D.C., Honduras</p>
+          <p class="small text-white-50 mb-1"><i class="bi bi-envelope"></i> secretariatecnicaagah@iaip.gob.hn</p>
+          <p class="small text-white-50 mb-0"><i class="bi bi-telephone"></i> [Teléfono de atención]</p>
+        </div>
+      </div>
+      <div class="border-top border-secondary pt-3 text-center small text-white-50">
+        <p class="mb-0">© 2026 Alianza para el Gobierno Abierto Honduras (AGAH). Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
