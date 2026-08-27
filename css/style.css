@@ -97,6 +97,13 @@ body {
   color: #fff;
 }
 
+/* Campos de fecha compactos (más chicos que form-control-sm), usados en filtros como Repositorio */
+.agah-date-xs {
+  font-size: .78rem;
+  padding: .2rem .4rem;
+  min-width: 0;
+}
+
 @media (max-width: 767.98px) {
   .agah-hero-overlay {
     background: linear-gradient(
