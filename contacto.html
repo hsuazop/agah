@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="bg-white">
 
   <div id="site-header"></div>
@@ -31,8 +33,10 @@
             <div class="bg-agah-grey rounded-4 p-4 h-100">
               <i class="bi bi-geo-alt-fill fs-3 text-agah-cyan"></i>
               <h6 class="fw-bold text-agah-navy mt-2">Sedes de la Secretaría Técnica</h6>
-              <p class="small text-secondary mb-1">Edificio IUDPAS, Ciudad Universitaria, Tegucigalpa, M.D.C., Honduras.</p>
-              <p class="small text-secondary mb-0">Col. Palmira, Edificio Zafiro, Avenida República de Panamá, contiguo al Edificio Rojo.</p>
+              <p class="small text-secondary mb-1">Edificio IUDPAS, Ciudad Universitaria, Tegucigalpa, M.D.C., Honduras.
+              </p>
+              <p class="small text-secondary mb-0">Col. Palmira, Edificio Zafiro, Avenida República de Panamá, contiguo
+                al Edificio Rojo.</p>
             </div>
           </div>
           <div class="col-md-4">
@@ -70,58 +74,31 @@
               <tr>
                 <td class="fw-semibold text-agah-navy">Comunicaciones y Prensa</td>
                 <td>Solicitudes de entrevistas, prensa y eventos</td>
-                <td>prensa@agah.gob.hn</td>
+                <td></td>
               </tr>
               <tr>
                 <td class="fw-semibold text-agah-navy">Soporte Técnico y Datos</td>
                 <td>Consultas sobre el Repositorio OCR o el Tablero</td>
-                <td>soporte@agah.gob.hn</td>
+                <td></td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <div class="row g-5">
-          <div class="col-lg-6">
-            <h2 class="fw-bold text-agah-navy mb-3">Formulario de Consultas Generales</h2>
-            <form class="bg-agah-grey rounded-4 p-4">
-              <div class="row g-3 mb-3">
-                <div class="col-md-6">
-                  <label class="form-label small fw-semibold text-agah-navy">Nombre completo</label>
-                  <input type="text" class="form-control" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label small fw-semibold text-agah-navy">Correo electrónico</label>
-                  <input type="email" class="form-control" required>
-                </div>
-              </div>
-              <div class="mb-3">
-                <label class="form-label small fw-semibold text-agah-navy">Sector de procedencia</label>
-                <select class="form-select">
-                  <option>Ciudadanía</option>
-                  <option>OSC</option>
-                  <option>Medio de Prensa</option>
-                  <option>Institución Pública</option>
-                  <option>Academia</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label class="form-label small fw-semibold text-agah-navy">Asunto del mensaje</label>
-                <input type="text" class="form-control" required>
-              </div>
-              <div class="mb-3">
-                <label class="form-label small fw-semibold text-agah-navy">Mensaje / Consulta</label>
-                <textarea class="form-control" rows="4"></textarea>
-              </div>
-              <button type="button" class="btn bg-agah-cyan text-white fw-bold px-4">Enviar Consulta</button>
-              <p class="small text-secondary mt-2 mb-0">Recibirás un acuse de recibo automático en pantalla y por correo.</p>
-            </form>
-          </div>
-          <div class="col-lg-6 d-flex flex-column">
+          <div class="col-lg-8 mx-auto d-flex flex-column">
             <h2 class="fw-bold text-agah-navy mb-3">Ubicación</h2>
-              <div class="bg-agah-grey rounded-4 d-flex align-items-center justify-content-center text-secondary small flex-grow-1" style="min-height:280px;">
-              [Mapa interactivo de la Secretaría Técnica — IUDPAS, Ciudad Universitaria, Tegucigalpa]
+            <div class="rounded-4 overflow-hidden flex-grow-1" style="min-height:280px;">
+              <iframe src="https://www.google.com/maps?q=14.1020318,-87.1970339&output=embed" width="100%" height="100%"
+                style="border:0; min-height:280px; display:block;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación del Instituto de Acceso a la Información Pública (IAIP)">
+              </iframe>
             </div>
+            <a href="https://maps.app.goo.gl/tZ9EPon2bLZBKuzm9" target="_blank"
+              class="small fw-bold text-agah-cyan text-decoration-none mt-2">
+              <i class="bi bi-box-arrow-up-right"></i> Abrir en Google Maps
+            </a>
           </div>
         </div>
       </div>
@@ -138,4 +115,5 @@
   <script src="js/main.js"></script>
   <script src="js/include.js"></script>
 </body>
+
 </html>

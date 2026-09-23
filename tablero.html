@@ -60,7 +60,7 @@
         <!-- Filtros -->
         <div class="bg-agah-grey rounded-4 p-4 mb-4">
           <div class="row g-3">
-            <div class="col-md-4">
+            <div class="col-md-6">
               <label class="small fw-semibold text-agah-navy d-block mb-1">Filtrar por Sector Responsable</label>
               <select class="form-select form-select-sm">
                 <option>Todos</option>
@@ -68,25 +68,14 @@
                 <option>Sociedad Civil / Co-Líder</option>
               </select>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
               <label class="small fw-semibold text-agah-navy d-block mb-1">Filtrar por Estado</label>
-              <select class="form-select form-select-sm">
-                <option>Todos</option>
-                <option>Cumplido</option>
-                <option>En Proceso</option>
-                <option>Retrasado</option>
-                <option>Sin Iniciar</option>
-              </select>
-            </div>
-            <div class="col-md-4">
-              <label class="small fw-semibold text-agah-navy d-block mb-1">Filtrar por Eje Temático</label>
-              <select class="form-select form-select-sm">
-                <option>Todos</option>
-                <option>Acceso a la Información</option>
-                <option>Anticorrupción</option>
-                <option>Digitalización</option>
-                <option>Medio Ambiente</option>
-                <option>Inclusión / Grupos Vulnerables</option>
+              <select id="tableroFiltroEstado" class="form-select form-select-sm">
+                <option value="">Todos</option>
+                <option value="Cumplido">Cumplido</option>
+                <option value="En Proceso">En Proceso</option>
+                <option value="Retrasado">Retrasado</option>
+                <option value="Sin Iniciar">Sin Iniciar</option>
               </select>
             </div>
           </div>
@@ -94,7 +83,7 @@
 
         <h2 class="fw-bold text-agah-navy mb-4">Los 14 Compromisos del PAEAH 2023-2025</h2>
         <div class="row g-4">
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 1</span>
@@ -103,7 +92,7 @@
               <h6 class="fw-bold text-agah-navy mb-0">Estableciendo el Sistema de Banderas Rojas (Alertas Tempranas) para detectar y prevenir actos de corrupción y promover la buena gobernanza</h6>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 2</span>
@@ -112,7 +101,7 @@
               <h6 class="fw-bold text-agah-navy mb-0">Implementando la Estrategia de Apertura de Datos</h6>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 3</span>
@@ -121,7 +110,7 @@
               <h6 class="fw-bold text-agah-navy mb-0">Sistema de Denuncias Ciudadanas para combatir la Corrupción</h6>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 4</span>
@@ -130,7 +119,7 @@
               <h6 class="fw-bold text-agah-navy mb-0">Fortalecimiento de las Comisiones Ciudadanas de Transparencia</h6>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 5</span>
@@ -139,7 +128,7 @@
               <h6 class="fw-bold text-agah-navy mb-0">Fortaleciendo el acceso a la información, la participación y el acceso a la justicia en asuntos ambientales en Honduras (Acuerdo de Escazú)</h6>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 6</span>
@@ -148,7 +137,7 @@
               <h6 class="fw-bold text-agah-navy mb-0">Visibilizando las voces de los Pueblos Originarios en la construcción de una Política Colaborativa: con ellos y para ellos</h6>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 7</span>
@@ -157,7 +146,7 @@
               <h6 class="fw-bold text-agah-navy mb-0">Promoviendo la Apertura Judicial para fortalecer el interés por la Justicia en Defensa de los Derechos de la Población</h6>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 8</span>
@@ -166,7 +155,7 @@
               <h6 class="fw-bold text-agah-navy mb-0">Agenda de Integridad, más allá del Compliance Empresarial</h6>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 9</span>
@@ -175,7 +164,7 @@
               <h6 class="fw-bold text-agah-navy mb-0">Aplicación del Principio de Paridad en el sector público</h6>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 10</span>
@@ -184,7 +173,7 @@
               <h6 class="fw-bold text-agah-navy mb-0">Sistema de Atención Ciudadana en la prestación de los servicios de salud (e-Health)</h6>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 11</span>
@@ -193,7 +182,7 @@
               <h6 class="fw-bold text-agah-navy mb-0">Acceso a la información sobre salud sexual y reproductiva en Honduras</h6>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 12</span>
@@ -202,7 +191,7 @@
               <h6 class="fw-bold text-agah-navy mb-0">Aplicación de buenas prácticas internacionales para la protección y promoción de los Derechos Humanos por parte de los Operadores de Seguridad y Defensa</h6>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 13</span>
@@ -211,7 +200,7 @@
               <h6 class="fw-bold text-agah-navy mb-0">Promoviendo la veeduría ciudadana en los proyectos de infraestructura pública</h6>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
             <div class="bg-white rounded-4 p-4 h-100 border">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <span class="badge bg-agah-cyan text-white">Compromiso 14</span>
@@ -240,7 +229,7 @@
               <h5 class="fw-bold text-agah-navy">I Plan de Acción de Gobierno Abierto Honduras</h5>
               <p class="small text-secondary mb-2">Periodo de vigencia: 2012 - 2013</p>
               <p class="small text-secondary flex-grow-1">Primer Plan de Acción presentado en abril de 2012, tras la adhesión formal de Honduras a la Alianza para el Gobierno Abierto (OGP) en agosto de 2011.</p>
-              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
+              <a href="docs/I_PAGAH_2012-2013.pdf" target="_blank" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
@@ -249,7 +238,7 @@
               <h5 class="fw-bold text-agah-navy">II Plan de Acción de Gobierno Abierto Honduras</h5>
               <p class="small text-secondary mb-2">Periodo de vigencia: 2014 - 2016</p>
               <p class="small text-secondary flex-grow-1">Segundo ciclo de compromisos nacionales en el marco de la Alianza para el Gobierno Abierto.</p>
-              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
+              <a href="docs/II_PAGAH_2014-2016.pdf" target="_blank" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
@@ -258,7 +247,7 @@
               <h5 class="fw-bold text-agah-navy">III Plan de Acción de Gobierno Abierto Honduras</h5>
               <p class="small text-secondary mb-2">Periodo de vigencia: 2016 - 2018</p>
               <p class="small text-secondary flex-grow-1">Construido "de abajo hacia arriba" mediante jornadas de consulta presencial en 7 ciudades, que generaron 47 necesidades prioritarias y 188 acciones puntuales. Organizado en 6 ejes: Control de la Corrupción, Acceso a la Información, Gasto Público, Compras Públicas, Servicios Públicos y Gobierno Digital.</p>
-              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
+              <a href="docs/III_PAGAH_2016-2018.pdf" target="_blank" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
@@ -267,7 +256,7 @@
               <h5 class="fw-bold text-agah-navy">IV Plan de Acción de Gobierno Abierto Honduras</h5>
               <p class="small text-secondary mb-2">Periodo de vigencia: 2018 - 2020</p>
               <p class="small text-secondary flex-grow-1">Cuarto ciclo de compromisos nacionales de gobierno abierto.</p>
-              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
+              <a href="docs/IV_PAGAH_2018-2020.pdf" target="_blank" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
@@ -276,7 +265,7 @@
               <h5 class="fw-bold text-agah-navy">V Plan de Acción de Estado Abierto Honduras (PAEAH)</h5>
               <p class="small text-secondary mb-2">Periodo de vigencia: 2023 - 2025</p>
               <p class="small text-secondary flex-grow-1">14 compromisos co-creados con la Mesa Técnica de Seguimiento de la AGAH, con apoyo de USAID (Gobernabilidad Local Honduras) y UNODC. Título del documento: "Voces hondureñas por la transparencia".</p>
-              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
+              <a href="docs/V_PAGAH_2023-2025.pdf" target="_blank" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
             </div>
           </div>
         </div>

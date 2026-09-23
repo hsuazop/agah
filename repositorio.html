@@ -23,15 +23,12 @@
           Actas, decretos, normativas, informes y documentos de trabajo de la AGAH, disponibles en formatos abiertos y descargables.
         </p>
         <div class="input-group input-group-lg mb-2">
-          <input type="text" class="form-control" placeholder="Busca por palabra clave, frase exacta, número de acta, decreto o término dentro del contenido del documento...">
-          <button class="btn bg-agah-cyan text-white fw-bold d-flex align-items-center gap-2">
+          <input type="text" id="repoSearchInput" class="form-control" placeholder="Busca por palabra clave, frase exacta, número de acta, decreto o término dentro del contenido del documento...">
+          <button id="repoSearchBtn" class="btn bg-agah-cyan text-white fw-bold d-flex align-items-center gap-2">
             <i class="bi bi-search"></i> Buscar
           </button>
         </div>
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="switchOCR" checked>
-          <label class="form-check-label small text-white-50" for="switchOCR">Incluir búsqueda en el texto interno de archivos escaneados (OCR)</label>
-        </div>
+        <p id="repoSearchStatus" class="small text-white-50 mb-0" style="min-height:1.2em;"></p>
       </div>
     </section>
 
@@ -72,13 +69,13 @@
               <h6 class="fw-bold text-agah-navy mb-3"><i class="bi bi-funnel"></i> Filtros Avanzados</h6>
 
               <label class="small fw-semibold text-agah-navy d-block mb-1">Tipo de Documento</label>
-              <select class="form-select form-select-sm mb-3">
-                <option>Todos</option>
-                <option>Actas</option>
-                <option>Decretos</option>
-                <option>Resoluciones</option>
-                <option>Informes IRM / Autoevaluación</option>
-                <option>Propuestas</option>
+              <select id="repoFiltroTipo" class="form-select form-select-sm mb-3">
+                <option value="">Todos</option>
+                <option value="Actas">Actas</option>
+                <option value="Decreto">Decretos</option>
+                <option value="Reglamento">Resoluciones</option>
+                <option value="IRM">Informes IRM / Autoevaluación</option>
+                <option value="Propuestas">Propuestas</option>
               </select>
 
               <label class="small fw-semibold text-agah-navy d-block mb-1">Sector Origen</label>
@@ -91,14 +88,6 @@
                 <option>Multisectorial</option>
               </select>
 
-              <label class="small fw-semibold text-agah-navy d-block mb-1">Plan de Acción Vinculado</label>
-              <select class="form-select form-select-sm mb-3">
-                <option>Todos</option>
-                <option>Plan Vigente (2023-2025)</option>
-                <option>Planes Anteriores / Histórico</option>
-                <option>Institucional / General</option>
-              </select>
-
               <label class="small fw-semibold text-agah-navy d-block mb-1">Rango de Fechas</label>
               <div class="d-flex gap-1 mb-1">
                 <input type="date" class="form-control form-control-sm agah-date-xs">
@@ -109,10 +98,10 @@
 
           <!-- Contenido: pestañas por categoría -->
           <div class="col-lg-9">
-            <ul class="nav nav-pills mb-4" role="tablist">
-              <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab-actas" type="button">Actas de Sesiones</button></li>
-              <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-normativa" type="button">Decretos y Normativa</button></li>
-              <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-trabajo" type="button">Documentos de Trabajo</button></li>
+            <ul class="nav nav-pills mb-4" role="tablist" id="repoTabs">
+              <li class="nav-item"><button class="nav-link active" id="tabBtn-actas" data-bs-toggle="pill" data-bs-target="#tab-actas" type="button">Actas de Sesiones</button></li>
+              <li class="nav-item"><button class="nav-link" id="tabBtn-normativa" data-bs-toggle="pill" data-bs-target="#tab-normativa" type="button">Decretos y Normativa</button></li>
+              <li class="nav-item"><button class="nav-link" id="tabBtn-trabajo" data-bs-toggle="pill" data-bs-target="#tab-trabajo" type="button">Documentos de Trabajo</button></li>
             </ul>
 
             <div class="tab-content">
@@ -149,7 +138,7 @@
               <!-- 4.3 Decretos, Resoluciones y Normativas -->
               <div class="tab-pane fade" id="tab-normativa">
                 <div class="row g-3">
-                  <div class="col-md-6">
+                  <div class="col-md-6" data-doc-tipo="Ley">
                     <div class="bg-agah-grey rounded-4 p-4 h-100">
                       <span class="badge bg-agah-green text-white mb-2">Vigente</span>
                       <h6 class="fw-bold text-agah-navy">Ley de Transparencia y Acceso a la Información Pública</h6>
@@ -157,7 +146,7 @@
                       <a href="#" class="small fw-bold text-agah-cyan text-decoration-none">Descargar Documento Oficial PDF</a>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6" data-doc-tipo="Decreto">
                     <div class="bg-agah-grey rounded-4 p-4 h-100">
                       <span class="badge bg-agah-green text-white mb-2">Vigente</span>
                       <h6 class="fw-bold text-agah-navy">Decretos de Adhesión y Ratificación a OGP</h6>
@@ -165,7 +154,7 @@
                       <a href="#" class="small fw-bold text-agah-cyan text-decoration-none">Descargar Documento Oficial PDF</a>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6" data-doc-tipo="Reglamento">
                     <div class="bg-agah-grey rounded-4 p-4 h-100">
                       <span class="badge bg-agah-amber text-white mb-2">En Revisión</span>
                       <h6 class="fw-bold text-agah-navy">Reglamento Interno del Comité Directivo</h6>
@@ -173,7 +162,7 @@
                       <a href="#" class="small fw-bold text-agah-cyan text-decoration-none">Descargar Documento Oficial PDF</a>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6" data-doc-tipo="Acuerdo">
                     <div class="bg-agah-grey rounded-4 p-4 h-100">
                       <span class="badge bg-agah-green text-white mb-2">Vigente</span>
                       <h6 class="fw-bold text-agah-navy">Manual de Metodología y Co-Creación</h6>
