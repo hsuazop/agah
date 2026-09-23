@@ -11,43 +11,7 @@
 </head>
 <body class="bg-white">
 
-  <!-- ============ HEADER Y NAVEGACIÓN (compartido) ============ -->
-  <header class="sticky-top shadow-sm">
-    <nav class="navbar navbar-expand-lg bg-agah-navy navbar-dark py-3">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-3 fw-bold fs-4" href="index.html">
-          <img src="img/isotipo.jpg" alt="Isotipo AGAH" class="agah-logo-navbar">
-          <span>AGAH <span class="text-agah-amber small fw-normal d-block d-sm-inline">| Honduras</span></span>
-        </a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAGAH" aria-controls="navbarAGAH" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarAGAH">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-medium small">
-            <li class="nav-item"><a class="nav-link px-3" href="index.html">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link active px-3" href="sobre-agah.html">Sobre AGAH</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="tablero.html">Tablero de Compromiso</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="repositorio.html">Repositorio OCR</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="prensa.html">Sala de Prensa</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="veeduria.html">Veeduría Ciudadana</a></li>
-            <li class="nav-item"><a class="nav-link px-3 btn bg-agah-cyan text-white ms-lg-2 px-4 py-1 rounded-pill hover-bg-agah-navy mt-lg-1" href="contacto.html">Contacto</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Sub-navegación interna de la página (2.1 / 2.2 / 2.3) -->
-    <div class="bg-agah-grey border-bottom">
-      <div class="container">
-        <ul class="nav small py-2 gap-3">
-          <li class="nav-item"><a class="nav-link px-2 text-agah-navy fw-semibold" href="#que-es-agah">¿Qué es la AGAH?</a></li>
-          <li class="nav-item"><a class="nav-link px-2 text-agah-navy fw-semibold" href="#ogp">¿Qué es OGP?</a></li>
-          <li class="nav-item"><a class="nav-link px-2 text-agah-navy fw-semibold" href="#gobernanza">Gobernanza y Estructura</a></li>
-          <li class="nav-item"><a class="nav-link px-2 text-agah-navy fw-semibold" href="#marco-legal">Marco Legal</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <main>
 
@@ -102,6 +66,8 @@
       </div>
     </section>
 
+    <!-- Misión y Visión: OCULTO TEMPORALMENTE mientras se define la redacción institucional.
+         Para reactivar, quitar estas líneas de comentario (<!-- y -->) que envuelven la sección. -->
     <!--
     <section class="py-5 bg-agah-grey">
       <div class="container">
@@ -187,7 +153,7 @@
           <div class="col-md-6">
             <div class="bg-agah-grey rounded-4 p-4 h-100">
               <h6 class="fw-bold text-agah-navy mb-1"><i class="bi bi-building-check text-agah-cyan"></i> Rol Técnico del IAIP</h6>
-              <p class="small text-secondary mb-0">Ratificación del Instituto de Acceso a la Información Pública (IAIP) como ente rector técnico del foro, articulando la fiscalización de los planes con el Portal Único de Transparencia y los sistemas vigentes de rendición de cuentas.</p>
+              <p class="small text-secondary mb-0">Ratificación del Instituto de Acceso a la Información Pública como ente rector técnico del foro, articulando la fiscalización de los planes con el Portal Único de Transparencia y los sistemas vigentes de rendición de cuentas.</p>
             </div>
           </div>
         </div>
@@ -202,9 +168,10 @@
         <h1 class="fw-bold display-6 text-agah-navy mb-3">Una Estructura de Decisión Compartida</h1>
         <p class="fs-5 text-secondary mb-4" style="max-width: 55rem;">
           Mediante un proceso participativo y de diálogo multiactor, se estructuró el Comité Directivo y el
-          Consejo Consultivo de la AGAH, se acordó por unanimidad el cuerpo normativo interno y se redefinió
+          Consejo Consultivo, se acordó por unanimidad el cuerpo normativo interno y se redefinió
           la hoja de ruta metodológica de co-creación, extendiendo las fases de sensibilización y consulta
-          territorial.
+          territorial. Integrado por 9 miembros con voz y voto — (3 de Sociedad Civil, 2 de Academia, 2 del
+          Sector Privado y 2 del Sector Público)
         </p>
 
         <div class="bg-white rounded-4 p-4 p-md-5 mb-5 d-flex flex-column flex-md-row align-items-md-center gap-4">
@@ -391,9 +358,8 @@
         <!-- Compromisos conjuntos -->
         <h2 class="fw-bold text-agah-navy mb-1">Compromisos Conjuntos para el Gobierno Abierto</h2>
         <p class="small text-secondary mb-4">
-          El Gobierno (representado por el IAIP) y el Comité Directivo de la AGAH (representado por FOSDEH) se
-          comprometen a lo siguiente, con una vigencia institucional que comprende el período
-          <strong>2026 - 2030</strong>, pudiendo ser revisado o modificado por mutuo acuerdo escrito de las partes.
+          El Gobierno (representado por IAIP) y el Comité Directivo de la AGAH (representando por FOSDEH),
+          para dar cumplimiento estricto a los principios de Gobierno Abierto, se comprometen a:
         </p>
         <div class="row g-4">
           <div class="col-md-6 col-lg-3">
@@ -421,10 +387,15 @@
             <div class="bg-white rounded-4 p-4 h-100">
               <i class="bi bi-diagram-3 fs-3 text-agah-cyan"></i>
               <h6 class="fw-bold text-agah-navy mt-2">Articulación Técnica</h6>
-              <p class="small text-secondary mb-0">Canalizar de forma oportuna los insumos hacia el IAIP en su rol de Secretaría Técnica, asegurando la comunicación fluida con el Comité Directivo y el Consejo Consultivo.</p>
+              <p class="small text-secondary mb-0">Canalizar de forma oportuna los insumos hacia el IAIP en su rol institucional y de Secretaría Técnica, asegurando la comunicación fluida con el Comité Directivo y el Consejo Consultivo.</p>
             </div>
           </div>
         </div>
+
+        <p class="small text-secondary mt-4 mb-0">
+          <strong>VIGENCIA;</strong> El presente instrumento tendrá una vigencia institucional que comprende el período
+          <strong>2026 - 2030</strong>, pudiendo ser revisado o modificado por mutuo acuerdo escrito de las partes.
+        </p>
       </div>
     </section>
 
@@ -463,54 +434,10 @@
   </main>
 
   <!-- ============ FOOTER (idéntico al de index.html) ============ -->
-  <footer class="bg-agah-navy text-white pt-5 pb-4" style="border-top:4px solid #0F6685;">
-    <div class="container">
-      <div class="row g-4 mb-4">
-        <div class="col-lg-3">
-          <div class="d-flex align-items-center gap-2 fw-bold fs-4 mb-2">
-            <img src="img/logo-agah-redondo.jpg" alt="Logo AGAH" class="agah-logo-navbar" style="width:32px;height:32px;border-radius:50%;object-fit:cover;">
-            <span>AGAH</span>
-          </div>
-          <div class="d-flex gap-3 fs-5 text-white-50">
-            <a href="#" class="text-white-50"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="text-white-50"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-white-50"><i class="bi bi-youtube"></i></a>
-            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <h4 class="small fw-bold text-info text-uppercase">Navegación Principal</h4>
-          <ul class="list-unstyled small text-white-50">
-            <li class="mb-1"><a href="sobre-agah.html#ogp" class="text-white-50 text-decoration-none">Sobre OGP</a></li>
-            <li class="mb-1"><a href="tablero.html" class="text-white-50 text-decoration-none">Planes de Acción</a></li>
-            <li class="mb-1"><a href="repositorio.html" class="text-white-50 text-decoration-none">Repositorio Documental</a></li>
-            <li class="mb-1"><a href="veeduria.html" class="text-white-50 text-decoration-none">Veeduría</a></li>
-            <li class="mb-1"><a href="contacto.html" class="text-white-50 text-decoration-none">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-3">
-          <h4 class="small fw-bold text-info text-uppercase">Transparencia y Datos</h4>
-          <ul class="list-unstyled small text-white-50">
-            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Licencia de Datos Abiertos</a></li>
-            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Política de Privacidad</a></li>
-            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Términos de Uso</a></li>
-            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none">Mapa del Sitio</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3">
-          <h4 class="small fw-bold text-info text-uppercase">Contacto Institucional</h4>
-          <p class="small text-white-50 mb-1"><i class="bi bi-geo-alt"></i> Edificio IUDPAS, Ciudad Universitaria, Tegucigalpa, M.D.C., Honduras</p>
-          <p class="small text-white-50 mb-1"><i class="bi bi-envelope"></i> secretariatecnicaagah@iaip.gob.hn</p>
-          <p class="small text-white-50 mb-0"><i class="bi bi-telephone"></i> [Teléfono de atención]</p>
-        </div>
-      </div>
-      <div class="border-top border-secondary pt-3 text-center small text-white-50">
-        <p class="mb-0">© 2026 Alianza para el Gobierno Abierto Honduras (AGAH). Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/include.js"></script>
 </body>
 </html>
