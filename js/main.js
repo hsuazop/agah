@@ -98,6 +98,9 @@ document.addEventListener('DOMContentLoaded', function () {
     repoSearchInput.addEventListener('keyup', function (e) {
       if (e.key === 'Enter') aplicarFiltrosRepositorio();
     });
+    repoSearchInput.addEventListener('input', function () {
+      aplicarFiltrosRepositorio();
+    });
     if (repoFiltroTipo) {
       repoFiltroTipo.addEventListener('change', aplicarFiltrosRepositorio);
     }
@@ -143,7 +146,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-
 
   /* -------------------------------------------------------------
      PRENSA.HTML — si alguien llega con un enlace copiado
