@@ -3,6 +3,7 @@
    superficies más blancas (menos gris), contraste de texto AA y foco visible. */
 
 :root {
+  --bs-link-color-rgb: 11, 94, 215;   /* azul de enlace con contraste AA sobre fondos claros */
   --agah-navy: #173C48;
   --agah-navy-dark: #10303A;
   --agah-cyan: #0F6685;
@@ -23,7 +24,7 @@ body {
 .bg-agah-navy  { background-color: var(--agah-navy); }
 .bg-agah-grey  { background-color: var(--agah-surface); }
 .bg-agah-cyan  { background-color: var(--agah-cyan); }
-.bg-agah-amber { background-color: #B86E12; }  /* ámbar oscurecido: texto blanco con contraste AA */
+.bg-agah-amber { background-color: #A8620F; }  /* ámbar oscurecido: texto blanco con contraste AA */
 .bg-agah-green { background-color: var(--agah-green); }
 .bg-agah-red   { background-color: #C0392B; }
 
@@ -434,3 +435,7 @@ main:focus { outline: none; }
   .agah-lb-prev { left: calc(50% - 3.4rem); }
   .agah-lb-next { right: calc(50% - 3.4rem); }
 }
+
+/* Tablas con desplazamiento: contiene los textos ocultos para lector de pantalla
+   (por ejemplo "abre en otra pestaña") para que no ensanchen toda la página. */
+.table-responsive { position: relative; }
