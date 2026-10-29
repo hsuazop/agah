@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tablero de Compromiso | Alianza para el Gobierno Abierto Honduras</title>
+  <title>Tablero de compromisos | Alianza para el Gobierno Abierto Honduras</title>
   <link rel="icon" type="image/jpeg" href="img/logo-agah-redondo.jpg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -13,303 +13,303 @@
 
   <div id="site-header"></div>
 
-  <main>
+  <main id="contenido" tabindex="-1">
 
-    <!-- ============ HERO ============ -->
     <section class="bg-agah-navy text-white py-5">
-      <div class="container py-3">
-        <h1 class="fw-bold display-6 mb-2">Planes de Acción de Gobierno Abierto</h1>
+      <div class="container py-2">
+        <h1 class="fw-bold display-6 mb-2">Tablero de compromisos</h1>
         <p class="fs-5 text-white-50 mb-0" style="max-width: 50rem;">
-          El último plan de acción desarrollado en el marco de la Iniciativa de la Alianza de Gobierno Abierto es
-          el V Plan de Acción de Estado Abierto (PAEAH 2023 - 2025) siendo este elaborado por la mesa técnica de
-          seguimiento de la AGAH, construido con el apoyo de la cooperación internacional.
+          Compromisos del V Plan de Acción de Estado Abierto (PAEAH 2023–2025), el plan más reciente publicado,
+          elaborado por la Mesa Técnica de Seguimiento de la AGAH.
         </p>
       </div>
     </section>
 
-    <!-- ============ 3.1 RESUMEN GENERAL DEL PLAN (KPIs) ============ -->
-    <section class="py-5 bg-white">
+    <!-- ============ RESUMEN: solo cifras con fuente ============ -->
+    <section class="py-5 bg-white" aria-labelledby="resumen-titulo">
       <div class="container">
-        <div class="row g-3 mb-4 text-center">
-          <div class="col-6 col-lg-3">
-            <div class="bg-agah-grey rounded-4 p-3 h-100">
-              <div class="display-6 fw-black text-agah-navy">[XX%]</div>
-              <div class="small text-secondary">Avance Global del Plan</div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="bg-agah-grey rounded-4 p-3 h-100">
-              <div class="display-6 fw-black text-agah-navy">14</div>
-              <div class="small text-secondary">Compromisos en el Plan</div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="bg-agah-grey rounded-4 p-3 h-100">
-              <div class="display-6 fw-black text-agah-navy">[XX]</div>
-              <div class="small text-secondary">Compromisos Finalizados</div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="bg-agah-grey rounded-4 p-3 h-100">
-              <div class="display-6 fw-black text-agah-navy">[XX]</div>
-              <div class="small text-secondary">Hitos Totales Programados</div>
-            </div>
-          </div>
+        <h2 id="resumen-titulo" class="visually-hidden">Resumen del plan</h2>
+        <div class="row g-3 mb-3">
+          <div class="col-6 col-lg-3"><div class="agah-stat"><div class="agah-stat-value">14</div><div class="agah-stat-label">compromisos</div><div class="agah-stat-source">Fuente: V PAEAH 2023–2025</div></div></div>
+          <div class="col-6 col-lg-3"><div class="agah-stat"><div class="agah-stat-value">57</div><div class="agah-stat-label">hitos programados</div><div class="agah-stat-source">Fuente: fichas de compromiso del V PAEAH</div></div></div>
+          <div class="col-6 col-lg-3"><div class="agah-stat"><div class="agah-stat-value">2023–2025</div><div class="agah-stat-label">período del plan (concluido)</div><div class="agah-stat-source">El VI Plan está en co-creación</div></div></div>
+          <div class="col-6 col-lg-3"><div class="agah-stat"><div class="agah-stat-value">5</div><div class="agah-stat-label">compromisos prometedores</div><div class="agah-stat-source">Fuente: revisión de diseño del IRM, 2024</div></div></div>
+        </div>
+        <div class="agah-pending p-3 mb-5">
+          <p class="mb-0"><strong>Sobre el avance:</strong> todavía no se publica un reporte verificado de ejecución por compromiso.
+          Los porcentajes de avance se mostrarán solo cuando exista una metodología de cálculo y evidencia que los respalde.
+          <span class="d-block agah-meta mt-1">Información actualizada al 29 de septiembre de 2026.</span></p>
         </div>
 
-        <!-- Filtros -->
-        <div class="bg-agah-grey rounded-4 p-4 mb-4">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label class="small fw-semibold text-agah-navy d-block mb-1">Filtrar por Sector Responsable</label>
-              <select class="form-select form-select-sm">
-                <option>Todos</option>
-                <option>Público</option>
-                <option>Sociedad Civil / Co-Líder</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="small fw-semibold text-agah-navy d-block mb-1">Filtrar por Estado</label>
-              <select id="tableroFiltroEstado" class="form-select form-select-sm">
-                <option value="">Todos</option>
-                <option value="Cumplido">Cumplido</option>
-                <option value="En Proceso">En Proceso</option>
-                <option value="Retrasado">Retrasado</option>
-                <option value="Sin Iniciar">Sin Iniciar</option>
-              </select>
-            </div>
+        <div id="compromisos" class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+          <h2 class="fw-bold text-agah-navy mb-0">Los 14 compromisos del PAEAH 2023–2025</h2>
+          <div>
+            <label for="tableroFiltroResponsable" class="small fw-semibold text-agah-navy d-block mb-1">Filtrar por institución responsable</label>
+            <select id="tableroFiltroResponsable" class="form-select form-select-sm" style="min-width:16rem;">
+              <option value="">Todas las instituciones</option>
+              <option value="STLCC">Secretaría de Transparencia (STLCC)</option>
+              <option value="Otras">Otras instituciones</option>
+            </select>
           </div>
         </div>
-
-        <h2 class="fw-bold text-agah-navy mb-4">Los 14 Compromisos del PAEAH 2023-2025</h2>
+        <p id="tableroStatus" class="visually-hidden" aria-live="polite"></p>
         <div class="row g-4">
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 1</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Estableciendo el Sistema de Banderas Rojas (Alertas Tempranas) para detectar y prevenir actos de corrupción y promover la buena gobernanza</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="STLCC">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 1</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Estableciendo el Sistema de Banderas Rojas (Alertas Tempranas) para detectar y prevenir actos de corrupción y promover la buena gobernanza</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Secretaría de Transparencia y Lucha contra la Corrupción (STLCC)</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">5</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=30" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 30)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 2</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Implementando la Estrategia de Apertura de Datos</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="STLCC">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 2</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Implementando la Estrategia de Apertura de Datos</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Secretaría de Transparencia y Lucha contra la Corrupción (STLCC)</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">4</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=37" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 37)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 3</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Sistema de Denuncias Ciudadanas para combatir la Corrupción</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="STLCC">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 3</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Sistema de Denuncias Ciudadanas para combatir la Corrupción</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Secretaría de Transparencia y Lucha contra la Corrupción (STLCC)</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">5</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=44" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 44)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 4</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Fortalecimiento de las Comisiones Ciudadanas de Transparencia</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="STLCC">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 4</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Fortalecimiento de las Comisiones Ciudadanas de Transparencia</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Secretaría de Transparencia y Lucha contra la Corrupción (STLCC)</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">4</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=51" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 51)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 5</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Fortaleciendo el acceso a la información, la participación y el acceso a la justicia en asuntos ambientales en Honduras (Acuerdo de Escazú)</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="Otras">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 5</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Fortaleciendo el acceso a la información, la participación y el acceso a la justicia en asuntos ambientales en Honduras (Acuerdo de Escazú)</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Secretaría de Recursos Naturales y Ambiente (SERNA)</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">4</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=58" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 58)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 6</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Visibilizando las voces de los Pueblos Originarios en la construcción de una Política Colaborativa: con ellos y para ellos</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="Otras">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 6</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Visibilizando las voces de los Pueblos Originarios en la construcción de una Política Colaborativa: con ellos y para ellos</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Secretaría de Desarrollo Social (SEDESOL) y Secretaría de las Culturas, las Artes y los Patrimonios de los Pueblos (SECAPPH)</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">4</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=65" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 65)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 7</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Promoviendo la Apertura Judicial para fortalecer el interés por la Justicia en Defensa de los Derechos de la Población</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="Otras">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 7</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Promoviendo la Apertura Judicial para fortalecer el interés por la Justicia en Defensa de los Derechos de la Población</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Corte Suprema de Justicia (Poder Judicial)</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">6</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=73" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 73)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 8</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Agenda de Integridad, más allá del Compliance Empresarial</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="STLCC">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 8</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Agenda de Integridad, más allá del Compliance Empresarial</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Secretaría de Transparencia y Lucha contra la Corrupción (STLCC)</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">4</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=81" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 81)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 9</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Aplicación del Principio de Paridad en el sector público</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="Otras">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 9</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Aplicación del Principio de Paridad en el sector público</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Secretaría de Asuntos de la Mujer (SEMUJER)</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">3</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=89" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 89)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 10</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Sistema de Atención Ciudadana en la prestación de los servicios de salud (e-Health)</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="Otras">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 10</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Sistema de Atención Ciudadana en la prestación de los servicios de salud (e-Health)</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Secretaría de Salud</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">4</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=95" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 95)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 11</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Acceso a la información sobre salud sexual y reproductiva en Honduras</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="Otras">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 11</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Acceso a la información sobre salud sexual y reproductiva en Honduras</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Secretaría de Desarrollo Social (SEDESOL) y Secretaría de Salud</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">3</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=101" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 101)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 12</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Aplicación de buenas prácticas internacionales para la protección y promoción de los Derechos Humanos por parte de los Operadores de Seguridad y Defensa</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="Otras">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 12</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Aplicación de buenas prácticas internacionales para la protección y promoción de los Derechos Humanos por parte de los Operadores de Seguridad y Defensa</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Secretaría de Seguridad y Secretaría de Defensa</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">4</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=108" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 108)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 13</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Promoviendo la veeduría ciudadana en los proyectos de infraestructura pública</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="STLCC">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 13</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Promoviendo la veeduría ciudadana en los proyectos de infraestructura pública</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Secretaría de Transparencia y Lucha contra la Corrupción (STLCC)</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">4</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=114" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 114)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
-          <div class="col-md-6 col-lg-4" data-estado="En Proceso">
-            <div class="bg-white rounded-4 p-4 h-100 border">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <span class="badge bg-agah-cyan text-white">Compromiso 14</span>
-                <span class="badge bg-agah-amber text-white">En Proceso</span>
-              </div>
-              <h6 class="fw-bold text-agah-navy mb-0">Fortalecimiento de las Escuelas y Centros Educativos en temas de Transparencia</h6>
-            </div>
+          <div class="col-md-6 col-lg-4" data-responsable="STLCC">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <p class="fw-bold text-agah-cyan mb-1">Compromiso 14</p>
+              <h3 class="h6 fw-bold text-agah-navy mb-3">Fortalecimiento de las Escuelas y Centros Educativos en temas de Transparencia</h3>
+              <dl class="agah-meta mb-3 flex-grow-1">
+                <dt>Responsable</dt><dd class="mb-2">Secretaría de Educación y STLCC</dd>
+                <dt>Hitos programados</dt><dd class="mb-2">3</dd>
+                <dt>Avance de ejecución</dt><dd class="mb-0">Sin reporte verificado publicado</dd>
+              </dl>
+              <a href="docs/V_PAGAH_2023-2025.pdf#page=120" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Ficha del compromiso (PDF, pág. 120)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 3.2 HISTÓRICO DE PLANES DE ACCIÓN ============ -->
-    <section class="py-5 bg-agah-grey">
+    <!-- ============ HISTÓRICO ============ -->
+    <section id="historico" class="py-5 bg-agah-grey" aria-labelledby="historico-titulo">
       <div class="container">
-        <h2 class="fw-bold text-agah-navy mb-1">Histórico y Archivo de Planes de Acción</h2>
-        <p class="text-secondary mb-4" style="max-width: 50rem;">
-          Consulta la trayectoria de la AGAH en la implementación de políticas de gobierno abierto a lo largo de sus
-          distintas etapas de gestión.
-        </p>
-
+        <h2 id="historico-titulo" class="fw-bold text-agah-navy mb-1">Histórico de planes de acción</h2>
+        <p class="text-secondary mb-4" style="max-width: 50rem;">Todos los planes publicados por Honduras desde su adhesión a la Alianza para el Gobierno Abierto.</p>
         <div class="row g-4">
           <div class="col-md-6 col-lg-4">
-            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
-              <span class="badge bg-agah-navy text-white align-self-start mb-2">Histórico</span>
-              <h5 class="fw-bold text-agah-navy">I Plan de Acción de Gobierno Abierto Honduras</h5>
-              <p class="small text-secondary mb-2">Periodo de vigencia: 2012 - 2013</p>
-              <p class="small text-secondary flex-grow-1">Primer Plan de Acción presentado en abril de 2012, tras la adhesión formal de Honduras a la Alianza para el Gobierno Abierto (OGP) en agosto de 2011.</p>
-              <a href="docs/I_PAGAH_2012-2013.pdf" target="_blank" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
-            </div>
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-navy align-self-start mb-2">Concluido</span>
+              <h3 class="h5 fw-bold text-agah-navy">I Plan de Acción de Gobierno Abierto Honduras</h3>
+              <p class="agah-meta mb-2">Período: 2012–2013</p>
+              <p class="text-secondary flex-grow-1">Primer plan, presentado en abril de 2012 tras la adhesión formal de Honduras a OGP en agosto de 2011.</p>
+              <a href="docs/I_PAGAH_2012-2013.pdf" target="_blank" rel="noopener" class="fw-bold text-agah-cyan"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Descargar plan (PDF, 174 KB)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
           <div class="col-md-6 col-lg-4">
-            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
-              <span class="badge bg-agah-navy text-white align-self-start mb-2">Histórico</span>
-              <h5 class="fw-bold text-agah-navy">II Plan de Acción de Gobierno Abierto Honduras</h5>
-              <p class="small text-secondary mb-2">Periodo de vigencia: 2014 - 2016</p>
-              <p class="small text-secondary flex-grow-1">Segundo ciclo de compromisos nacionales en el marco de la Alianza para el Gobierno Abierto.</p>
-              <a href="docs/II_PAGAH_2014-2016.pdf" target="_blank" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
-            </div>
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-navy align-self-start mb-2">Concluido</span>
+              <h3 class="h5 fw-bold text-agah-navy">II Plan de Acción de Gobierno Abierto Honduras</h3>
+              <p class="agah-meta mb-2">Período: 2014–2016</p>
+              <p class="text-secondary flex-grow-1">Segundo ciclo de compromisos nacionales en el marco de la Alianza para el Gobierno Abierto.</p>
+              <a href="docs/II_PAGAH_2014-2016.pdf" target="_blank" rel="noopener" class="fw-bold text-agah-cyan"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Descargar plan (PDF, 443 KB)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
           <div class="col-md-6 col-lg-4">
-            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
-              <span class="badge bg-agah-navy text-white align-self-start mb-2">Histórico</span>
-              <h5 class="fw-bold text-agah-navy">III Plan de Acción de Gobierno Abierto Honduras</h5>
-              <p class="small text-secondary mb-2">Periodo de vigencia: 2016 - 2018</p>
-              <p class="small text-secondary flex-grow-1">Construido "de abajo hacia arriba" mediante jornadas de consulta presencial en 7 ciudades, que generaron 47 necesidades prioritarias y 188 acciones puntuales. Organizado en 6 ejes: Control de la Corrupción, Acceso a la Información, Gasto Público, Compras Públicas, Servicios Públicos y Gobierno Digital.</p>
-              <a href="docs/III_PAGAH_2016-2018.pdf" target="_blank" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
-            </div>
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-navy align-self-start mb-2">Concluido</span>
+              <h3 class="h5 fw-bold text-agah-navy">III Plan de Acción de Gobierno Abierto Honduras</h3>
+              <p class="agah-meta mb-2">Período: 2016–2018</p>
+              <p class="text-secondary flex-grow-1">Construido mediante consultas presenciales en 7 ciudades; organizado en 6 ejes temáticos.</p>
+              <a href="docs/III_PAGAH_2016-2018.pdf" target="_blank" rel="noopener" class="fw-bold text-agah-cyan"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Descargar plan (PDF, 1,2 MB)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
           <div class="col-md-6 col-lg-4">
-            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
-              <span class="badge bg-agah-navy text-white align-self-start mb-2">Histórico</span>
-              <h5 class="fw-bold text-agah-navy">IV Plan de Acción de Gobierno Abierto Honduras</h5>
-              <p class="small text-secondary mb-2">Periodo de vigencia: 2018 - 2020</p>
-              <p class="small text-secondary flex-grow-1">Cuarto ciclo de compromisos nacionales de gobierno abierto.</p>
-              <a href="docs/IV_PAGAH_2018-2020.pdf" target="_blank" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
-            </div>
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-navy align-self-start mb-2">Concluido</span>
+              <h3 class="h5 fw-bold text-agah-navy">IV Plan de Acción de Gobierno Abierto Honduras</h3>
+              <p class="agah-meta mb-2">Período: 2018–2020</p>
+              <p class="text-secondary flex-grow-1">Cuarto ciclo de compromisos nacionales de gobierno abierto.</p>
+              <a href="docs/IV_PAGAH_2018-2020.pdf" target="_blank" rel="noopener" class="fw-bold text-agah-cyan"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Descargar plan (PDF, 2,1 MB)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
           <div class="col-md-6 col-lg-4">
-            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
-              <span class="badge bg-agah-green text-white align-self-start mb-2">Vigente</span>
-              <h5 class="fw-bold text-agah-navy">V Plan de Acción de Estado Abierto Honduras (PAEAH)</h5>
-              <p class="small text-secondary mb-2">Periodo de vigencia: 2023 - 2025</p>
-              <p class="small text-secondary flex-grow-1">14 compromisos co-creados con la Mesa Técnica de Seguimiento de la AGAH, con apoyo de USAID (Gobernabilidad Local Honduras) y UNODC. Título del documento: "Voces hondureñas por la transparencia".</p>
-              <a href="docs/V_PAGAH_2023-2025.pdf" target="_blank" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Documento del Plan</a>
-            </div>
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-cyan align-self-start mb-2">Más reciente publicado</span>
+              <h3 class="h5 fw-bold text-agah-navy">V Plan de Acción de Estado Abierto Honduras (PAEAH)</h3>
+              <p class="agah-meta mb-2">Período: 2023–2025</p>
+              <p class="text-secondary flex-grow-1">14 compromisos co-creados por la Mesa Técnica de Seguimiento de la AGAH. Título: «Voces hondureñas por la transparencia».</p>
+              <a href="docs/V_PAGAH_2023-2025.pdf" target="_blank" rel="noopener" class="fw-bold text-agah-cyan"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Descargar plan (PDF, 1,6 MB)<span class="visually-hidden">, abre en otra pestaña</span></a>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 3.3 INFORMES DE AUTOEVALUACIÓN E IRM ============ -->
-    <section class="py-5 bg-white">
+    <!-- ============ EVALUACIÓN ============ -->
+    <section id="informes" class="py-5 bg-white" aria-labelledby="informes-titulo">
       <div class="container">
-        <h2 class="fw-bold text-agah-navy mb-1">Informes de Evaluación y Control Social</h2>
-        <p class="text-secondary mb-4" style="max-width: 50rem;">
-          Accede a las autoevaluaciones periódicas del gobierno y a las revisiones objetivas realizadas por
-          evaluadores internacionales independientes.
-        </p>
-
-        <ul class="nav nav-pills mb-4" id="tabsInformes" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="irm-tab" data-bs-toggle="pill" data-bs-target="#irm" type="button" role="tab">Informes IRM</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="auto-tab" data-bs-toggle="pill" data-bs-target="#auto" type="button" role="tab">Autoevaluación Institucional</button>
-          </li>
-        </ul>
-        <div class="tab-content">
-          <div class="tab-pane fade show active" id="irm" role="tabpanel">
-            <div class="bg-agah-grey rounded-4 p-4">
-              <span class="badge text-bg-secondary mb-2">Informe de Diseño</span>
-              <h6 class="fw-bold text-agah-navy">Plan de Acción Vinculado: V PAEAH 2023 - 2025</h6>
-              <p class="small text-secondary mb-1">Fecha de Publicación: [Mes / Año]</p>
-              <ul class="small text-secondary">
-                <li>[Recomendación técnica principal 1]</li>
-                <li>[Recomendación técnica principal 2]</li>
-                <li>[Recomendación técnica principal 3]</li>
+        <h2 id="informes-titulo" class="fw-bold text-agah-navy mb-1">Informes de evaluación</h2>
+        <p class="text-secondary mb-4" style="max-width: 50rem;">Revisiones independientes y autoevaluaciones del plan de acción.</p>
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <article class="agah-card p-4 h-100">
+              <span class="badge bg-agah-cyan mb-2">Revisión del plan de acción (IRM)</span>
+              <h3 class="h5 fw-bold text-agah-navy">Revisión del Plan de Acción de Honduras 2023–2025</h3>
+              <p class="agah-meta mb-3">Mecanismo de Revisión Independiente (IRM) de OGP · publicada en julio de 2024</p>
+              <ul class="text-secondary">
+                <li>Identificó 13 de los 14 compromisos con perspectiva de gobierno abierto y 5 compromisos prometedores.</li>
+                <li>Destacó el proceso de consulta realizado en los 18 departamentos del país.</li>
+                <li>Recomendó mejorar el diseño de los hitos con enfoque en resultados y definir los recursos para implementar cada compromiso.</li>
               </ul>
-              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Reporte IRM en PDF</a>
-            </div>
+              <p class="small text-secondary">Esta revisión evalúa el diseño del plan, no su nivel de ejecución.</p>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="https://opengovpartnership.org/wp-content/uploads/2024/07/Honduras_Action-Plan-Review_2023-2025.pdf" target="_blank" rel="noopener" class="fw-bold text-agah-cyan"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Descargar informe (PDF, OGP)<span class="visually-hidden">, abre en otra pestaña</span></a>
+                <a href="https://www.opengovpartnership.org/es/members/honduras/" target="_blank" rel="noopener" class="fw-bold text-agah-cyan"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Honduras en OGP<span class="visually-hidden">, abre en otra pestaña</span></a>
+              </div>
+            </article>
           </div>
-          <div class="tab-pane fade" id="auto" role="tabpanel">
-            <div class="bg-agah-grey rounded-4 p-4">
-              <span class="badge text-bg-secondary mb-2">Autoevaluación de Mitad de Periodo</span>
-              <h6 class="fw-bold text-agah-navy">Periodo Evaluado: [Fechas]</h6>
-              <p class="small text-secondary mb-2">Resumen Ejecutivo: [Síntesis del estado de la gestión, principales desafíos y lecciones aprendidas]</p>
-              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar Autoevaluación en PDF</a>
-            </div>
+          <div class="col-lg-5">
+            <article class="agah-pending p-4 h-100">
+              <span class="badge bg-secondary mb-2">Pendiente de publicación</span>
+              <h3 class="h5 fw-bold text-agah-navy">Autoevaluación del plan 2023–2025</h3>
+              <p class="text-secondary mb-0">La autoevaluación de fin de período aún no está disponible en este portal. Se publicará aquí con su fecha y el documento completo.</p>
+            </article>
           </div>
         </div>
       </div>
@@ -317,9 +317,6 @@
 
   </main>
 
-  <!-- ============================================================
-       PIE DE PÁGINA INSTITUCIONAL (FOOTER) - compartido
-       =========================================================== -->
   <div id="site-footer"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

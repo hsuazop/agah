@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AGAH | Alianza para el Gobierno Abierto Honduras</title>
+  <title>AGAHonduras | Alianza para el Gobierno Abierto Honduras</title>
   <link rel="icon" type="image/jpeg" href="img/logo-agah-redondo.jpg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -13,207 +13,204 @@
 
   <div id="site-header"></div>
 
-  <main>
+  <main id="contenido" tabindex="-1">
+    <section class="agah-hero" aria-labelledby="hero-titulo">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <h1 id="hero-titulo" class="mb-3">Alianza para el Gobierno Abierto Honduras</h1>
+            <p class="agah-hero-lead mb-4">Plataforma oficial de transparencia, rendición de cuentas y participación ciudadana.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="#accesos" class="btn btn-light fw-bold px-4">Ver documentos más consultados</a>
+              <a href="sobre-agah.html" class="btn btn-outline-light fw-semibold px-4">Qué es la AGAH</a>
+            </div>
+          </div>
+          <div class="col-lg-4 d-none d-lg-block">
+            <div class="agah-hero-emblem">
+              <img src="img/isotipo-simbolo.png" alt="Emblema de la Alianza para el Gobierno Abierto Honduras">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="agah-brand-stripe" aria-hidden="true"></div>
 
-    <!-- ============ HERO: Banner institucional a todo lo ancho ============ -->
-    <section class="agah-hero text-white">
-      <img src="img/banner-linkedin.png" alt="Alianza de Gobierno Abierto Honduras" class="agah-hero-img">
-      <div class="agah-hero-overlay"></div>
-      <div class="container agah-hero-content">
-        <h1 class="fw-bold display-5 mb-3" style="max-width: 30rem; text-shadow: 0 2px 12px rgba(0,0,0,0.35);">Alianza para el Gobierno Abierto Honduras</h1>
-        <p class="fs-5 text-white-50 mb-0" style="max-width: 28rem;">
-          Plataforma oficial de transparencia, rendición de cuentas y co-creación ciudadana
+    <!-- ============ ACCESOS DIRECTOS (reemplaza buscador y filtros rápidos) ============ -->
+    <section id="accesos" class="py-5 bg-white" aria-labelledby="accesos-titulo">
+      <div class="container">
+        <h2 id="accesos-titulo" class="fw-bold text-agah-navy mb-1">Documentos más consultados</h2>
+        <p class="text-secondary mb-4">Cada acceso abre directamente el documento o la sección que indica.</p>
+
+        <div class="row g-3">
+          <div class="col-md-6 col-lg-4">
+            <a class="agah-access" href="docs/V_PAGAH_2023-2025.pdf" target="_blank" rel="noopener">
+              <span class="agah-access-title">Plan de Acción de Estado Abierto 2023–2025</span>
+              <span class="agah-access-meta">V PAEAH · PDF, 128 páginas, 1,6 MB · Plan más reciente publicado</span>
+              <span class="agah-access-go"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Abrir PDF <span class="visually-hidden">(abre en otra pestaña)</span></span>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="agah-access" href="tablero.html#compromisos">
+              <span class="agah-access-title">Los 14 compromisos del plan 2023–2025</span>
+              <span class="agah-access-meta">Institución responsable, número de hitos y ficha de cada compromiso</span>
+              <span class="agah-access-go">Ver compromisos</span>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="agah-access" href="https://www.opengovpartnership.org/es/documents/honduras-action-plan-review-2023-2025/" target="_blank" rel="noopener">
+              <span class="agah-access-title">Revisión del IRM al plan 2023–2025</span>
+              <span class="agah-access-meta">Mecanismo de Revisión Independiente de OGP · publicada en julio de 2024</span>
+              <span class="agah-access-go"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Abrir en opengovpartnership.org <span class="visually-hidden">(abre en otra pestaña)</span></span>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="agah-access" href="tablero.html#historico">
+              <span class="agah-access-title">Planes de acción anteriores (2012–2020)</span>
+              <span class="agah-access-meta">I, II, III y IV Plan de Acción de Gobierno Abierto · PDF</span>
+              <span class="agah-access-go">Ver planes históricos</span>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="agah-access" href="https://portalunico.iaip.gob.hn/ver_archivo/Njg0NDg0" target="_blank" rel="noopener">
+              <span class="agah-access-title">Ley de Transparencia y Acceso a la Información Pública</span>
+              <span class="agah-access-meta">Decreto 170-2006 · Congreso Nacional · La Gaceta, 30 de diciembre de 2006</span>
+              <span class="agah-access-go"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Abrir en el Portal Único del IAIP <span class="visually-hidden">(abre en otra pestaña)</span></span>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="agah-access is-pending" href="repositorio.html?filtro=actas">
+              <span class="agah-access-title">Actas y normativa interna de la AGAH</span>
+              <span class="agah-access-meta">Actas del Comité Directivo, reglamento y manual de co-creación · pendientes de publicación</span>
+              <span class="agah-access-go">Ver estado de publicación</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACTUALIDAD: solo noticias aprobadas, con fecha, fuente y enlace real ============ -->
+    <section class="py-5 bg-agah-grey" aria-labelledby="actualidad-titulo">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-4">
+          <h2 id="actualidad-titulo" class="fw-bold text-agah-navy mb-0">Actualidad AGAH</h2>
+          <a href="prensa.html" class="fw-bold text-agah-cyan">Ver todas las publicaciones en la sala de prensa</a>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-amber align-self-start mb-2">Nota de prensa</span>
+              <h3 class="h5 fw-bold text-agah-navy">AGAH fortalece su planificación estratégica para avanzar en el Gobierno Abierto</h3>
+              <p class="agah-meta mb-2"><time datetime="2026-08-10">10 de agosto de 2026</time> · Fuente: IAIP, Secretaría Técnica de la AGAH</p>
+              <p class="text-secondary flex-grow-1">Sesión de trabajo del Comité Directivo sobre las próximas actividades de co-creación del VI Plan de Acción.</p>
+              <a href="prensa.html#modalBoletin4" class="fw-bold text-agah-cyan">Leer nota completa<span class="visually-hidden">: AGAH fortalece su planificación estratégica</span></a>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-cyan align-self-start mb-2">Comunicado oficial</span>
+              <h3 class="h5 fw-bold text-agah-navy">Honduras ratifica su adhesión a la Alianza para el Gobierno Abierto Honduras</h3>
+              <p class="agah-meta mb-2"><time datetime="2026-07-27">27 de julio de 2026</time> · Fuente: IAIP, Secretaría Técnica de la AGAH</p>
+              <p class="text-secondary flex-grow-1">Se conforman el Comité Directivo 2026–2030 y el Consejo Consultivo; inicia la construcción del VI Plan de Acción.</p>
+              <a href="prensa.html#modalBoletin1" class="fw-bold text-agah-cyan">Leer nota completa<span class="visually-hidden">: Honduras ratifica su adhesión</span></a>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="agah-card p-4 h-100 d-flex flex-column">
+              <span class="badge bg-agah-green align-self-start mb-2">Evento</span>
+              <h3 class="h5 fw-bold text-agah-navy">Consejo Directivo y Consejo Consultivo de la AGAH participan en taller de formación</h3>
+              <p class="agah-meta mb-2"><time datetime="2026-07-27">27 de julio de 2026</time> · Fuente: IAIP, Secretaría Técnica de la AGAH</p>
+              <p class="text-secondary flex-grow-1">Taller sobre formulación de metas e hitos para cada compromiso institucional.</p>
+              <a href="prensa.html#modalBoletin3" class="fw-bold text-agah-cyan">Leer nota completa<span class="visually-hidden">: taller de formación</span></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLAN DE ACCIÓN: solo cifras verificables y con fuente ============ -->
+    <section class="py-5 bg-white" aria-labelledby="plan-titulo">
+      <div class="container">
+        <h2 id="plan-titulo" class="fw-bold text-agah-navy mb-1">Plan de acción más reciente publicado: 2023–2025</h2>
+        <p class="text-secondary mb-4" style="max-width: 52rem;">
+          El período del V Plan de Acción de Estado Abierto concluyó en 2025. El VI Plan se encuentra en proceso de
+          co-creación, con lanzamiento previsto para enero de 2027. Los porcentajes de avance se publicarán cuando exista
+          una metodología de cálculo y evidencia verificable.
         </p>
-      </div>
-    </section>
 
-    <!-- ============================================================
-         1.1 BUSCADOR GLOBAL INTELIGENTE
-         =========================================================== -->
-    <section class="py-5 bg-agah-grey">
-      <div class="container">
-        <div class="bg-agah-navy text-white rounded-4 p-4 p-md-5 shadow">
-          <div class="input-group input-group-lg mb-3">
-            <input type="text" class="form-control" placeholder="Busca por palabra clave, número de decreto, acta, institución o compromiso...">
-            <button class="btn bg-agah-cyan text-white fw-bold d-flex align-items-center gap-2">
-              <i class="bi bi-search"></i> Buscar
-            </button>
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-lg-3">
+            <div class="agah-stat">
+              <div class="agah-stat-value text-agah-navy">14</div>
+              <div class="agah-stat-label">compromisos en el plan</div>
+              <div class="agah-stat-source">Fuente: V PAEAH 2023–2025</div>
+            </div>
           </div>
-          <div class="d-flex flex-wrap gap-2">
-            <span class="small text-white-50 align-self-center me-1">Filtros rápidos:</span>
-            <a href="tablero.html" class="btn btn-sm btn-outline-light rounded-pill">Planes de Acción</a>
-            <a href="repositorio.html?filtro=actas" class="btn btn-sm btn-outline-light rounded-pill">Actas</a>
-            <a href="repositorio.html?filtro=normativa" class="btn btn-sm btn-outline-light rounded-pill">Normativa</a>
+          <div class="col-6 col-lg-3">
+            <div class="agah-stat">
+              <div class="agah-stat-value text-agah-navy">57</div>
+              <div class="agah-stat-label">hitos programados</div>
+              <div class="agah-stat-source">Fuente: fichas de compromiso del V PAEAH</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="agah-stat">
+              <div class="agah-stat-value text-agah-navy">13 de 14</div>
+              <div class="agah-stat-label">compromisos con perspectiva de gobierno abierto</div>
+              <div class="agah-stat-source">Fuente: revisión de diseño del IRM, 2024</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="agah-stat">
+              <div class="agah-stat-value text-agah-navy">5</div>
+              <div class="agah-stat-label">planes de acción publicados desde 2012</div>
+              <div class="agah-stat-source">Fuente: repositorio documental</div>
+            </div>
           </div>
         </div>
+        <p class="small text-secondary mb-4">La revisión del IRM evalúa el diseño del plan; no mide su avance de ejecución.</p>
+
+        <a href="tablero.html" class="btn bg-agah-cyan text-white fw-bold px-4 py-2 hover-bg-agah-navy">Ir al tablero de compromisos</a>
       </div>
     </section>
 
-
-
-    <!-- ============================================================
-         1.3 NOVEDADES Y DESTACADOS
-         =========================================================== -->
-    <section class="py-5 bg-agah-grey">
+    <!-- ============ PARTICIPACIÓN CIUDADANA ============ -->
+    <section class="py-5 bg-agah-grey" aria-labelledby="participa-titulo">
       <div class="container">
-        <h2 class="fw-bold text-agah-navy text-center mb-4">Actualidad y Eventos AGAH</h2>
+        <h2 id="participa-titulo" class="fw-bold text-agah-navy mb-1">Participación ciudadana y control social</h2>
+        <p class="text-secondary mb-4">Espacios para incidir, evaluar y vigilar la gestión pública.</p>
 
         <div class="row g-4">
-          <!-- Noticia Destacada -->
           <div class="col-md-4">
-            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
-              <span class="badge text-bg-secondary align-self-start mb-2">Noticia</span>
-              <h5 class="fw-bold text-agah-navy">Honduras ratifica su adhesión a la Alianza para el Gobierno Abierto Honduras (AGAH)</h5>
-              <p class="small text-secondary">27 de julio de 2026</p>
-              <p class="small text-secondary flex-grow-1">Honduras ratificó su adhesión a la Alianza para el Gobierno Abierto Honduras (AGAH), reafirmando su compromiso con el fortalecimiento de la transparencia, la participación ciudadana, la rendición de cuentas y la innovación en la gestión pública.</p>
-              <a href="prensa.html" class="small fw-bold text-agah-cyan text-decoration-none">Leer más →</a>
+            <div class="agah-card p-4 h-100 d-flex flex-column">
+              <i class="bi bi-chat-square-text fs-2 text-agah-cyan" aria-hidden="true"></i>
+              <h3 class="h5 fw-bold text-agah-navy mt-2">Consultas públicas</h3>
+              <p class="text-secondary flex-grow-1">Estado de las consultas: cuáles están abiertas, sus plazos y qué ocurrió con los aportes recibidos.</p>
+              <a href="consultas.html" class="btn bg-agah-navy text-white hover-bg-agah-cyan align-self-start">Ver estado de las consultas</a>
             </div>
           </div>
-          <!-- Evento / Mesa Técnica -->
           <div class="col-md-4">
-            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
-              <span class="badge text-bg-secondary align-self-start mb-2">Evento / Mesa Técnica</span>
-              <h5 class="fw-bold text-agah-navy">[Título de la próxima convocatoria]</h5>
-              <p class="small text-secondary mb-1">[Fecha y Hora]</p>
-              <p class="small text-secondary flex-grow-1">Modalidad: [Virtual / Presencial]</p>
+            <div class="agah-card p-4 h-100 d-flex flex-column">
+              <i class="bi bi-people fs-2 text-agah-cyan" aria-hidden="true"></i>
+              <h3 class="h5 fw-bold text-agah-navy mt-2">Espacio para sociedad civil</h3>
+              <p class="text-secondary flex-grow-1">Organizaciones que integran la AGAH, requisitos de acreditación y recursos de formación.</p>
+              <a href="osc.html" class="btn bg-agah-navy text-white hover-bg-agah-cyan align-self-start">Ir al espacio OSC</a>
             </div>
           </div>
-          <!-- Informe Reciente -->
           <div class="col-md-4">
-            <div class="bg-white rounded-4 p-4 h-100 d-flex flex-column">
-              <span class="badge text-bg-secondary align-self-start mb-2">Informe</span>
-              <h5 class="fw-bold text-agah-navy">Informe del Mecanismo de Revisión Independiente (IRM) / Autoevaluación</h5>
-              <p class="small text-secondary flex-grow-1">[Descripción breve de la publicación]</p>
-              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none"><i class="bi bi-file-earmark-arrow-down"></i> Descargar PDF</a>
+            <div class="agah-card p-4 h-100 d-flex flex-column">
+              <i class="bi bi-newspaper fs-2 text-agah-cyan" aria-hidden="true"></i>
+              <h3 class="h5 fw-bold text-agah-navy mt-2">Sala de prensa</h3>
+              <p class="text-secondary flex-grow-1">Comunicados oficiales, notas de prensa y eventos de la AGAH, ordenados por fecha.</p>
+              <a href="prensa.html" class="btn bg-agah-navy text-white hover-bg-agah-cyan align-self-start">Ir a la sala de prensa</a>
             </div>
           </div>
-        </div>
-
-        <div class="text-center mt-4">
-          <a href="prensa.html" class="btn btn-outline-dark rounded-pill px-4">Ir a la Sala de Prensa →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         1.4 ACCESOS DIRECTOS A VEEDURÍA Y DENUNCIAS
-         =========================================================== -->
-    <section class="py-5 bg-white">
-      <div class="container">
-        <div class="text-center mx-auto mb-4" style="max-width: 48rem;">
-          <h2 class="fw-bold text-agah-navy">Participación Ciudadana y Control Social</h2>
-          <p class="text-secondary mb-0">Herramientas directas para incidir, evaluar y vigilar la gestión pública</p>
-        </div>
-
-        <div class="row g-4">
-          <!-- Módulo 1 -->
-          <div class="col-md-4">
-            <div class="bg-agah-grey rounded-4 p-4 h-100 d-flex flex-column">
-              <div class="mb-2"><i class="bi bi-chat-square-text fs-2 text-agah-cyan"></i></div>
-              <h5 class="fw-bold text-agah-navy">Consultas Públicas Abiertas</h5>
-              <p class="small text-secondary flex-grow-1">Participa en la discusión y elaboración de borradores normativos, planes y políticas de gobierno abierto.</p>
-              <a href="consultas.html" class="btn bg-agah-navy text-white hover-bg-agah-cyan align-self-start">Ver Consultas Activas</a>
-            </div>
-          </div>
-          <!-- Módulo 3 -->
-          <div class="col-md-4">
-            <div class="bg-agah-grey rounded-4 p-4 h-100 d-flex flex-column">
-              <div class="mb-2"><i class="bi bi-people fs-2 text-agah-cyan"></i></div>
-              <h5 class="fw-bold text-agah-navy">Espacio para Sociedad Civil</h5>
-              <p class="small text-secondary flex-grow-1">Red de acreditación, grupos de trabajo y colaboración entre organizaciones no gubernamentales y academia.</p>
-              <a href="osc.html" class="btn bg-agah-navy text-white hover-bg-agah-cyan align-self-start">Acceder al Espacio OSC</a>
-            </div>
-          </div>
-          <!-- Módulo Sala de Prensa -->
-          <div class="col-md-4">
-            <div class="bg-agah-grey rounded-4 p-4 h-100 d-flex flex-column">
-              <div class="mb-2"><i class="bi bi-newspaper fs-2 text-agah-cyan"></i></div>
-              <h5 class="fw-bold text-agah-navy">Sala de Prensa</h5>
-              <p class="small text-secondary flex-grow-1">Comunicados oficiales, boletines informativos y recursos de prensa sobre los avances de la AGAH.</p>
-              <a href="prensa.html" class="btn bg-agah-navy text-white hover-bg-agah-cyan align-self-start">Ir a la Sala de Prensa</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         1.2 TABLERO DE CONTROL DE COMPROMISOS (Resumen)
-         =========================================================== -->
-    <section class="py-5 bg-white">
-      <div class="container">
-        <div class="text-center mx-auto mb-4" style="max-width: 48rem;">
-          <h2 class="fw-bold text-agah-navy">Avance y Trazabilidad del Plan de Acción</h2>
-          <p class="text-secondary mb-0">
-            Monitoreo en tiempo real del grado de cumplimiento de los compromisos asumidos por el Estado y la sociedad civil
-          </p>
-        </div>
-
-        <!-- KPIs -->
-        <div class="row g-3 mb-4 text-center">
-          <div class="col-6 col-lg-3">
-            <div class="bg-agah-grey rounded-4 p-3 h-100">
-              <div class="display-6 fw-black text-agah-navy">[XX%]</div>
-              <div class="small text-secondary">Avance General del Plan de Acción Vigente</div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="bg-agah-grey rounded-4 p-3 h-100">
-              <div class="display-6 fw-black text-agah-navy">[XX / XX]</div>
-              <div class="small text-secondary">Hitos Completados</div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="bg-agah-grey rounded-4 p-3 h-100">
-              <div class="display-6 fw-black text-agah-navy">[XX]</div>
-              <div class="small text-secondary">Instituciones Públicas Responsables</div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="bg-agah-grey rounded-4 p-3 h-100">
-              <div class="display-6 fw-black text-agah-navy">[XX]</div>
-              <div class="small text-secondary">Organizaciones de Sociedad Civil Involucradas</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Vista previa de compromisos (tarjetas resumidas) -->
-        <div class="row g-4 mb-4">
-          <div class="col-md-6">
-            <div class="bg-agah-grey rounded-4 p-4 h-100">
-              <span class="badge bg-agah-amber text-white text-uppercase mb-2">En Proceso</span>
-              <h5 class="fw-bold text-agah-navy">[Nombre del Compromiso]</h5>
-              <p class="small text-secondary mb-2">[Institución Responsable]</p>
-              <div class="progress" style="height:.6rem;">
-                <div class="progress-bar bg-agah-amber" style="width: 68%">68%</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="bg-agah-grey rounded-4 p-4 h-100">
-              <span class="badge bg-agah-green text-white text-uppercase mb-2">Cumplido</span>
-              <h5 class="fw-bold text-agah-navy">[Nombre del Compromiso]</h5>
-              <p class="small text-secondary mb-2">[Institución Responsable]</p>
-              <div class="progress" style="height:.6rem;">
-                <div class="progress-bar bg-agah-green" style="width: 100%">100%</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center">
-          <a href="tablero.html" class="btn bg-agah-cyan text-white fw-bold px-4 py-2 rounded-pill hover-bg-agah-navy">
-            Ver Tablero de Trazabilidad Completo →
-          </a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ============================================================
-       PIE DE PÁGINA INSTITUCIONAL (FOOTER) - compartido
-       =========================================================== -->
   <div id="site-footer"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

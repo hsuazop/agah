@@ -1,118 +1,436 @@
-/* ===== AGAH - Hoja de estilos compartida ===== */
+/* ===== AGAH - Hoja de estilos compartida =====
+   Revisión sep-2026: legibilidad del menú y del banner al 100/200/400 % de zoom,
+   superficies más blancas (menos gris), contraste de texto AA y foco visible. */
+
+:root {
+  --agah-navy: #173C48;
+  --agah-navy-dark: #10303A;
+  --agah-cyan: #0F6685;
+  --agah-amber: #D98822;
+  --agah-green: #5E6A3F;
+  --agah-surface: #F4F7F8;   /* antes #E8EEF0: se aclara para reducir el gris */
+  --agah-line: #D5DFE3;
+  --agah-text-muted: #4A5B63; /* contraste ≥ 7:1 sobre blanco */
+}
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #173C48;
+  color: var(--agah-navy);
+  line-height: 1.6;
 }
 
-.bg-agah-navy { background-color: #173C48; }
-.bg-agah-grey { background-color: #E8EEF0; }
-.bg-agah-cyan { background-color: #0F6685; }
-.bg-agah-amber { background-color: #D98822; }
-.bg-agah-green { background-color: #7D875D; }
-.bg-agah-red { background-color: #C0392B; }
+/* ---------- Colores de marca ---------- */
+.bg-agah-navy  { background-color: var(--agah-navy); }
+.bg-agah-grey  { background-color: var(--agah-surface); }
+.bg-agah-cyan  { background-color: var(--agah-cyan); }
+.bg-agah-amber { background-color: #B86E12; }  /* ámbar oscurecido: texto blanco con contraste AA */
+.bg-agah-green { background-color: var(--agah-green); }
+.bg-agah-red   { background-color: #C0392B; }
 
-.text-agah-navy { color: #173C48; }
-.text-agah-cyan { color: #0F6685; }
-.text-agah-amber { color: #D98822; }
+.text-agah-navy  { color: var(--agah-navy); }
+.text-agah-cyan  { color: var(--agah-cyan); }
+.text-agah-amber { color: var(--agah-amber); }
 
-.border-agah-navy { border-color: #173C48; }
-.border-agah-cyan { border-color: #0F6685; }
+.border-agah-navy { border-color: var(--agah-navy) !important; }
+.border-agah-cyan { border-color: var(--agah-cyan) !important; }
 
-.hover-bg-agah-navy:hover { background-color: #173C48; }
-.hover-bg-agah-cyan:hover { background-color: #0F6685; }
+.hover-bg-agah-navy:hover { background-color: var(--agah-navy); color: #fff; }
+.hover-bg-agah-cyan:hover { background-color: var(--agah-cyan); color: #fff; }
 
-.agah-logo-circle {
-  width: 40px;
-  height: 40px;
-  font-size: 1.05rem;
+/* Contraste: los grises por defecto de Bootstrap no alcanzan AA sobre superficies claras */
+.text-secondary { color: var(--agah-text-muted) !important; }
+.text-white-50  { color: rgba(255, 255, 255, .82) !important; }
+
+/* ---------- Accesibilidad transversal ---------- */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 2000;
+  background: #fff;
+  color: var(--agah-navy);
+  font-weight: 700;
+  padding: .6rem 1rem;
+  border-radius: .5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+}
+.skip-link:focus { top: 1rem; }
+
+:focus-visible {
+  outline: 3px solid #F2B24C;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+main:focus { outline: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
 
-/* Logo (isotipo) dentro del círculo del navbar, reemplaza al texto "AG" */
+/* ---------- Cabecera y menú ---------- */
 .agah-logo-navbar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 4px;
   object-fit: contain;
   flex-shrink: 0;
 }
 
-/* Banner institucional a todo lo ancho (hero de Inicio) */
+.agah-navbar .navbar-brand { white-space: nowrap; }
+
+.agah-navbar .nav-link {
+  color: rgba(255, 255, 255, .88);
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;           /* ningún título del menú se parte en varias líneas */
+  padding: .5rem .8rem;
+  border-radius: .4rem;
+}
+.agah-navbar .nav-link:hover { color: #fff; background: rgba(255,255,255,.08); }
+.agah-navbar .nav-link.active,
+.agah-navbar .nav-link[aria-current="page"] {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: .45em;
+}
+.agah-navbar .nav-link.agah-nav-cta {
+  background: var(--agah-cyan);
+  color: #fff;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+}
+.agah-navbar .nav-link.agah-nav-cta:hover { background: #0C5670; }
+
+/* Móvil / ampliación: menú desplegable con enlaces grandes y separados */
+@media (max-width: 991.98px) {
+  .agah-navbar .navbar-collapse { border-top: 1px solid rgba(255,255,255,.15); margin-top: .75rem; padding-top: .5rem; }
+  .agah-navbar .nav-link { padding: .7rem .5rem; }
+  .agah-navbar .nav-link.agah-nav-cta { display: inline-block; margin-top: .5rem; }
+}
+
+/* Escritorio mediano (992–1399 px): marca arriba y menú en una segunda fila,
+   así todos los títulos caben completos sin comprimirse. */
+@media (min-width: 992px) and (max-width: 1399.98px) {
+  .agah-navbar .navbar-collapse {
+    flex-basis: 100%;
+    border-top: 1px solid rgba(255,255,255,.15);
+    margin-top: .75rem;
+    padding-top: .5rem;
+  }
+  .agah-navbar .navbar-nav { margin-left: 0 !important; gap: .25rem; }
+}
+@media (min-width: 1400px) {
+  .agah-navbar .navbar-nav { gap: .25rem; }
+}
+
+/* ---------- Banner de inicio (sin texto duplicado) ---------- */
 .agah-hero {
   position: relative;
+  background: linear-gradient(120deg, var(--agah-navy-dark) 0%, var(--agah-navy) 55%, #125266 100%);
+  color: #fff;
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+}
+.agah-hero h1 {
+  font-size: clamp(2rem, 1.2rem + 3.2vw, 3.5rem);
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  max-width: 16ch;
+}
+.agah-hero .agah-hero-lead {
+  font-size: clamp(1.05rem, 1rem + .4vw, 1.3rem);
+  color: rgba(255,255,255,.9);
+  max-width: 34rem;
+}
+.agah-hero-emblem {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  max-width: 300px;
+  margin-left: auto;
+}
+.agah-hero-emblem img { width: 100%; height: auto; display: block; }
+
+/* Franja con los colores del emblema (tomados del logotipo oficial) */
+.agah-brand-stripe {
+  height: 6px;
+  background: linear-gradient(90deg,
+    #FF3D00 0 8%, #0A66FF 8% 16%, #089A3E 16% 24%, #FFE03A 24% 32%,
+    #FF7043 32% 40%, #2B2B2B 40% 48%, #0B6C9A 48% 56%, #FF9900 56% 64%,
+    #D13A0A 64% 72%, #0F3A6B 72% 80%, #0B6A67 80% 88%, #FF3D00 88% 100%);
+}
+
+/* ---------- Accesos directos ---------- */
+.agah-access {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border: 1px solid var(--agah-line);
+  border-left: 5px solid var(--agah-cyan);
+  border-radius: .75rem;
+  padding: 1.25rem 1.25rem 1.1rem;
+  text-decoration: none;
+  color: var(--agah-navy);
+}
+.agah-access:hover { border-color: var(--agah-cyan); background: #F7FBFC; }
+.agah-access:hover .agah-access-title { text-decoration: underline; }
+.agah-access .agah-access-title { font-weight: 700; font-size: 1.08rem; margin-bottom: .25rem; }
+.agah-access .agah-access-meta { font-size: .88rem; color: var(--agah-text-muted); }
+.agah-access .agah-access-go { margin-top: auto; padding-top: .75rem; font-weight: 700; color: var(--agah-cyan); font-size: .92rem; }
+.agah-access.is-pending { border-left-color: #9AA9B0; }
+
+/* ---------- Tarjetas y superficies ---------- */
+.agah-card {
+  background: #fff;
+  border: 1px solid var(--agah-line);
+  border-radius: .75rem;
+}
+.agah-meta { font-size: .88rem; color: var(--agah-text-muted); }
+.agah-meta dt { font-weight: 600; color: var(--agah-navy); }
+
+.agah-stat {
+  background: #fff;
+  border: 1px solid var(--agah-line);
+  border-radius: .75rem;
+  padding: 1.1rem 1rem;
+  height: 100%;
+}
+.agah-stat .agah-stat-value { font-size: clamp(1.8rem, 1.4rem + 1.2vw, 2.4rem); font-weight: 800; line-height: 1.1; }
+.agah-stat .agah-stat-label { font-size: .95rem; }
+.agah-stat .agah-stat-source { font-size: .8rem; color: var(--agah-text-muted); margin-top: .35rem; }
+
+.agah-pending {
+  background: #FFF8EC;
+  border: 1px dashed #D9A55A;
+  border-radius: .75rem;
+}
+
+/* Pestañas (nav-pills) con los colores de marca */
+.nav-pills .nav-link { color: var(--agah-navy); font-weight: 600; font-size: .95rem; }
+.nav-pills .nav-link.active { background-color: var(--agah-cyan); color: #fff; }
+
+/* ---------- Sala de prensa ---------- */
+.agah-press-feature {
+  background: #fff;
+  border: 1px solid var(--agah-line);
+  border-radius: 1rem;
   overflow: hidden;
-  background-color: #173C48;
-  /* La altura sigue la proporción real de banner-linkedin.png (3168x792 = 4:1).
-     Así la imagen siempre ocupa el 100% del ancho, de lado a lado, sin
-     recortarse y sin dejar espacios vacíos a los costados. */
-  aspect-ratio: 3168 / 792;
+}
+.agah-press-feature .agah-press-photo {
+  min-height: 280px;
+  background-size: cover;
+  background-position: center;
+}
+.agah-press-item {
+  background: #fff;
+  border: 1px solid var(--agah-line);
+  border-radius: .75rem;
+  overflow: hidden;
+}
+.agah-press-item .agah-press-thumb {
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+}
+.agah-filter[aria-pressed="true"] { background: var(--agah-cyan); color: #fff; border-color: var(--agah-cyan); }
+
+/* Campos de fecha compactos */
+.agah-date-xs { font-size: .78rem; padding: .2rem .4rem; min-width: 0; }
+
+/* Pie de página */
+.agah-footer a { color: rgba(255,255,255,.85); }
+.agah-footer a:hover { color: #fff; }
+.agah-footer h2 { font-size: .85rem; letter-spacing: .02em; color: #9FD7EA; }
+
+/* La cabecera fija solo en escritorio: con zoom alto o en móvil no debe tapar el contenido */
+.agah-navbar .navbar-brand { font-size: clamp(1.15rem, 1rem + .8vw, 1.5rem); margin-right: .5rem; }
+@media (min-width: 992px) {
+  .agah-header { position: sticky; top: 0; z-index: 1020; }
+}
+
+/* ---------- Boletín: Jornadas de Sensibilización (prensa.html · #modalBoletin5) ---------- */
+.agah-modal-cover {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  align-items: flex-end;
+  background-color: var(--agah-navy);
+  background-size: cover;
+  background-position: center;
+}
+.agah-modal-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 30, 40, .88), rgba(15, 30, 40, .15));
+}
+.agah-modal-cover > * { position: relative; }
+
+/* Botón de cerrar siempre visible mientras se desplaza el boletín */
+.agah-modal-close {
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  z-index: 5;
+  box-sizing: content-box;
+  width: 1rem;
+  height: 1rem;
+  padding: .6rem;
+  border-radius: 50%;
+  background-color: rgba(23, 60, 72, .88);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+  background-size: .85rem;
+  opacity: 1;
+}
+.agah-modal-close:hover { background-color: var(--agah-navy-dark); }
+
+.agah-note {
+  background: #F2F8FA;
+  border-left: 5px solid var(--agah-cyan);
+  border-radius: .5rem;
+  padding: 1rem 1.25rem;
+}
+
+.agah-chip-list { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 0; }
+.agah-chip {
+  background: #fff;
+  border: 1px solid var(--agah-line);
+  border-radius: 999px;
+  padding: .35rem .9rem;
+  font-size: .92rem;
+  font-weight: 600;
+  color: var(--agah-navy);
+}
+
+/* Etapas del proceso */
+.agah-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: .75rem;
+  counter-reset: paso;
+}
+.agah-steps li {
+  counter-increment: paso;
+  background: #fff;
+  border: 1px solid var(--agah-line);
+  border-top: 4px solid var(--agah-line);
+  border-radius: .6rem;
+  padding: .8rem .9rem;
+  font-weight: 600;
+  font-size: .93rem;
+  line-height: 1.35;
+}
+.agah-steps li::before {
+  content: counter(paso);
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-bottom: .5rem;
+  border-radius: 50%;
+  background: var(--agah-surface);
+  color: var(--agah-navy);
+  font-weight: 800;
+  font-size: .9rem;
+}
+.agah-steps li.is-current { border-top-color: var(--agah-cyan); background: #F2F8FA; }
+.agah-steps li.is-current::before { background: var(--agah-cyan); color: #fff; }
+.agah-steps .agah-step-tag { display: block; font-size: .78rem; font-weight: 700; color: var(--agah-cyan); margin-top: .25rem; }
+
+/* Pestañas de ciudades: se desplazan en horizontal en pantallas pequeñas */
+.agah-city-tabs {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: .4rem;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid var(--agah-line);
+  scrollbar-width: thin;
+}
+.agah-city-tabs .nav-link {
+  white-space: nowrap;
+  border: 1px solid var(--agah-line);
+  border-radius: 999px;
+  padding: .4rem .95rem;
+}
+.agah-city-tabs .nav-link:hover { border-color: var(--agah-cyan); }
+.agah-city-tabs .nav-link.active { border-color: var(--agah-cyan); }
+@media (min-width: 992px) {
+  .agah-city-tabs { flex-wrap: wrap; overflow: visible; }
 }
 
-.agah-hero-img {
-  position: absolute;
-  inset: 0;
+/* Galería por ciudad */
+.agah-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: .5rem; }
+.agah-gallery-item {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: .6rem;
+  overflow: hidden;
+  background: var(--agah-surface);
+  aspect-ratio: 4 / 3;
+  cursor: zoom-in;
+}
+.agah-gallery-item img {
   width: 100%;
   height: 100%;
-  /* Al coincidir el aspect-ratio de la sección con el de la imagen,
-     "cover" no recorta nada: la imagen queda completa y a lo ancho. */
   object-fit: cover;
-  object-position: center;
-  z-index: 0;
+  display: block;
+  transition: transform .3s ease;
+}
+.agah-gallery-item:hover img { transform: scale(1.04); }
+.agah-gallery.is-featured .agah-gallery-item:first-child { grid-column: span 2; aspect-ratio: 16 / 10; }
+@media (min-width: 768px) {
+  .agah-gallery { grid-template-columns: repeat(3, 1fr); }
+  .agah-gallery[data-n="1"] { grid-template-columns: 1fr; max-width: 32rem; }
+  .agah-gallery[data-n="2"], .agah-gallery[data-n="4"] { grid-template-columns: repeat(2, 1fr); }
+  .agah-gallery.is-featured { grid-template-columns: repeat(4, 1fr); }
+  .agah-gallery.is-featured .agah-gallery-item:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
 }
 
-/* Difuminado: sólido a la izquierda (para el título) y transparente hacia el centro/derecha */
-.agah-hero-overlay {
-  position: absolute;
+/* Visor de fotos (dentro del modal) */
+.agah-lightbox {
+  position: fixed;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(23, 60, 72, 1) 0%,
-    rgba(23, 60, 72, 0.97) 28%,
-    rgba(23, 60, 72, 0.7) 46%,
-    rgba(23, 60, 72, 0.3) 60%,
-    rgba(23, 60, 72, 0.1) 72%
-  );
-  z-index: 1;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 20, 26, .98);
+  padding: 3.5rem 3.5rem 2rem;
 }
-
-.agah-hero-content {
-  position: relative;
-  z-index: 2;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-/* Pestañas (nav-pills) con los colores de marca, usadas en Tablero, Repositorio y Prensa */
-.nav-pills .nav-link {
-  color: #173C48;
-  font-weight: 600;
-  font-size: .95rem;
-}
-.nav-pills .nav-link.active {
-  background-color: #0F6685;
+.agah-lightbox[hidden], .agah-lb-btn[hidden] { display: none !important; }
+.agah-lb-figure { margin: 0; max-width: 100%; max-height: 100%; display: flex; flex-direction: column; align-items: center; }
+.agah-lb-img { max-width: 100%; max-height: calc(100vh - 9rem); object-fit: contain; border-radius: .4rem; background: #0b1a20; }
+.agah-lb-caption { color: #fff; margin-top: .75rem; font-size: .95rem; }
+.agah-lb-btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .16);
   color: #fff;
+  font-size: 1.25rem;
 }
-
-/* Campos de fecha compactos (más chicos que form-control-sm), usados en filtros como Repositorio */
-.agah-date-xs {
-  font-size: .78rem;
-  padding: .2rem .4rem;
-  min-width: 0;
-}
-
-@media (max-width: 767.98px) {
-  .agah-hero-overlay {
-    background: linear-gradient(
-      to right,
-      rgba(23, 60, 72, 1) 0%,
-      rgba(23, 60, 72, 1) 40%,
-      rgba(23, 60, 72, 0.7) 65%,
-      rgba(23, 60, 72, 0.35) 85%,
-      rgba(23, 60, 72, 0.2) 100%
-    );
-  }
+.agah-lb-btn:hover { background: rgba(255, 255, 255, .3); }
+.agah-lb-close { top: .75rem; right: .75rem; }
+.agah-lb-prev { left: .6rem; top: 50%; transform: translateY(-50%); }
+.agah-lb-next { right: .6rem; top: 50%; transform: translateY(-50%); }
+@media (max-width: 575.98px) {
+  .agah-lightbox { padding: 3.5rem .5rem 4.5rem; }
+  .agah-lb-prev, .agah-lb-next { top: auto; bottom: .75rem; transform: none; }
+  .agah-lb-prev { left: calc(50% - 3.4rem); }
+  .agah-lb-next { right: calc(50% - 3.4rem); }
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sala de Prensa | Alianza para el Gobierno Abierto Honduras</title>
+  <title>Sala de prensa | Alianza para el Gobierno Abierto Honduras</title>
   <link rel="icon" type="image/jpeg" href="img/logo-agah-redondo.jpg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -13,173 +13,113 @@
 
   <div id="site-header"></div>
 
-  <main>
+  <main id="contenido" tabindex="-1">
 
     <section class="bg-agah-navy text-white py-5">
-      <div class="container py-3">
-        <h1 class="fw-bold display-6 mb-2">Centro de Noticias y Prensa</h1>
-        <p class="fs-5 text-white-50 mb-0" style="max-width: 50rem;">
-          Mantente informado sobre las últimas novedades, acuerdos del Comité Directivo, eventos internacionales y
-          avances en los compromisos de la AGAH.
+      <div class="container py-2">
+        <h1 class="fw-bold display-6 mb-2">Sala de prensa</h1>
+        <p class="fs-5 text-white-50 mb-0" style="max-width: 46rem;">
+          Comunicados, notas de prensa y eventos de la Alianza para el Gobierno Abierto Honduras.
         </p>
       </div>
     </section>
 
-    <!-- Destacado principal -->
     <section class="py-5 bg-white">
       <div class="container">
-        <div class="bg-agah-grey rounded-4 overflow-hidden mb-5">
-          <div class="row g-0 align-items-stretch">
-            <div class="col-md-6 bg-agah-navy" style="min-height:260px; background-image:url('img/boletin-adhesion-1.jpg'); background-size:cover; background-position:center;"></div>
-            <div class="col-md-6 p-4 p-md-5 d-flex flex-column justify-content-center">
-              <span class="badge bg-agah-amber text-white align-self-start mb-2">Comunicado Oficial</span>
-              <h3 class="fw-bold text-agah-navy">Honduras ratifica su adhesión a la Alianza para el Gobierno Abierto Honduras (AGAH)</h3>
-              <p class="small text-secondary mb-2">27 de julio de 2026</p>
-              <p class="text-secondary">Honduras ratificó su adhesión a la Alianza para el Gobierno Abierto Honduras (AGAH), reafirmando su compromiso con el fortalecimiento de la transparencia, la participación ciudadana, la rendición de cuentas y la innovación en la gestión pública.</p>
-              <p class="text-secondary">El acto, liderado por el Instituto de Acceso a la Información Pública (IAIP), reunió a representantes del gobierno, sociedad civil, academia, sector privado y organismos internacionales, consolidando una alianza de colaboración para impulsar un Estado más abierto y cercano a la ciudadanía.</p>
-              <p class="text-secondary">Como parte de este proceso, el IAIP asume la Secretaría Técnica de la AGAH, mientras que el Comité Directivo 2026-2030 y el Consejo Consultivo de Estado Abierto quedan conformados por instituciones y organizaciones de distintos sectores, garantizando una gobernanza participativa.</p>
-              <p class="text-secondary">La ratificación marca el inicio de la construcción del Sexto Plan de Acción de Gobierno Abierto, cuya elaboración incluirá procesos de co-creación con la ciudadanía a nivel nacional y culminará con su lanzamiento en enero de 2027.</p>
-              <p class="text-secondary flex-grow-1">Con este paso, Honduras fortalece su compromiso con los estándares internacionales de gobierno abierto y avanza hacia una gestión pública más transparente, inclusiva y orientada a resultados.</p>
-              <a href="#" data-bs-toggle="modal" data-bs-target="#modalBoletin1" class="btn bg-agah-cyan text-white fw-bold align-self-start">Leer Nota Completa</a>
+
+        <!-- Noticia destacada: titular, fecha, resumen breve y acceso a la nota completa -->
+        <h2 class="visually-hidden">Noticia destacada</h2>
+        <article class="agah-press-feature mb-5">
+          <div class="row g-0">
+            <div class="col-lg-6 agah-press-photo" style="background-image:url('img/boletin-adhesion-1.jpg');" role="img"
+              aria-label="Representantes de gobierno y sociedad civil en el acto de ratificación de la AGAH"></div>
+            <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-center">
+              <span class="badge bg-agah-cyan align-self-start mb-3">Comunicado oficial · Destacado</span>
+              <h3 class="h2 fw-bold text-agah-navy mb-2">Honduras ratifica su adhesión a la Alianza para el Gobierno Abierto Honduras</h3>
+              <p class="agah-meta mb-3"><time datetime="2026-07-27">27 de julio de 2026</time> · Fuente: IAIP, Secretaría Técnica de la AGAH</p>
+              <p class="fs-5 text-secondary mb-4" style="max-width: 36rem;">El IAIP asume la Secretaría Técnica, se conforman el Comité Directivo 2026–2030
+                y el Consejo Consultivo de Estado Abierto, y arranca la construcción del VI Plan de Acción, previsto para enero de 2027.</p>
+              <a href="#modalBoletin1" data-bs-toggle="modal" role="button" class="btn bg-agah-cyan text-white fw-bold align-self-start px-4">Leer nota completa</a>
             </div>
+          </div>
+        </article>
+
+        <!-- Listado ordenado por fecha (más reciente primero) con filtro por tipo -->
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+          <h2 class="h3 fw-bold text-agah-navy mb-0">Todas las publicaciones</h2>
+          <div class="d-flex flex-wrap gap-2" role="group" aria-label="Filtrar publicaciones por tipo">
+            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill agah-filter" data-filtro="" aria-pressed="true">Todas</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill agah-filter" data-filtro="comunicado" aria-pressed="false">Comunicados</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill agah-filter" data-filtro="nota" aria-pressed="false">Notas de prensa</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill agah-filter" data-filtro="evento" aria-pressed="false">Eventos</button>
           </div>
         </div>
+        <p id="prensaStatus" class="visually-hidden" aria-live="polite"></p>
 
-        <!-- Filtros -->
-        <div class="d-flex flex-wrap gap-2 mb-4">
-          <button class="btn btn-sm bg-agah-cyan text-white rounded-pill">Todas</button>
-          <button class="btn btn-sm btn-outline-secondary rounded-pill">Comunicados Oficiales</button>
-          <button class="btn btn-sm btn-outline-secondary rounded-pill">Eventos y Talleres</button>
-          <button class="btn btn-sm btn-outline-secondary rounded-pill">Notas de Prensa</button>
-          <button class="btn btn-sm btn-outline-secondary rounded-pill">Artículos de Opinión / Reportajes</button>
-        </div>
-
-        <!-- Grilla de publicaciones -->
-        <div class="row g-4 mb-5">
-          <div class="col-md-4">
-            <div class="bg-white border rounded-4 overflow-hidden h-100 d-flex flex-column">
-              <div class="bg-agah-grey" style="height:140px; background-image:url('img/boletin-adhesion-2.jpg'); background-size:cover; background-position:center;"></div>
-              <div class="p-3 d-flex flex-column flex-grow-1">
-                <span class="badge text-bg-secondary align-self-start mb-2">Comunicado</span>
-                <p class="small text-secondary mb-1">27 de julio de 2026</p>
-                <h6 class="fw-bold text-agah-navy flex-grow-1">IAIP impulsa la transparencia con la Alianza de Gobierno Abierto</h6>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#modalBoletin2" class="small fw-bold text-agah-cyan text-decoration-none">Leer más →</a>
+        <div class="row g-4 mb-4" id="prensaLista">
+          <div class="col-md-6 col-lg-4" data-tipo="nota">
+            <article class="agah-press-item h-100 d-flex flex-column">
+              <div class="agah-press-thumb" style="background-color:#173C48; background-image:url('img/jornadas/siguatepeque/DSC08355.jpg');" aria-hidden="true"></div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <span class="badge bg-agah-amber align-self-start mb-2">Boletín de prensa</span>
+                <p class="agah-meta mb-1">Gira nacional 2026 · 10 ciudades · Fuente: AGAH, con el IAIP como Secretaría Técnica</p>
+                <h3 class="h5 fw-bold text-agah-navy">AGAH impulsa Jornadas de Sensibilización para la cocreación del VI Plan de Acción</h3>
+                <p class="text-secondary flex-grow-1">Información general de la etapa preparatoria y reseña con fotos de cada ciudad.</p>
+                <a href="#modalBoletin5" data-bs-toggle="modal" role="button" class="fw-bold text-agah-cyan">Leer boletín<span class="visually-hidden">: Jornadas de Sensibilización</span></a>
               </div>
-            </div>
+            </article>
           </div>
-          <div class="col-md-4">
-            <div class="bg-white border rounded-4 overflow-hidden h-100 d-flex flex-column">
-              <div class="bg-agah-grey" style="height:140px; background-image:url('img/boletin-adhesion-3.jpg'); background-size:cover; background-position:center;"></div>
-              <div class="p-3 d-flex flex-column flex-grow-1">
-                <span class="badge text-bg-secondary align-self-start mb-2">Evento</span>
-                <p class="small text-secondary mb-1">27 de julio de 2026</p>
-                <h6 class="fw-bold text-agah-navy flex-grow-1">Consejo Directivo y Consejo Consultivo de la AGAH participan en taller de formación</h6>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#modalBoletin3" class="small fw-bold text-agah-cyan text-decoration-none">Leer más →</a>
+          <div class="col-md-6 col-lg-4" data-tipo="nota">
+            <article class="agah-press-item h-100 d-flex flex-column">
+              <div class="agah-press-thumb" style="background-image:url('img/boletin-adhesion-4.jpg');" aria-hidden="true"></div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <span class="badge bg-agah-amber align-self-start mb-2">Nota de prensa</span>
+                <p class="agah-meta mb-1"><time datetime="2026-08-10">10 de agosto de 2026</time></p>
+                <h3 class="h5 fw-bold text-agah-navy">AGAH fortalece su planificación estratégica para avanzar en el Gobierno Abierto</h3>
+                <p class="text-secondary flex-grow-1">Sesión del Comité Directivo sobre la co-creación del VI Plan de Acción.</p>
+                <a href="#modalBoletin4" data-bs-toggle="modal" role="button" class="fw-bold text-agah-cyan">Leer nota<span class="visually-hidden">: AGAH fortalece su planificación estratégica</span></a>
               </div>
-            </div>
+            </article>
           </div>
-          <div class="col-md-4">
-            <div class="bg-white border rounded-4 overflow-hidden h-100 d-flex flex-column">
-              <div class="bg-agah-grey" style="height:140px; background-image:url('img/boletin-adhesion-4.jpg'); background-size:cover; background-position:center;"></div>
-              <div class="p-3 d-flex flex-column flex-grow-1">
-                <span class="badge text-bg-secondary align-self-start mb-2">Nota de Prensa</span>
-                <p class="small text-secondary mb-1">10 de agosto de 2026</p>
-                <h6 class="fw-bold text-agah-navy flex-grow-1">AGAH fortalece su planificación estratégica para avanzar en el Gobierno Abierto</h6>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#modalBoletin4" class="small fw-bold text-agah-cyan text-decoration-none">Leer más →</a>
+          <div class="col-md-6 col-lg-4" data-tipo="comunicado">
+            <article class="agah-press-item h-100 d-flex flex-column">
+              <div class="agah-press-thumb" style="background-image:url('img/boletin-adhesion-2.jpg');" aria-hidden="true"></div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <span class="badge bg-agah-cyan align-self-start mb-2">Comunicado</span>
+                <p class="agah-meta mb-1"><time datetime="2026-07-27">27 de julio de 2026</time></p>
+                <h3 class="h5 fw-bold text-agah-navy">IAIP impulsa la transparencia con la Alianza de Gobierno Abierto</h3>
+                <p class="text-secondary flex-grow-1">Jornada de trabajo en la UNAH con los miembros de la AGAH y OGP.</p>
+                <a href="#modalBoletin2" data-bs-toggle="modal" role="button" class="fw-bold text-agah-cyan">Leer nota<span class="visually-hidden">: IAIP impulsa la transparencia</span></a>
               </div>
-            </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-tipo="evento">
+            <article class="agah-press-item h-100 d-flex flex-column">
+              <div class="agah-press-thumb" style="background-image:url('img/boletin-adhesion-3.jpg');" aria-hidden="true"></div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <span class="badge bg-agah-green align-self-start mb-2">Evento</span>
+                <p class="agah-meta mb-1"><time datetime="2026-07-27">27 de julio de 2026</time></p>
+                <h3 class="h5 fw-bold text-agah-navy">Consejo Directivo y Consejo Consultivo participan en taller de formación</h3>
+                <p class="text-secondary flex-grow-1">Formación sobre metas e hitos para los compromisos institucionales.</p>
+                <a href="#modalBoletin3" data-bs-toggle="modal" role="button" class="fw-bold text-agah-cyan">Leer nota<span class="visually-hidden">: taller de formación</span></a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-tipo="comunicado">
+            <article class="agah-press-item h-100 d-flex flex-column">
+              <div class="agah-press-thumb" style="background-image:url('img/boletin-adhesion-1.jpg');" aria-hidden="true"></div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <span class="badge bg-agah-cyan align-self-start mb-2">Comunicado oficial</span>
+                <p class="agah-meta mb-1"><time datetime="2026-07-27">27 de julio de 2026</time></p>
+                <h3 class="h5 fw-bold text-agah-navy">Honduras ratifica su adhesión a la Alianza para el Gobierno Abierto Honduras</h3>
+                <p class="text-secondary flex-grow-1">Se conforman el Comité Directivo 2026–2030 y el Consejo Consultivo.</p>
+                <a href="#modalBoletin1" data-bs-toggle="modal" role="button" class="fw-bold text-agah-cyan">Leer nota<span class="visually-hidden">: Honduras ratifica su adhesión</span></a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Kits de Prensa 
-    <section class="py-5 bg-agah-grey">
-      <div class="container">
-        <h2 class="fw-bold text-agah-navy mb-4">Kits de Prensa y Recursos Descargables</h2>
-        <div class="row g-4 mb-4">
-          <div class="col-md-6">
-            <div class="bg-white rounded-4 p-4 h-100">
-              <h6 class="fw-bold text-agah-navy">Logotipos Oficiales</h6>
-              <p class="small text-secondary">Archivos vectoriales y de alta resolución en PNG, SVG y EPS (color, fondo oscuro, escala de grises y monocromático).</p>
-              <a href="#" class="btn btn-sm bg-agah-navy text-white hover-bg-agah-cyan">Descargar Paquete de Logos ZIP</a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="bg-white rounded-4 p-4 h-100">
-              <h6 class="fw-bold text-agah-navy">Guía Básica de Uso de Marca</h6>
-              <p class="small text-secondary">Paleta de colores oficiales (HEX / RGB), tipografías institucionales y lineamientos de aplicación visual.</p>
-              <a href="#" class="btn btn-sm bg-agah-navy text-white hover-bg-agah-cyan">Descargar Manual de Marca PDF</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-4 mb-4">
-          <div class="col-md-6">
-            <div class="bg-white rounded-4 p-4 h-100">
-              <h6 class="fw-bold text-agah-navy">Banco de Fotos Oficiales</h6>
-              <p class="small text-secondary">Fotografías de alta resolución de sesiones del Comité Directivo, firmas de acuerdos y talleres de co-creación, con créditos libres para prensa.</p>
-              <a href="#" class="btn btn-sm bg-agah-navy text-white hover-bg-agah-cyan">Acceder a la Galería de Fotos</a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="bg-white rounded-4 p-4 h-100">
-              <h6 class="fw-bold text-agah-navy">Hojas Informativas (Factsheets)</h6>
-              <p class="small text-secondary">Resúmenes ejecutivos de 1 página con datos clave, cifras del Plan de Acción y preguntas frecuentes sobre la AGAH.</p>
-              <a href="#" class="btn btn-sm bg-agah-navy text-white hover-bg-agah-cyan">Descargar Factsheet Institucional PDF</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-4 p-4 p-md-5">
-          <h6 class="fw-bold text-agah-navy">Archivo de Boletines Informativos</h6>
-          <p class="small text-secondary mb-3">Registro histórico de los boletines digitales emitidos por la Secretaría Técnica.</p>
-
-          <ul class="list-group list-group-flush mb-4">
-            <li class="list-group-item d-flex justify-content-between align-items-start px-0">
-              <div>
-                <span class="small text-secondary d-block">27 de julio de 2026</span>
-                <span class="fw-semibold text-agah-navy">Honduras ratifica su adhesión a la Alianza para el Gobierno Abierto Honduras (AGAH)</span>
-              </div>
-              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none text-nowrap ms-3">Ver →</a>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-start px-0">
-              <div>
-                <span class="small text-secondary d-block">27 de julio de 2026</span>
-                <span class="fw-semibold text-agah-navy">IAIP impulsa la transparencia con la Alianza de Gobierno Abierto</span>
-              </div>
-              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none text-nowrap ms-3">Ver →</a>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-start px-0">
-              <div>
-                <span class="small text-secondary d-block">27 de julio de 2026</span>
-                <span class="fw-semibold text-agah-navy">Consejo Directivo y Consejo Consultivo de la AGAH participan en taller de formación</span>
-              </div>
-              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none text-nowrap ms-3">Ver →</a>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-start px-0">
-              <div>
-                <span class="small text-secondary d-block">10 de agosto de 2026</span>
-                <span class="fw-semibold text-agah-navy">AGAH fortalece su planificación estratégica para avanzar en el Gobierno Abierto</span>
-              </div>
-              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none text-nowrap ms-3">Ver →</a>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-start px-0">
-              <div>
-                <span class="small text-secondary d-block">19 de agosto de 2026</span>
-                <span class="fw-semibold text-agah-navy">AGAH avanza en acciones para promover el Gobierno Abierto en Honduras</span>
-              </div>
-              <a href="#" class="small fw-bold text-agah-cyan text-decoration-none text-nowrap ms-3">Ver →</a>
-            </li>
-          </ul>
-
-          <div class="input-group" style="max-width: 28rem;">
-            <input type="email" class="form-control" placeholder="Ingrese su correo electrónico">
-            <button class="btn bg-agah-cyan text-white fw-bold">Suscribirme al Boletín</button>
-          </div>
-        </div>
-      </div>
-    </section>-->
 
     <!-- ============================================================
          MODALES: Texto completo de cada boletín (contenido real, sin backend)
@@ -189,7 +129,7 @@
         <div class="modal-content border-0 rounded-4 overflow-hidden">
           <div class="position-relative" style="height:220px; background-image:url('img/boletin-adhesion-1.jpg'); background-size:cover; background-position:center;">
             <div class="position-absolute top-0 start-0 w-100 h-100" style="background:linear-gradient(to top, rgba(15,30,40,0.85), rgba(15,30,40,0.15));"></div>
-            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             <div class="position-absolute bottom-0 start-0 p-4 text-white">
               <span class="badge bg-agah-amber text-white mb-2">Comunicado Oficial</span>
               <h4 class="fw-bold mb-0" id="modalBoletin1Label">Honduras ratifica su adhesión a la Alianza para el Gobierno Abierto Honduras (AGAH)</h4>
@@ -215,7 +155,7 @@
         <div class="modal-content border-0 rounded-4 overflow-hidden">
           <div class="position-relative" style="height:220px; background-image:url('img/boletin-adhesion-2.jpg'); background-size:cover; background-position:center;">
             <div class="position-absolute top-0 start-0 w-100 h-100" style="background:linear-gradient(to top, rgba(15,30,40,0.85), rgba(15,30,40,0.15));"></div>
-            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             <div class="position-absolute bottom-0 start-0 p-4 text-white">
               <span class="badge bg-agah-cyan text-white mb-2">Comunicado</span>
               <h4 class="fw-bold mb-0" id="modalBoletin2Label">IAIP impulsa la transparencia con la Alianza de Gobierno Abierto</h4>
@@ -239,7 +179,7 @@
         <div class="modal-content border-0 rounded-4 overflow-hidden">
           <div class="position-relative" style="height:220px; background-image:url('img/boletin-adhesion-3.jpg'); background-size:cover; background-position:center;">
             <div class="position-absolute top-0 start-0 w-100 h-100" style="background:linear-gradient(to top, rgba(15,30,40,0.85), rgba(15,30,40,0.15));"></div>
-            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             <div class="position-absolute bottom-0 start-0 p-4 text-white">
               <span class="badge bg-agah-green text-white mb-2">Evento</span>
               <h4 class="fw-bold mb-0" id="modalBoletin3Label">Consejo Directivo y Consejo Consultivo de la AGAH participan en taller de formación</h4>
@@ -263,7 +203,7 @@
         <div class="modal-content border-0 rounded-4 overflow-hidden">
           <div class="position-relative" style="height:220px; background-image:url('img/boletin-adhesion-4.jpg'); background-size:cover; background-position:center;">
             <div class="position-absolute top-0 start-0 w-100 h-100" style="background:linear-gradient(to top, rgba(15,30,40,0.85), rgba(15,30,40,0.15));"></div>
-            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             <div class="position-absolute bottom-0 start-0 p-4 text-white">
               <span class="badge bg-agah-amber text-white mb-2">Nota de Prensa</span>
               <h4 class="fw-bold mb-0" id="modalBoletin4Label">AGAH fortalece su planificación estratégica para avanzar en el Gobierno Abierto</h4>
@@ -282,6 +222,192 @@
       </div>
     </div>
 
+    <!-- ============================================================
+         BOLETÍN 5 · Jornadas de Sensibilización (información general + 10 ciudades con fotos)
+         Fotos: img/jornadas/<ciudad>/  ·  Lista de fotos: js/jornadas-fotos.js  ·  Galería: js/jornadas.js
+         =========================================================== -->
+    <div class="modal fade" id="modalBoletin5" tabindex="-1" aria-labelledby="modalBoletin5Label" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable modal-fullscreen-md-down">
+        <div class="modal-content border-0 rounded-4 overflow-hidden">
+          <button type="button" class="btn-close agah-modal-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          <div class="modal-body p-0">
+          <div class="agah-modal-cover" style="background-image:url('img/jornadas/siguatepeque/DSC08355.jpg');">
+            <div class="p-4 pt-5 text-white">
+              <span class="badge bg-agah-amber text-white mb-2">Boletín de prensa</span>
+              <h4 class="fw-bold mb-0" id="modalBoletin5Label">La Alianza de Gobierno Abierto Honduras (AGAH) impulsa Jornadas de Sensibilización como etapa preparatoria para la cocreación del VI Plan de Acción de Estado Abierto Honduras</h4>
+            </div>
+          </div>
+          <div class="p-4 p-md-5">
+
+            <p class="fs-5 text-agah-navy" style="line-height:1.7;">La Alianza de Gobierno Abierto Honduras (AGAH), con el acompañamiento del Instituto de Acceso a la Información Pública (IAIP), en su condición de Secretaría Técnica, desarrolla las Jornadas de Sensibilización como parte de la etapa preparatoria del proceso de cocreación del VI Plan de Acción de Estado Abierto Honduras.</p>
+            <p class="text-secondary" style="line-height:1.7;">Las jornadas tienen como propósito fortalecer el conocimiento de los diferentes actores sobre los principios y alcances del Gobierno Abierto, así como generar espacios participativos que permitan comenzar a identificar prioridades, desafíos, necesidades y oportunidades desde las distintas realidades sectoriales y territoriales. En esta jornada participaron representantes de Sector Público, Sociedad Civil, Academia, Empresa Privada, entre otros, quienes conocieron aspectos relacionados con la Alianza para el Gobierno Abierto, los principios de Gobierno Abierto, el funcionamiento de la AGAH y las etapas previstas para el proceso de cocreación del VI Plan de Acción.</p>
+
+            <h5 class="fw-bold text-agah-navy mt-5 mb-3">Nueve áreas de trabajo</h5>
+            <p class="text-secondary" style="line-height:1.7;">Como parte de la metodología de trabajo, las personas participantes analizaron nueve áreas vinculadas con Gobierno Abierto:</p>
+            <ul class="agah-chip-list mb-3">
+              <li class="agah-chip">Anticorrupción e integridad</li>
+              <li class="agah-chip">Espacio cívico</li>
+              <li class="agah-chip">Clima y medio ambiente</li>
+              <li class="agah-chip">Gobernanza digital</li>
+              <li class="agah-chip">Apertura fiscal</li>
+              <li class="agah-chip">Inclusión</li>
+              <li class="agah-chip">Justicia</li>
+              <li class="agah-chip">Participación pública</li>
+              <li class="agah-chip">Derecho de acceso a la información</li>
+            </ul>
+            <p class="text-secondary" style="line-height:1.7;">El ejercicio metodológico permitió avanzar desde la exploración de estas áreas hacia la identificación y priorización de desafíos y oportunidades, tomando como punto de partida la experiencia y el ámbito de actuación de cada sector o territorio participante. Para facilitar la recopilación y sistematización de los aportes, se utilizaron fichas técnicas adaptadas a los distintos sectores participantes, así como instrumentos para el trabajo colectivo y la consolidación de los principales resultados de cada jornada.</p>
+
+            <h5 class="fw-bold text-agah-navy mt-5 mb-3">Una etapa preparatoria para la cocreación</h5>
+            <div class="agah-note mb-3">
+              <p class="mb-0 text-agah-navy fw-semibold" style="line-height:1.7;">Las Jornadas de Sensibilización tienen un carácter preparatorio y exploratorio. En consecuencia, las prioridades y oportunidades identificadas durante estos espacios no constituyen todavía compromisos del VI Plan de Acción ni sustituyen la consulta oficial.</p>
+            </div>
+            <p class="text-secondary" style="line-height:1.7;">Los aportes obtenidos serán integrados con los provenientes de las demás jornadas sectoriales y territoriales y posteriormente sistematizados, con el propósito de identificar tendencias, coincidencias y áreas de interés que contribuyan a la construcción de un mapa preliminar de prioridades y sirvan como insumo para las siguientes etapas del proceso. De esta manera, el proceso busca ampliar las oportunidades de participación y promover la incorporación de perspectivas provenientes de las instituciones públicas, sociedad civil, academia, sector privado y los distintos territorios del país.</p>
+
+            <h5 class="fw-bold text-agah-navy mt-5 mb-3">El proceso continúa</h5>
+            <ol class="agah-steps mb-3">
+              <li class="is-current">Sensibilización<span class="agah-step-tag">Etapa en curso</span></li>
+              <li>Consulta oficial</li>
+              <li>Cocreación y definición de compromisos</li>
+              <li>Socialización y retroalimentación</li>
+              <li>Respuesta razonada</li>
+              <li>Implementación abierta</li>
+            </ol>
+            <p class="text-secondary" style="line-height:1.7;">A través de este proceso, la AGAH busca fortalecer espacios de diálogo y colaboración que permitan incorporar las perspectivas de los distintos sectores y territorios en las diferentes etapas de cocreación del VI Plan de Acción de Estado Abierto Honduras.</p>
+            <p class="text-secondary" style="line-height:1.7;">La AGAH invita a la ciudadanía, organizaciones de sociedad civil, academia, sector privado, instituciones públicas y demás actores interesados a sumarse activamente a este proceso y participar en las próximas Jornadas de Sensibilización que se desarrollarán en diferentes sectores y territorios del país. Asimismo, se exhorta a la ciudadanía a mantenerse informada y atenta a las redes sociales, noticias, boletines y demás canales oficiales de comunicación, a través de los cuales se estarán dando a conocer las fechas, lugares, horarios y mecanismos de participación de las próximas jornadas y de las siguientes etapas del proceso de cocreación. La participación de los distintos sectores y territorios permitirá ampliar las perspectivas recogidas durante esta etapa y contribuir a la identificación de los desafíos, necesidades y oportunidades que serán sistematizados como insumos para las etapas posteriores.</p>
+
+            <!-- ===== Subdivisión por ciudades ===== -->
+            <h5 class="fw-bold text-agah-navy mt-5 mb-1" id="jornadasCiudadesTitulo">Jornadas por ciudad</h5>
+            <p class="text-secondary mb-3">Selecciona una ciudad para ver su reseña y sus fotos.</p>
+            <div class="agah-card p-3 p-md-4 mb-4">
+              <ul class="nav nav-pills agah-city-tabs mb-4" id="jornadasTabs" role="tablist" aria-label="Ciudades de las Jornadas de Sensibilización">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="jorTab-danli" data-bs-toggle="pill" data-bs-target="#jorPane-danli" type="button" role="tab" aria-controls="jorPane-danli" aria-selected="true">Danlí</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="jorTab-catacamas" data-bs-toggle="pill" data-bs-target="#jorPane-catacamas" type="button" role="tab" aria-controls="jorPane-catacamas" aria-selected="false">Catacamas</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="jorTab-choluteca" data-bs-toggle="pill" data-bs-target="#jorPane-choluteca" type="button" role="tab" aria-controls="jorPane-choluteca" aria-selected="false">Choluteca</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="jorTab-san-lorenzo" data-bs-toggle="pill" data-bs-target="#jorPane-san-lorenzo" type="button" role="tab" aria-controls="jorPane-san-lorenzo" aria-selected="false">San Lorenzo</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="jorTab-siguatepeque" data-bs-toggle="pill" data-bs-target="#jorPane-siguatepeque" type="button" role="tab" aria-controls="jorPane-siguatepeque" aria-selected="false">Siguatepeque</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="jorTab-la-esperanza" data-bs-toggle="pill" data-bs-target="#jorPane-la-esperanza" type="button" role="tab" aria-controls="jorPane-la-esperanza" aria-selected="false">La Esperanza</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="jorTab-gracias" data-bs-toggle="pill" data-bs-target="#jorPane-gracias" type="button" role="tab" aria-controls="jorPane-gracias" aria-selected="false">Gracias</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="jorTab-santa-rosa-de-copan" data-bs-toggle="pill" data-bs-target="#jorPane-santa-rosa-de-copan" type="button" role="tab" aria-controls="jorPane-santa-rosa-de-copan" aria-selected="false">Santa Rosa de Copán</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="jorTab-san-pedro-sula" data-bs-toggle="pill" data-bs-target="#jorPane-san-pedro-sula" type="button" role="tab" aria-controls="jorPane-san-pedro-sula" aria-selected="false">San Pedro Sula</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="jorTab-la-ceiba" data-bs-toggle="pill" data-bs-target="#jorPane-la-ceiba" type="button" role="tab" aria-controls="jorPane-la-ceiba" aria-selected="false">La Ceiba</button>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="jorPane-danli" role="tabpanel" aria-labelledby="jorTab-danli" tabindex="0">
+                  <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                    <h6 class="h4 fw-bold text-agah-navy mb-0">Danlí</h6>
+                    <span class="badge bg-agah-cyan">El Paraíso</span>
+                  </div>
+                  <p class="text-secondary" style="line-height:1.7;">En Danlí, El Paraíso, se desarrolló una Jornada de Sensibilización orientada a promover el conocimiento sobre los principios del Gobierno Abierto y preparar a los distintos sectores para la cocreación del VI Plan de Acción de Estado Abierto Honduras (2026–2030). La actividad propició el intercambio de ideas entre representantes de diversos sectores, mientras la difusión en redes sociales y medios de comunicación contribuyó a dar visibilidad territorial a esta iniciativa.</p>
+                  <div class="agah-gallery-host mt-3" data-ciudad="danli" data-nombre="Danlí, El Paraíso"></div>
+                </div>
+                <div class="tab-pane fade" id="jorPane-catacamas" role="tabpanel" aria-labelledby="jorTab-catacamas" tabindex="0">
+                  <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                    <h6 class="h4 fw-bold text-agah-navy mb-0">Catacamas</h6>
+                    <span class="badge bg-agah-cyan">Olancho</span>
+                  </div>
+                  <p class="text-secondary" style="line-height:1.7;">La ciudad de Catacamas, Olancho, fue escenario de un espacio de diálogo y aprendizaje sobre el funcionamiento de la AGAH y las etapas previstas para la construcción participativa del VI Plan de Acción de Estado Abierto Honduras. La jornada permitió explorar desafíos y oportunidades vinculados con la anticorrupción, la inclusión, la justicia, el medio ambiente, la gobernanza digital y el derecho de acceso a la información, acercando estos temas a las realidades del territorio.</p>
+                  <div class="agah-gallery-host mt-3" data-ciudad="catacamas" data-nombre="Catacamas, Olancho"></div>
+                </div>
+                <div class="tab-pane fade" id="jorPane-choluteca" role="tabpanel" aria-labelledby="jorTab-choluteca" tabindex="0">
+                  <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                    <h6 class="h4 fw-bold text-agah-navy mb-0">Choluteca</h6>
+                    <span class="badge bg-agah-cyan">Choluteca</span>
+                  </div>
+                  <p class="text-secondary" style="line-height:1.7;">En Choluteca, la Jornada de Sensibilización reunió perspectivas de distintos sectores en torno a la transparencia, la integridad y la participación ciudadana. La cobertura de medios de comunicación de la zona sur permitió ampliar el alcance de los mensajes sobre Gobierno Abierto y destacar la importancia de construir propuestas desde las necesidades locales, como parte de la etapa preparatoria del VI Plan de Acción de Estado Abierto Honduras.</p>
+                  <div class="agah-gallery-host mt-3" data-ciudad="choluteca" data-nombre="Choluteca, Choluteca"></div>
+                </div>
+                <div class="tab-pane fade" id="jorPane-san-lorenzo" role="tabpanel" aria-labelledby="jorTab-san-lorenzo" tabindex="0">
+                  <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                    <h6 class="h4 fw-bold text-agah-navy mb-0">San Lorenzo</h6>
+                    <span class="badge bg-agah-cyan">Valle</span>
+                  </div>
+                  <p class="text-secondary" style="line-height:1.7;">En San Lorenzo, Valle, se impulsó el diálogo entre actores del sector público, la sociedad civil, la academia y la empresa privada para identificar desafíos y oportunidades relacionados con el Gobierno Abierto. La actividad formó parte de la preparación para la cocreación del VI Plan de Acción de Estado Abierto Honduras, y su difusión mediante canales institucionales y medios locales contribuyó a acercar esta iniciativa a la ciudadanía de la zona sur.</p>
+                  <div class="agah-gallery-host mt-3" data-ciudad="san-lorenzo" data-nombre="San Lorenzo, Valle"></div>
+                </div>
+                <div class="tab-pane fade" id="jorPane-siguatepeque" role="tabpanel" aria-labelledby="jorTab-siguatepeque" tabindex="0">
+                  <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                    <h6 class="h4 fw-bold text-agah-navy mb-0">Siguatepeque</h6>
+                    <span class="badge bg-agah-cyan">Comayagua</span>
+                  </div>
+                  <p class="text-secondary" style="line-height:1.7;">Siguatepeque, Comayagua, formó parte de la gira nacional destinada a fortalecer el conocimiento y la participación de los diferentes sectores en el proceso de Estado Abierto. Durante estas jornadas se abordaron los principios de transparencia, colaboración y participación pública, junto con nueve áreas de política vinculadas al Gobierno Abierto, generando insumos para reconocer prioridades y oportunidades que serán considerados en las siguientes etapas del proceso.</p>
+                  <div class="agah-gallery-host mt-3" data-ciudad="siguatepeque" data-nombre="Siguatepeque, Comayagua"></div>
+                </div>
+                <div class="tab-pane fade" id="jorPane-la-esperanza" role="tabpanel" aria-labelledby="jorTab-la-esperanza" tabindex="0">
+                  <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                    <h6 class="h4 fw-bold text-agah-navy mb-0">La Esperanza</h6>
+                    <span class="badge bg-agah-cyan">Intibucá</span>
+                  </div>
+                  <p class="text-secondary" style="line-height:1.7;">En La Esperanza, Intibucá, la Jornada de Sensibilización abrió un espacio para reflexionar sobre los retos y las oportunidades del Gobierno Abierto desde una perspectiva territorial. La participación de representantes de diferentes sectores permitió intercambiar experiencias y conocer las etapas de cocreación del VI Plan de Acción de Estado Abierto Honduras, mientras la comunicación institucional contribuyó a divulgar el propósito de la iniciativa y promover el involucramiento ciudadano.</p>
+                  <div class="agah-gallery-host mt-3" data-ciudad="la-esperanza" data-nombre="La Esperanza, Intibucá"></div>
+                </div>
+                <div class="tab-pane fade" id="jorPane-gracias" role="tabpanel" aria-labelledby="jorTab-gracias" tabindex="0">
+                  <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                    <h6 class="h4 fw-bold text-agah-navy mb-0">Gracias</h6>
+                    <span class="badge bg-agah-cyan">Lempira</span>
+                  </div>
+                  <p class="text-secondary" style="line-height:1.7;">La jornada desarrollada en Gracias, Lempira, se integró a los esfuerzos nacionales por acercar los principios del Gobierno Abierto a los distintos territorios de Honduras. A través del trabajo colectivo, las personas participantes tuvieron la oportunidad de explorar áreas como la inclusión, la justicia, la participación pública y el acceso a la información, aportando perspectivas que contribuirán a identificar coincidencias y prioridades para las etapas posteriores del VI Plan de Acción.</p>
+                  <div class="agah-gallery-host mt-3" data-ciudad="gracias" data-nombre="Gracias, Lempira"></div>
+                </div>
+                <div class="tab-pane fade" id="jorPane-santa-rosa-de-copan" role="tabpanel" aria-labelledby="jorTab-santa-rosa-de-copan" tabindex="0">
+                  <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                    <h6 class="h4 fw-bold text-agah-navy mb-0">Santa Rosa de Copán</h6>
+                    <span class="badge bg-agah-cyan">Copán</span>
+                  </div>
+                  <p class="text-secondary" style="line-height:1.7;">En Santa Rosa de Copán, Copán, continuaron las acciones de sensibilización para fortalecer la comprensión del Gobierno Abierto y fomentar la colaboración entre los sectores que participan en este proceso. La difusión de la jornada permitió dar mayor visibilidad a la iniciativa en el occidente del país, con el acompañamiento de la Oficina de las Naciones Unidas contra la Droga y el Delito (UNODC) y la Unión Europea, en el marco del apoyo al fortalecimiento de la AGAH y a la cocreación del VI Plan de Acción.</p>
+                  <div class="agah-gallery-host mt-3" data-ciudad="santa-rosa-de-copan" data-nombre="Santa Rosa de Copán, Copán"></div>
+                </div>
+                <div class="tab-pane fade" id="jorPane-san-pedro-sula" role="tabpanel" aria-labelledby="jorTab-san-pedro-sula" tabindex="0">
+                  <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                    <h6 class="h4 fw-bold text-agah-navy mb-0">San Pedro Sula</h6>
+                    <span class="badge bg-agah-cyan">Cortés</span>
+                  </div>
+                  <p class="text-secondary" style="line-height:1.7;">San Pedro Sula, Cortés, fue una de las ciudades incluidas en la gira nacional de sensibilización para la cocreación del VI Plan de Acción de Estado Abierto Honduras (2026–2030). La jornada promovió el intercambio entre representantes de la sociedad civil, el sector público, la academia y la empresa privada, destacando la importancia de integrar diversas perspectivas en la identificación de desafíos y oportunidades. La comunicación a través de plataformas digitales y medios informativos contribuyó a extender el alcance de esta agenda de participación y transparencia.</p>
+                  <div class="agah-gallery-host mt-3" data-ciudad="san-pedro-sula" data-nombre="San Pedro Sula, Cortés"></div>
+                </div>
+                <div class="tab-pane fade" id="jorPane-la-ceiba" role="tabpanel" aria-labelledby="jorTab-la-ceiba" tabindex="0">
+                  <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                    <h6 class="h4 fw-bold text-agah-navy mb-0">La Ceiba</h6>
+                    <span class="badge bg-agah-cyan">Atlántida</span>
+                  </div>
+                  <p class="text-secondary" style="line-height:1.7;">La Ceiba, Atlántida, se sumó a las ciudades que acogieron las Jornadas de Sensibilización de la AGAH, concebidas como una etapa preparatoria para ampliar la participación en la construcción del VI Plan de Acción de Estado Abierto Honduras. Estos espacios permitieron promover el conocimiento sobre el proceso, estimular el diálogo multisectorial y recoger aportes desde las distintas realidades territoriales. La difusión de las actividades también favoreció el acercamiento de la ciudadanía a los principios del Gobierno Abierto y a las próximas etapas de cocreación.</p>
+                  <div class="agah-gallery-host mt-3" data-ciudad="la-ceiba" data-nombre="La Ceiba, Atlántida"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="agah-note" style="border-left-color: var(--agah-amber);">
+              <p class="mb-0 text-secondary" style="line-height:1.7;">El desarrollo de esta jornada cuenta con el apoyo de la Oficina de las Naciones Unidas contra la Droga y el Delito (UNODC), a través de la Unión Europea, que ha acompañado y respaldado el fortalecimiento de la Alianza de Gobierno Abierto Honduras (AGAH) y el desarrollo del proceso de cocreación del VI Plan de Acción de Estado Abierto Honduras, contribuyendo a la generación de espacios de participación, diálogo y colaboración entre los diferentes sectores y territorios del país.</p>
+            </div>
+            <p class="fw-bold text-agah-navy fs-5 mt-4 mb-0" style="line-height:1.6;">El proceso de cocreación continúa y la participación ciudadana es fundamental. Infórmate, participa y sé parte de la construcción del VI Plan de Acción de Estado Abierto Honduras.</p>
+          </div>
+          </div>
+          <div class="modal-footer bg-agah-grey border-0 justify-content-between">
+            <button type="button" class="btn btn-sm bg-agah-navy text-white" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- ============================================================
@@ -292,5 +418,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/include.js"></script>
+  <script src="js/jornadas-fotos.js"></script>
+  <script src="js/jornadas.js"></script>
 </body>
 </html>

@@ -1,161 +1,113 @@
 /* =====================================================================
-   Funcionalidades básicas del sitio AGAH — 100% en el navegador.
-   No hay backend ni base de datos: todo filtra/busca sobre el
-   contenido que ya está escrito en el HTML de cada página. No se
-   envía ni se guarda ningún dato del visitante en ningún servidor.
+   Funcionalidades del sitio AGAH — 100 % en el navegador.
+   No hay backend ni base de datos: se filtra/busca sobre el contenido
+   escrito en el HTML de cada página. No se envía ningún dato.
    ===================================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  function normalizar(texto) {
+    return (texto || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
   /* -------------------------------------------------------------
-     REPOSITORIO.HTML — búsqueda de texto + filtro por Tipo de Documento
+     REPOSITORIO.HTML — búsqueda sobre los documentos listados.
+     Cada documento lleva el atributo data-doc-item; si la pestaña
+     activa no tiene coincidencias, se abre la primera que sí tenga.
      ------------------------------------------------------------- */
-  var repoSearchInput = document.getElementById('repoSearchInput');
-  if (repoSearchInput) {
-    var repoSearchBtn = document.getElementById('repoSearchBtn');
-    var repoSearchStatus = document.getElementById('repoSearchStatus');
-    var repoFiltroTipo = document.getElementById('repoFiltroTipo');
+  var repoInput = document.getElementById('repoSearchInput');
+  if (repoInput) {
+    var repoBtn = document.getElementById('repoSearchBtn');
+    var repoStatus = document.getElementById('repoSearchStatus');
+    var panes = Array.prototype.slice.call(document.querySelectorAll('#contenido .tab-pane'));
 
-    // Si se llegó desde un "filtro rápido" del inicio (?filtro=normativa),
-    // abrir directamente esa pestaña.
-    var params = new URLSearchParams(window.location.search);
-    var filtroInicial = params.get('filtro');
-    if (filtroInicial === 'normativa') {
-      var tabNormativa = document.getElementById('tabBtn-normativa');
-      if (tabNormativa && window.bootstrap) {
-        new bootstrap.Tab(tabNormativa).show();
-      }
+    // ?filtro=actas | normativa | informes | planes abre esa pestaña
+    var filtro = new URLSearchParams(window.location.search).get('filtro');
+    if (filtro && window.bootstrap) {
+      var btnInicial = document.getElementById('tabBtn-' + filtro);
+      if (btnInicial) new bootstrap.Tab(btnInicial).show();
     }
 
-    function normalizar(texto) {
-      return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    }
+    function buscarRepositorio() {
+      var termino = normalizar(repoInput.value.trim());
+      var total = 0;
+      var primeraConResultados = null;
+      var activaTieneResultados = false;
 
-    function aplicarFiltrosRepositorio() {
-      var termino = normalizar(repoSearchInput.value.trim());
-      var tipoSeleccionado = repoFiltroTipo ? repoFiltroTipo.value : '';
-      var totalVisible = 0;
-      var primerTabConResultado = null;
-
-      // --- Filas de la tabla de Actas ---
-      var filasActas = document.querySelectorAll('#tab-actas tbody tr');
-      var actasVisibles = 0;
-      filasActas.forEach(function (fila) {
-        var coincideTexto = !termino || normalizar(fila.textContent).indexOf(termino) !== -1;
-        var coincideTipo = !tipoSeleccionado || tipoSeleccionado === 'Actas';
-        var visible = coincideTexto && coincideTipo;
-        fila.style.display = visible ? '' : 'none';
-        if (visible) { actasVisibles++; totalVisible++; }
+      panes.forEach(function (pane) {
+        var visibles = 0;
+        pane.querySelectorAll('[data-doc-item]').forEach(function (item) {
+          var ok = !termino || normalizar(item.textContent).indexOf(termino) !== -1;
+          item.style.display = ok ? '' : 'none';
+          if (ok) visibles++;
+        });
+        total += visibles;
+        if (visibles > 0 && !primeraConResultados) primeraConResultados = pane.id;
+        if (visibles > 0 && pane.classList.contains('active')) activaTieneResultados = true;
       });
-      if (actasVisibles > 0 && !primerTabConResultado) primerTabConResultado = 'tabBtn-actas';
 
-      // --- Tarjetas de Decretos y Normativa (tienen data-doc-tipo real) ---
-      var tarjetasNormativa = document.querySelectorAll('#tab-normativa [data-doc-tipo]');
-      var normativaVisibles = 0;
-      tarjetasNormativa.forEach(function (tarjeta) {
-        var coincideTexto = !termino || normalizar(tarjeta.textContent).indexOf(termino) !== -1;
-        var coincideTipo = !tipoSeleccionado || tipoSeleccionado === tarjeta.getAttribute('data-doc-tipo');
-        var visible = coincideTexto && coincideTipo;
-        tarjeta.style.display = visible ? '' : 'none';
-        if (visible) { normativaVisibles++; totalVisible++; }
-      });
-      if (normativaVisibles > 0 && !primerTabConResultado) primerTabConResultado = 'tabBtn-normativa';
-
-      // --- Tarjetas de Documentos de Trabajo (no tienen "tipo" propio, solo texto) ---
-      var tarjetasTrabajo = document.querySelectorAll('#tab-trabajo .col-md-4');
-      var trabajoVisibles = 0;
-      var tipoAplicaATrabajo = !tipoSeleccionado || tipoSeleccionado === 'Propuestas';
-      tarjetasTrabajo.forEach(function (tarjeta) {
-        var coincideTexto = !termino || normalizar(tarjeta.textContent).indexOf(termino) !== -1;
-        var visible = coincideTexto && tipoAplicaATrabajo;
-        tarjeta.style.display = visible ? '' : 'none';
-        if (visible) { trabajoVisibles++; totalVisible++; }
-      });
-      if (trabajoVisibles > 0 && !primerTabConResultado) primerTabConResultado = 'tabBtn-trabajo';
-
-      // Mensaje honesto de estado: solo cuenta lo que realmente hay escrito
-      // en la página, no simula un índice documental que no existe.
-      if (!termino && !tipoSeleccionado) {
-        repoSearchStatus.textContent = '';
-      } else if (totalVisible === 0) {
-        repoSearchStatus.textContent = 'No se encontraron documentos que coincidan con tu búsqueda.';
+      if (!termino) {
+        repoStatus.textContent = '';
+      } else if (total === 0) {
+        repoStatus.textContent = 'No se encontraron documentos para «' + repoInput.value.trim() + '». Prueba con otra palabra.';
       } else {
-        repoSearchStatus.textContent = totalVisible + ' documento(s) encontrado(s).';
-        var tabActivaTieneResultados =
-          (document.getElementById('tab-actas').classList.contains('active') && actasVisibles > 0) ||
-          (document.getElementById('tab-normativa').classList.contains('active') && normativaVisibles > 0) ||
-          (document.getElementById('tab-trabajo').classList.contains('active') && trabajoVisibles > 0);
-        if (!tabActivaTieneResultados && primerTabConResultado && window.bootstrap) {
-          new bootstrap.Tab(document.getElementById(primerTabConResultado)).show();
+        repoStatus.textContent = total + ' documento(s) encontrado(s).';
+        if (!activaTieneResultados && primeraConResultados && window.bootstrap) {
+          new bootstrap.Tab(document.getElementById(primeraConResultados.replace('tab-', 'tabBtn-'))).show();
         }
       }
     }
 
-    repoSearchBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      aplicarFiltrosRepositorio();
-    });
-    repoSearchInput.addEventListener('keyup', function (e) {
-      if (e.key === 'Enter') aplicarFiltrosRepositorio();
-    });
-    repoSearchInput.addEventListener('input', function () {
-      aplicarFiltrosRepositorio();
-    });
-    if (repoFiltroTipo) {
-      repoFiltroTipo.addEventListener('change', aplicarFiltrosRepositorio);
-    }
+    repoBtn.addEventListener('click', buscarRepositorio);
+    repoInput.addEventListener('input', buscarRepositorio);
+    repoInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') buscarRepositorio(); });
   }
 
   /* -------------------------------------------------------------
-     TABLERO.HTML — filtro por Estado sobre los 14 compromisos reales
-     del V PAEAH 2023-2025 (cada tarjeta trae su propio data-estado,
-     tomado del mismo texto que ya se ve en su badge).
+     TABLERO.HTML — filtro por institución responsable
      ------------------------------------------------------------- */
-  var tableroFiltroEstado = document.getElementById('tableroFiltroEstado');
-  if (tableroFiltroEstado) {
-    var tarjetasCompromiso = document.querySelectorAll('[data-estado]');
-    tableroFiltroEstado.addEventListener('change', function () {
-      var valor = tableroFiltroEstado.value;
-      tarjetasCompromiso.forEach(function (tarjeta) {
-        var visible = !valor || tarjeta.getAttribute('data-estado') === valor;
-        tarjeta.style.display = visible ? '' : 'none';
+  var filtroResp = document.getElementById('tableroFiltroResponsable');
+  if (filtroResp) {
+    var tarjetas = document.querySelectorAll('[data-responsable]');
+    var tableroStatus = document.getElementById('tableroStatus');
+    filtroResp.addEventListener('change', function () {
+      var valor = filtroResp.value, n = 0;
+      tarjetas.forEach(function (t) {
+        var ok = !valor || t.getAttribute('data-responsable') === valor;
+        t.style.display = ok ? '' : 'none';
+        if (ok) n++;
+      });
+      if (tableroStatus) tableroStatus.textContent = n + ' compromiso(s) mostrados.';
+    });
+  }
+
+  /* -------------------------------------------------------------
+     PRENSA.HTML — filtro por tipo de publicación
+     ------------------------------------------------------------- */
+  var filtrosPrensa = document.querySelectorAll('.agah-filter');
+  if (filtrosPrensa.length) {
+    var itemsPrensa = document.querySelectorAll('#prensaLista [data-tipo]');
+    var prensaStatus = document.getElementById('prensaStatus');
+    filtrosPrensa.forEach(function (boton) {
+      boton.addEventListener('click', function () {
+        var tipo = boton.getAttribute('data-filtro'), n = 0;
+        filtrosPrensa.forEach(function (b) { b.setAttribute('aria-pressed', b === boton ? 'true' : 'false'); });
+        itemsPrensa.forEach(function (item) {
+          var ok = !tipo || item.getAttribute('data-tipo') === tipo;
+          item.style.display = ok ? '' : 'none';
+          if (ok) n++;
+        });
+        if (prensaStatus) prensaStatus.textContent = n + ' publicación(es) mostradas.';
       });
     });
   }
 
   /* -------------------------------------------------------------
-     PRENSA.HTML — "Copiar enlace" de cada boletín (Clipboard API,
-     nada se envía a ningún servidor).
+     PRENSA.HTML — si se llega con prensa.html#modalBoletinX
+     (por ejemplo, desde la portada), abrir esa nota.
      ------------------------------------------------------------- */
-  document.querySelectorAll('.copiar-enlace-boletin').forEach(function (boton) {
-    boton.addEventListener('click', function () {
-      var modalId = boton.getAttribute('data-modal-id');
-      var url = window.location.href.split('#')[0] + '#' + modalId;
-      var textoOriginal = boton.innerHTML;
-
-      function marcarComoCopiado() {
-        boton.innerHTML = '<i class="bi bi-check2"></i> Enlace copiado';
-        setTimeout(function () { boton.innerHTML = textoOriginal; }, 2000);
-      }
-
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(marcarComoCopiado).catch(function () {
-          boton.innerHTML = '<i class="bi bi-exclamation-triangle"></i> No se pudo copiar';
-          setTimeout(function () { boton.innerHTML = textoOriginal; }, 2000);
-        });
-      }
-    });
-  });
-
-  /* -------------------------------------------------------------
-     PRENSA.HTML — si alguien llega con un enlace copiado
-     (pagina.html#modalBoletinX), abrir ese boletín automáticamente.
-     ------------------------------------------------------------- */
-  if (window.location.hash && window.location.hash.indexOf('modalBoletin') === 1) {
-    var modalDesdeEnlace = document.querySelector(window.location.hash);
-    if (modalDesdeEnlace && window.bootstrap) {
-      new bootstrap.Modal(modalDesdeEnlace).show();
-    }
+  if (window.location.hash && window.location.hash.indexOf('#modalBoletin') === 0) {
+    var modal = document.querySelector(window.location.hash);
+    if (modal && window.bootstrap) new bootstrap.Modal(modal).show();
   }
-
 });

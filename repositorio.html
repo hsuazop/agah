@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Repositorio Documental | Alianza para el Gobierno Abierto Honduras</title>
+  <title>Repositorio documental | Alianza para el Gobierno Abierto Honduras</title>
   <link rel="icon" type="image/jpeg" href="img/logo-agah-redondo.jpg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -13,189 +13,151 @@
 
   <div id="site-header"></div>
 
-  <main>
+  <main id="contenido" tabindex="-1">
 
-    <!-- ============ HERO Y BUSCADOR CENTRAL ============ -->
     <section class="bg-agah-navy text-white py-5">
-      <div class="container py-3">
-        <h1 class="fw-bold display-6 mb-2">Repositorio Documental Abierto y Transparente</h1>
+      <div class="container py-2">
+        <h1 class="fw-bold display-6 mb-2">Repositorio documental</h1>
         <p class="fs-5 text-white-50 mb-4" style="max-width: 50rem;">
-          Actas, decretos, normativas, informes y documentos de trabajo de la AGAH, disponibles en formatos abiertos y descargables.
+          Planes de acción, informes, normativa y actas de la AGAH, organizados por tipo de documento y fecha.
         </p>
-        <div class="input-group input-group-lg mb-2">
-          <input type="text" id="repoSearchInput" class="form-control" placeholder="Busca por palabra clave, frase exacta, número de acta, decreto o término dentro del contenido del documento...">
-          <button id="repoSearchBtn" class="btn bg-agah-cyan text-white fw-bold d-flex align-items-center gap-2">
-            <i class="bi bi-search"></i> Buscar
+        <label for="repoSearchInput" class="fw-semibold mb-1">Buscar en los documentos listados en esta página</label>
+        <div class="input-group input-group-lg mb-2" style="max-width: 48rem;">
+          <input type="search" id="repoSearchInput" class="form-control" placeholder="Por ejemplo: plan 2023, IRM, transparencia">
+          <button id="repoSearchBtn" class="btn bg-agah-cyan text-white fw-bold" type="button">
+            <i class="bi bi-search" aria-hidden="true"></i> Buscar
           </button>
         </div>
-        <p id="repoSearchStatus" class="small text-white-50 mb-0" style="min-height:1.2em;"></p>
+        <p id="repoSearchStatus" class="small text-white-50 mb-0" style="min-height:1.2em;" aria-live="polite"></p>
       </div>
     </section>
 
-    <!-- ============ KPIs DEL ACERVO DOCUMENTAL ============ -->
     <section class="py-5 bg-white">
       <div class="container">
-        <div class="row g-3 mb-5 text-center">
-          <div class="col-6 col-lg-3">
-            <div class="bg-agah-grey rounded-4 p-3 h-100">
-              <div class="display-6 fw-black text-agah-navy">[XXXX]</div>
-              <div class="small text-secondary">Documentos Publicados e Indexados</div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="bg-agah-grey rounded-4 p-3 h-100">
-              <div class="display-6 fw-black text-agah-navy">100%</div>
-              <div class="small text-secondary">Archivos en Formatos Abiertos y Descargables</div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="bg-agah-grey rounded-4 p-3 h-100">
-              <div class="display-6 fw-black text-agah-navy">[XX]</div>
-              <div class="small text-secondary">Actas de Sesiones Disponibles</div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="bg-agah-grey rounded-4 p-3 h-100">
-              <div class="display-6 fw-black text-agah-navy">5</div>
-              <div class="small text-secondary">Planes de Acción Publicados</div>
-            </div>
-          </div>
+
+        <!-- Estado real del acervo (sin cifras provisionales) -->
+        <div class="row g-3 mb-5">
+          <div class="col-6 col-lg-3"><div class="agah-stat"><div class="agah-stat-value">5</div><div class="agah-stat-label">planes de acción en PDF</div></div></div>
+          <div class="col-6 col-lg-3"><div class="agah-stat"><div class="agah-stat-value">1</div><div class="agah-stat-label">informe del IRM enlazado</div></div></div>
+          <div class="col-6 col-lg-3"><div class="agah-stat"><div class="agah-stat-value">1</div><div class="agah-stat-label">ley marco enlazada</div></div></div>
+          <div class="col-6 col-lg-3"><div class="agah-stat"><div class="agah-stat-value">0</div><div class="agah-stat-label">actas publicadas a la fecha</div></div></div>
         </div>
 
-        <div class="row g-4">
-          <!-- Panel lateral de filtros -->
-          <div class="col-lg-3">
-            <div class="bg-agah-grey rounded-4 p-4">
-              <h6 class="fw-bold text-agah-navy mb-3"><i class="bi bi-funnel"></i> Filtros Avanzados</h6>
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-3">
+          <ul class="nav nav-pills gap-1" role="tablist" id="repoTabs">
+            <li class="nav-item" role="presentation"><button class="nav-link active" id="tabBtn-planes" data-bs-toggle="pill" data-bs-target="#tab-planes" type="button" role="tab" aria-controls="tab-planes" aria-selected="true">Planes de acción</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" id="tabBtn-informes" data-bs-toggle="pill" data-bs-target="#tab-informes" type="button" role="tab" aria-controls="tab-informes" aria-selected="false">Informes</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" id="tabBtn-normativa" data-bs-toggle="pill" data-bs-target="#tab-normativa" type="button" role="tab" aria-controls="tab-normativa" aria-selected="false">Normativa</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" id="tabBtn-actas" data-bs-toggle="pill" data-bs-target="#tab-actas" type="button" role="tab" aria-controls="tab-actas" aria-selected="false">Actas</button></li>
+          </ul>
+          <p class="agah-meta mb-0">Información actualizada al 29 de septiembre de 2026</p>
+        </div>
 
-              <label class="small fw-semibold text-agah-navy d-block mb-1">Tipo de Documento</label>
-              <select id="repoFiltroTipo" class="form-select form-select-sm mb-3">
-                <option value="">Todos</option>
-                <option value="Actas">Actas</option>
-                <option value="Decreto">Decretos</option>
-                <option value="Reglamento">Resoluciones</option>
-                <option value="IRM">Informes IRM / Autoevaluación</option>
-                <option value="Propuestas">Propuestas</option>
-              </select>
+        <div class="tab-content">
 
-              <label class="small fw-semibold text-agah-navy d-block mb-1">Sector Origen</label>
-              <select class="form-select form-select-sm mb-3">
-                <option>Todos</option>
-                <option>Sector Público</option>
-                <option>Sociedad Civil</option>
-                <option>Academia</option>
-                <option>Sector Privado</option>
-                <option>Multisectorial</option>
-              </select>
+          <!-- PLANES DE ACCIÓN -->
+          <div class="tab-pane fade show active" id="tab-planes" role="tabpanel" aria-labelledby="tabBtn-planes">
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <caption class="visually-hidden">Planes de acción publicados, del más reciente al más antiguo</caption>
+                <thead class="small text-secondary">
+                  <tr><th scope="col">Documento</th><th scope="col">Período</th><th scope="col">Compromisos</th><th scope="col">Archivo</th></tr>
+                </thead>
+                <tbody>
+                  <tr data-doc-item>
+                    <td class="fw-semibold text-agah-navy">V Plan de Acción de Estado Abierto Honduras (PAEAH) — «Voces hondureñas por la transparencia»</td>
+                    <td>2023–2025</td>
+                    <td><a href="tablero.html#compromisos">14 compromisos</a></td>
+                    <td><a href="docs/V_PAGAH_2023-2025.pdf" target="_blank" rel="noopener">PDF, 1,6 MB<span class="visually-hidden"> (abre en otra pestaña)</span></a></td>
+                  </tr>
+                  <tr data-doc-item>
+                    <td class="fw-semibold text-agah-navy">IV Plan de Acción de Gobierno Abierto Honduras</td>
+                    <td>2018–2020</td><td>—</td>
+                    <td><a href="docs/IV_PAGAH_2018-2020.pdf" target="_blank" rel="noopener">PDF, 2,1 MB<span class="visually-hidden"> (abre en otra pestaña)</span></a></td>
+                  </tr>
+                  <tr data-doc-item>
+                    <td class="fw-semibold text-agah-navy">III Plan de Acción de Gobierno Abierto Honduras</td>
+                    <td>2016–2018</td><td>—</td>
+                    <td><a href="docs/III_PAGAH_2016-2018.pdf" target="_blank" rel="noopener">PDF, 1,2 MB<span class="visually-hidden"> (abre en otra pestaña)</span></a></td>
+                  </tr>
+                  <tr data-doc-item>
+                    <td class="fw-semibold text-agah-navy">II Plan de Acción de Gobierno Abierto Honduras</td>
+                    <td>2014–2016</td><td>—</td>
+                    <td><a href="docs/II_PAGAH_2014-2016.pdf" target="_blank" rel="noopener">PDF, 443 KB<span class="visually-hidden"> (abre en otra pestaña)</span></a></td>
+                  </tr>
+                  <tr data-doc-item>
+                    <td class="fw-semibold text-agah-navy">I Plan de Acción de Gobierno Abierto Honduras</td>
+                    <td>2012–2013</td><td>—</td>
+                    <td><a href="docs/I_PAGAH_2012-2013.pdf" target="_blank" rel="noopener">PDF, 174 KB<span class="visually-hidden"> (abre en otra pestaña)</span></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-              <label class="small fw-semibold text-agah-navy d-block mb-1">Rango de Fechas</label>
-              <div class="d-flex gap-1 mb-1">
-                <input type="date" class="form-control form-control-sm agah-date-xs">
-                <input type="date" class="form-control form-control-sm agah-date-xs">
+          <!-- INFORMES -->
+          <div class="tab-pane fade" id="tab-informes" role="tabpanel" aria-labelledby="tabBtn-informes">
+            <div class="row g-3">
+              <div class="col-md-6" data-doc-item>
+                <article class="agah-card p-4 h-100">
+                  <span class="badge bg-agah-cyan mb-2">Disponible</span>
+                  <h2 class="h6 fw-bold text-agah-navy">Revisión del Plan de Acción de Honduras 2023–2025 (IRM)</h2>
+                  <p class="agah-meta mb-2">Emisor: Mecanismo de Revisión Independiente de OGP · julio de 2024 · Plan 2023–2025</p>
+                  <a href="https://opengovpartnership.org/wp-content/uploads/2024/07/Honduras_Action-Plan-Review_2023-2025.pdf" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small">Descargar informe (PDF, sitio de OGP)<span class="visually-hidden">, abre en otra pestaña</span></a>
+                </article>
+              </div>
+              <div class="col-md-6" data-doc-item>
+                <article class="agah-pending p-4 h-100">
+                  <span class="badge bg-secondary mb-2">Pendiente de publicación</span>
+                  <h2 class="h6 fw-bold text-agah-navy">Autoevaluación de fin de período 2023–2025</h2>
+                  <p class="agah-meta mb-0">Emisor: Secretaría Técnica de la AGAH · sin fecha de publicación</p>
+                </article>
               </div>
             </div>
           </div>
 
-          <!-- Contenido: pestañas por categoría -->
-          <div class="col-lg-9">
-            <ul class="nav nav-pills mb-4" role="tablist" id="repoTabs">
-              <li class="nav-item"><button class="nav-link active" id="tabBtn-actas" data-bs-toggle="pill" data-bs-target="#tab-actas" type="button">Actas de Sesiones</button></li>
-              <li class="nav-item"><button class="nav-link" id="tabBtn-normativa" data-bs-toggle="pill" data-bs-target="#tab-normativa" type="button">Decretos y Normativa</button></li>
-              <li class="nav-item"><button class="nav-link" id="tabBtn-trabajo" data-bs-toggle="pill" data-bs-target="#tab-trabajo" type="button">Documentos de Trabajo</button></li>
-            </ul>
-
-            <div class="tab-content">
-              <!-- 4.2 Actas -->
-              <div class="tab-pane fade show active" id="tab-actas">
-                <div class="table-responsive">
-                  <table class="table align-middle">
-                    <thead class="small text-uppercase text-secondary">
-                      <tr>
-                        <th>Documento</th>
-                        <th>Fecha</th>
-                        <th>Sectores Participantes</th>
-                        <th>Archivos</th>
-                      </tr>
-                    </thead>
-                    <tbody class="small">
-                      <tr>
-                        <td class="fw-semibold text-agah-navy">Acta N° [XX-2026] — Sesión Ordinaria del Comité Directivo</td>
-                        <td>[Día / Mes / Año]</td>
-                        <td>Público, Sociedad Civil, Academia, Sector Privado</td>
-                        <td><a href="#" class="text-agah-cyan text-decoration-none">PDF Firmado</a></td>
-                      </tr>
-                      <tr>
-                        <td class="fw-semibold text-agah-navy">Acta N° [XX-2026] — Sesión Extraordinaria del Comité Directivo</td>
-                        <td>[Día / Mes / Año]</td>
-                        <td>Público, Sociedad Civil</td>
-                        <td><a href="#" class="text-agah-cyan text-decoration-none">PDF Firmado</a></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+          <!-- NORMATIVA -->
+          <div class="tab-pane fade" id="tab-normativa" role="tabpanel" aria-labelledby="tabBtn-normativa">
+            <h2 class="h6 fw-bold text-agah-navy mb-3">Disponibles</h2>
+            <div class="row g-3 mb-4">
+              <div class="col-md-6" data-doc-item>
+                <article class="agah-card p-4 h-100">
+                  <span class="badge bg-agah-green mb-2">Vigente</span>
+                  <h3 class="h6 fw-bold text-agah-navy">Ley de Transparencia y Acceso a la Información Pública</h3>
+                  <p class="agah-meta mb-2">Decreto 170-2006 · Emisor: Congreso Nacional · Publicada en La Gaceta el 30 de diciembre de 2006</p>
+                  <a href="https://portalunico.iaip.gob.hn/ver_archivo/Njg0NDg0" target="_blank" rel="noopener" class="fw-bold text-agah-cyan small">Abrir texto oficial (Portal Único del IAIP)<span class="visually-hidden">, abre en otra pestaña</span></a>
+                </article>
               </div>
-
-              <!-- 4.3 Decretos, Resoluciones y Normativas -->
-              <div class="tab-pane fade" id="tab-normativa">
-                <div class="row g-3">
-                  <div class="col-md-6" data-doc-tipo="Ley">
-                    <div class="bg-agah-grey rounded-4 p-4 h-100">
-                      <span class="badge bg-agah-green text-white mb-2">Vigente</span>
-                      <h6 class="fw-bold text-agah-navy">Ley de Transparencia y Acceso a la Información Pública</h6>
-                      <p class="small text-secondary mb-1">Tipo: Ley · Registro: [Número de Gaceta]</p>
-                      <a href="#" class="small fw-bold text-agah-cyan text-decoration-none">Descargar Documento Oficial PDF</a>
-                    </div>
-                  </div>
-                  <div class="col-md-6" data-doc-tipo="Decreto">
-                    <div class="bg-agah-grey rounded-4 p-4 h-100">
-                      <span class="badge bg-agah-green text-white mb-2">Vigente</span>
-                      <h6 class="fw-bold text-agah-navy">Decretos de Adhesión y Ratificación a OGP</h6>
-                      <p class="small text-secondary mb-1">Tipo: Decreto · Registro: [Número de Gaceta]</p>
-                      <a href="#" class="small fw-bold text-agah-cyan text-decoration-none">Descargar Documento Oficial PDF</a>
-                    </div>
-                  </div>
-                  <div class="col-md-6" data-doc-tipo="Reglamento">
-                    <div class="bg-agah-grey rounded-4 p-4 h-100">
-                      <span class="badge bg-agah-amber text-white mb-2">En Revisión</span>
-                      <h6 class="fw-bold text-agah-navy">Reglamento Interno del Comité Directivo</h6>
-                      <p class="small text-secondary mb-1">Tipo: Reglamento · Registro: [Número de Gaceta]</p>
-                      <a href="#" class="small fw-bold text-agah-cyan text-decoration-none">Descargar Documento Oficial PDF</a>
-                    </div>
-                  </div>
-                  <div class="col-md-6" data-doc-tipo="Acuerdo">
-                    <div class="bg-agah-grey rounded-4 p-4 h-100">
-                      <span class="badge bg-agah-green text-white mb-2">Vigente</span>
-                      <h6 class="fw-bold text-agah-navy">Manual de Metodología y Co-Creación</h6>
-                      <p class="small text-secondary mb-1">Tipo: Acuerdo · Registro: [Número de Gaceta]</p>
-                      <a href="#" class="small fw-bold text-agah-cyan text-decoration-none">Descargar Documento Oficial PDF</a>
-                    </div>
-                  </div>
-                </div>
+            </div>
+            <h2 class="h6 fw-bold text-agah-navy mb-3">Pendientes de publicación</h2>
+            <div class="row g-3">
+              <div class="col-md-4" data-doc-item>
+                <article class="agah-pending p-4 h-100">
+                  <h3 class="h6 fw-bold text-agah-navy">Decretos de adhesión y ratificación a OGP</h3>
+                  <p class="agah-meta mb-0">Emisor, número y fecha por confirmar</p>
+                </article>
               </div>
-
-              <!-- 4.4 Documentos de trabajo y propuestas -->
-              <div class="tab-pane fade" id="tab-trabajo">
-                <div class="row g-3">
-                  <div class="col-md-4">
-                    <div class="bg-agah-grey rounded-4 p-4 h-100">
-                      <h6 class="fw-bold text-agah-navy">Insumos de Mesas Técnicas</h6>
-                      <p class="small text-secondary mb-0">Memorias de trabajo, diagnósticos y sistematización de talleres.</p>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="bg-agah-grey rounded-4 p-4 h-100">
-                      <h6 class="fw-bold text-agah-navy">Propuestas Ciudadanas y OSC</h6>
-                      <p class="small text-secondary mb-0">Documentos de propuesta sometidos a consideración para los Planes de Acción.</p>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="bg-agah-grey rounded-4 p-4 h-100">
-                      <h6 class="fw-bold text-agah-navy">Borradores de Compromisos</h6>
-                      <p class="small text-secondary mb-0">Versiones preliminares de compromisos antes de su redacción final.</p>
-                    </div>
-                  </div>
-                </div>
+              <div class="col-md-4" data-doc-item>
+                <article class="agah-pending p-4 h-100">
+                  <h3 class="h6 fw-bold text-agah-navy">Reglamento interno del Comité Directivo</h3>
+                  <p class="agah-meta mb-0">Emisor: Comité Directivo de la AGAH · en revisión</p>
+                </article>
               </div>
+              <div class="col-md-4" data-doc-item>
+                <article class="agah-pending p-4 h-100">
+                  <h3 class="h6 fw-bold text-agah-navy">Manual de metodología y co-creación</h3>
+                  <p class="agah-meta mb-0">Emisor: Secretaría Técnica de la AGAH · fecha por confirmar</p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACTAS -->
+          <div class="tab-pane fade" id="tab-actas" role="tabpanel" aria-labelledby="tabBtn-actas">
+            <div class="agah-pending p-4" data-doc-item>
+              <h2 class="h6 fw-bold text-agah-navy">Actas del Comité Directivo — pendientes de publicación</h2>
+              <p class="text-secondary mb-0">Todavía no se han publicado actas en este portal. Cada acta se listará aquí con su número,
+                fecha de sesión, tipo de sesión, sectores participantes y el PDF firmado.</p>
             </div>
           </div>
         </div>
@@ -204,9 +166,6 @@
 
   </main>
 
-  <!-- ============================================================
-       PIE DE PÁGINA INSTITUCIONAL (FOOTER) - compartido
-       =========================================================== -->
   <div id="site-footer"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Consultas Públicas Abiertas | Alianza para el Gobierno Abierto Honduras</title>
+  <title>Consultas públicas | Alianza para el Gobierno Abierto Honduras</title>
   <link rel="icon" type="image/jpeg" href="img/logo-agah-redondo.jpg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -13,66 +13,58 @@
 
   <div id="site-header"></div>
 
-  <main>
+  <main id="contenido" tabindex="-1">
 
     <section class="bg-agah-navy text-white py-5">
       <div class="container py-3">
         <h1 class="fw-bold display-6 mb-2">Espacio Abierto de Consulta Ciudadana</h1>
         <p class="fs-5 text-white-50 mb-0" style="max-width: 50rem;">
-          Tu voz incide directamente en la gestión pública. Examina las propuestas activas, descarga los borradores
-          de documentos y envía tus aportes o recomendaciones durante los periodos de consulta pública.
+          Tu voz incide directamente en la gestión pública. Aquí se publican las consultas públicas de la AGAH, sus plazos y la respuesta a los aportes recibidos.
         </p>
       </div>
     </section>
 
     <section class="py-5 bg-white">
       <div class="container">
-        <div class="d-flex flex-wrap gap-2 mb-4">
-          <span class="small text-secondary align-self-center me-1">Estado de las consultas:</span>
-          <button class="btn btn-sm bg-agah-cyan text-white rounded-pill">Todas</button>
-          <button class="btn btn-sm btn-outline-secondary rounded-pill">Abiertas / Activas</button>
-          <button class="btn btn-sm btn-outline-secondary rounded-pill">En Fase de Sistematización</button>
-          <button class="btn btn-sm btn-outline-secondary rounded-pill">Concluidas / Con Informe</button>
+        <div class="agah-card p-4 p-md-5 mb-5">
+          <span class="badge bg-secondary mb-2">Sin consultas abiertas</span>
+          <h2 class="h3 fw-bold text-agah-navy">No hay consultas públicas abiertas en este momento</h2>
+          <p class="agah-meta mb-3">Estado verificado al 29 de septiembre de 2026</p>
+          <p class="text-secondary mb-0" style="max-width: 46rem;">El próximo proceso de participación será la co-creación del
+            VI Plan de Acción de Gobierno Abierto, cuyo lanzamiento está previsto para enero de 2027. Las convocatorias
+            se anunciarán en la <a href="prensa.html">sala de prensa</a> y en esta página.</p>
         </div>
 
+        <h2 class="fw-bold text-agah-navy mb-3">Qué información tendrá cada consulta</h2>
         <div class="row g-4 mb-5">
-          <div class="col-md-6">
-            <div class="bg-agah-grey rounded-4 p-4 h-100 d-flex flex-column">
-              <span class="badge bg-agah-green text-white align-self-start mb-2">Abierta / Activa</span>
-              <h5 class="fw-bold text-agah-navy">[Nombre formal de la propuesta de ley, plan o política en consulta]</h5>
-              <p class="small text-secondary mb-2">Vigencia del foro: [Fecha de apertura] — [Fecha de cierre] · [XX] días restantes</p>
-              <p class="small text-secondary flex-grow-1">Documentos base disponibles para revisión ciudadana antes de enviar tu aporte.</p>
-              <div class="d-flex gap-2">
-                <a href="#" class="btn btn-sm bg-agah-navy text-white hover-bg-agah-cyan">Descargar Borrador PDF</a>
-              </div>
+          <div class="col-md-4">
+            <div class="agah-card p-4 h-100">
+              <i class="bi bi-calendar-range fs-3 text-agah-cyan" aria-hidden="true"></i>
+              <h3 class="h6 fw-bold text-agah-navy mt-2">Plazo</h3>
+              <p class="text-secondary mb-0">Fecha de apertura y de cierre. Una consulta vencida nunca se mostrará como activa.</p>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="bg-agah-grey rounded-4 p-4 h-100 d-flex flex-column">
-              <span class="badge bg-agah-amber text-white align-self-start mb-2">En Sistematización</span>
-              <h5 class="fw-bold text-agah-navy">[Nombre formal de la propuesta de ley, plan o política en consulta]</h5>
-              <p class="small text-secondary mb-2">Vigencia del foro: [Fecha de apertura] — [Fecha de cierre]</p>
-              <p class="small text-secondary flex-grow-1">El plazo de aportes concluyó; los comentarios recibidos están en fase de análisis técnico.</p>
-              <a href="#" class="btn btn-sm bg-agah-navy text-white hover-bg-agah-cyan align-self-start">Ver Documento Completo</a>
+          <div class="col-md-4">
+            <div class="agah-card p-4 h-100">
+              <i class="bi bi-chat-square-text fs-3 text-agah-cyan" aria-hidden="true"></i>
+              <h3 class="h6 fw-bold text-agah-navy mt-2">Mecanismo de participación</h3>
+              <p class="text-secondary mb-0">Cómo enviar aportes (formulario, correo o sesión presencial) y el documento base en consulta.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="agah-card p-4 h-100">
+              <i class="bi bi-clipboard-check fs-3 text-agah-cyan" aria-hidden="true"></i>
+              <h3 class="h6 fw-bold text-agah-navy mt-2">Respuesta a los aportes</h3>
+              <p class="text-secondary mb-0">Al cerrar, se publica la matriz de sistematización: qué aportes se aceptaron, cuáles no y por qué.</p>
             </div>
           </div>
         </div>
 
-        <div class="row g-5">
-          <div class="col-lg-8 mx-auto">
-            <h2 class="fw-bold text-agah-navy mb-3">Cierre y Transparencia</h2>
-            <div class="bg-white border rounded-4 p-4">
-              <p class="text-secondary mb-0">
-                Al concluir el plazo, la página publica la <strong>Matriz de Sistematización de Aportes</strong>,
-                detallando qué comentarios fueron aceptados, cuáles fueron desestimados y la justificación técnica
-                correspondiente.
-              </p>
-            </div>
-          </div>
-        </div>
+        <h2 class="fw-bold text-agah-navy mb-3">Consultas concluidas</h2>
+        <p class="text-secondary mb-0">Aún no hay consultas concluidas publicadas en este portal. ¿Tienes una pregunta?
+          Escribe a <a href="mailto:secretariatecnicaagah@iaip.gob.hn">secretariatecnicaagah@iaip.gob.hn</a>.</p>
       </div>
     </section>
-
   </main>
 
   <!-- ============================================================
