@@ -128,7 +128,8 @@
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.agah-gallery-host').forEach(dibujar);
     // Al cerrar el modal del boletín se cierra también el visor
-    var modal = document.getElementById('modalBoletin5');
-    if (modal) modal.addEventListener('hidden.bs.modal', cerrar);
+        document.querySelectorAll('.modal').forEach(function (m) {
+      if (m.querySelector('.agah-gallery-host')) m.addEventListener('hidden.bs.modal', cerrar);
+    });
   });
 })();
