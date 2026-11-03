@@ -439,3 +439,30 @@ main:focus { outline: none; }
 /* Tablas con desplazamiento: contiene los textos ocultos para lector de pantalla
    (por ejemplo "abre en otra pestaña") para que no ensanchen toda la página. */
 .table-responsive { position: relative; }
+
+/* Botones con fondo de marca (.btn + .bg-agah-navy / .bg-agah-cyan):
+   conservan fondo y texto blanco al pasar el cursor, con el foco del teclado y al pulsar.
+   Antes, Bootstrap los volvía transparentes en esos estados y el texto blanco desaparecía. */
+.btn.bg-agah-navy,
+.btn.bg-agah-cyan {
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-color: #fff;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-border-color: transparent;
+  --bs-btn-disabled-border-color: transparent;
+}
+.btn.bg-agah-navy {
+  --bs-btn-bg: var(--agah-navy);
+  --bs-btn-hover-bg: var(--agah-navy-dark);
+  --bs-btn-active-bg: var(--agah-navy-dark);
+  --bs-btn-disabled-bg: var(--agah-navy);
+}
+.btn.bg-agah-cyan {
+  --bs-btn-bg: var(--agah-cyan);
+  --bs-btn-hover-bg: #0C5670;
+  --bs-btn-active-bg: #0C5670;
+  --bs-btn-disabled-bg: var(--agah-cyan);
+}

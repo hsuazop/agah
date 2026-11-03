@@ -78,11 +78,25 @@
     }
   }
 
+  /* ---------- Orden: primero las fotos elegidas en js/jornadas-portadas.js ---------- */
+  function ordenar(clave, fotos) {
+    var elegidas = (window.AGAH_JORNADAS_PORTADAS || {})[clave] || [];
+    var primeras = [];
+    elegidas.forEach(function (nombre) {
+      if (fotos.indexOf(nombre) === -1) {
+        if (window.console) console.warn('[Jornadas] "' + nombre + '" no existe en la lista de ' + clave + ' (revisa el nombre).');
+      } else if (primeras.indexOf(nombre) === -1) {
+        primeras.push(nombre);
+      }
+    });
+    return primeras.concat(fotos.filter(function (f) { return primeras.indexOf(f) === -1; }));
+  }
+
   /* ---------- Galerías ---------- */
   function dibujar(cont) {
     var clave = cont.getAttribute('data-ciudad');
     var nombre = cont.getAttribute('data-nombre') || clave;
-    var fotos = FOTOS[clave] || [];
+    var fotos = ordenar(clave, FOTOS[clave] || []);
     var modal = cont.closest('.modal');
     if (!fotos.length || !modal) { cont.remove(); return; }
 
