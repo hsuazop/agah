@@ -50,7 +50,8 @@
   }
 
   function abrir(modal, urls, desde, nombre, origen) {
-    if (!visor) visor = construirVisor(modal);
+    if (!modal._agahVisor) modal._agahVisor = construirVisor(modal);
+    visor = modal._agahVisor;
     lista = urls; indice = desde; titulo = nombre; disparador = origen;
     mostrar();
     visor.hidden = false;
@@ -128,7 +129,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.agah-gallery-host').forEach(dibujar);
     // Al cerrar el modal del boletín se cierra también el visor
-        document.querySelectorAll('.modal').forEach(function (m) {
+    document.querySelectorAll('.modal').forEach(function (m) {
       if (m.querySelector('.agah-gallery-host')) m.addEventListener('hidden.bs.modal', cerrar);
     });
   });
